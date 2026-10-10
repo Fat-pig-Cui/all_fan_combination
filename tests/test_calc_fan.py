@@ -193,10 +193,29 @@ class CalcFanTests(unittest.TestCase):
         self.assertTrue(all(item['yakuman'] for item in result['results']))
         self.assertTrue(all(not item['yaku'] for item in result['results']))
 
-    def test_double_riichi_chankan_is_not_banned_without_ippatsu(self):
+    def test_double_riichi_chankan_is_rejected_without_ippatsu(self):
         result = score_request({'hand': '12m 123p 123s 456s 77p', 'win': '3m', 'riichi': 2, 'event': 'chankan'})
+        self.assertFalse(result['legal_win'])
+        self.assertEqual(result['results'], [])
+
+    def test_dora_does_not_make_double_riichi_kakan_ron_legal(self):
+        result = score_request({'hand': '12m 123p 123s 456s 77p', 'win': '3m', 'riichi': 2,
+                                'event': 'chankan', 'dora': 20})
+        self.assertFalse(result['legal_win'])
+
+    def test_ordinary_riichi_ippatsu_chankan_remains_legal(self):
+        result = score_request({'hand': '12m 123p 123s 456s 77p', 'win': '3m', 'riichi': 1,
+                                'ippatsu': True, 'event': 'chankan'})
+        self.assertTrue(result['legal_win'])
         names = {item['slug'] for item in result['results'][0]['yaku']}
-        self.assertTrue({'double_riichi', 'chankan'} <= names)
+        self.assertTrue({'riichi', 'ippatsu', 'chankan'} <= names)
+
+    def test_double_riichi_kokushi_can_still_rob_ankan(self):
+        result = score_request({'hand': '9m 19p 19s 11234567z', 'win': '1m', 'riichi': 2,
+                                'event': 'chankan'})
+        self.assertTrue(result['legal_win'])
+        self.assertEqual(result['results'][0]['kind'], 'kokushi')
+        self.assertEqual(result['results'][0]['yaku'], [])
 
     def test_invalid_condition_flags_raise(self):
         for kwargs in ({'ippatsu': True}, {'event': 'haitei'}, {'event': 'chankan', 'tsumo': True}, {'event': 'rinshan', 'tsumo': True, 'riichi': 1, 'ippatsu': True}, {'event': 'haitei', 'tsumo': True, 'riichi': 2, 'ippatsu': True}):

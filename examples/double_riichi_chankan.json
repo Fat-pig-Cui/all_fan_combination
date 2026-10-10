@@ -1,4 +1,5 @@
 {
+  "_note": "Invalid ordinary-yaku example: passing the post-double-riichi pon tile causes permanent furiten.",
   "hand": "12m 123p 123s 456s 77p",
   "win": "3m",
   "tsumo": false,

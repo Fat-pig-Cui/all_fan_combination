@@ -58,6 +58,7 @@ def summary_for(records, *, complete, reason, models, rejected, elapsed, hashes)
         'scope': {'players': 4, 'ranked': True, 'natural_yakuman': False, 'dora_in_combinations': False,
                   'dora_for_partition_selection': 0, 'include_ordinary_han_13_plus': True,
                   'round_winds': ['1z', '2z', '3z'], 'riichi_min_live_tiles': 4,
+                  'double_riichi_kakan_ron': 'excluded_by_permanent_furiten',
                   'selection': 'maximum(base_points, raw_han, fu); retain exact ties'},
         'complete': complete, 'termination': reason,
         'combination_count': len(records), 'models_checked': models,
@@ -138,7 +139,8 @@ def enumerate_sets(directory: Path, *, limit=0, max_models=0, timeout_ms=0, resu
                 if certificate is None or not matching:
                     rejected += 1
                     rejected_output.write(json.dumps({
-                        'reason': 'post_riichi_kan_changes_waits' if certificate is None else 'not_score_selected',
+                        'reason': ('double_riichi_kakan_furiten' if witness.context.riichi == 2 and witness.context.event == 'chankan'
+                                   else 'post_riichi_kan_changes_waits' if certificate is None else 'not_score_selected'),
                         'target_yaku': [name for i, name in enumerate(ORDER) if witness.mask & (1 << i)],
                         'witness': scenario(witness), 'actual': [score.to_dict() for score in scores],
                     }, ensure_ascii=False) + '\n')

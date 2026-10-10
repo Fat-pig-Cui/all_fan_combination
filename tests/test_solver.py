@@ -2,7 +2,7 @@ import unittest
 
 import z3
 
-from calc_fan import BIT, ORDER, evaluate_shape, score_hand, special_scores
+from calc_fan import ORDER, evaluate_shape, score_hand, special_scores
 from shape_solver import ShapeSolver
 
 
@@ -64,14 +64,19 @@ class SolverTests(unittest.TestCase):
         solver.solver.add(solver.round == 30)
         self.assertEqual(solver.check(), z3.unsat)
 
-    def test_double_riichi_chankan_has_a_non_yakuman_witness(self):
+    def test_double_riichi_chankan_is_impossible_even_without_ippatsu(self):
         solver = self.solver(closed=True, kind='standard')
         solver.require_yaku({'double_riichi', 'chankan'})
-        solver.solver.add(*(z3.Not(flag) for flag in solver.kan))
+        solver.solver.add(z3.Not(solver.ippatsu))
+        self.assertEqual(solver.check(), z3.unsat)
+
+    def test_ordinary_riichi_ippatsu_chankan_remains_possible(self):
+        solver = self.solver(closed=True)
+        solver.require_yaku({'riichi', 'ippatsu', 'chankan'})
         self.assertEqual(solver.check(), z3.sat)
         witness = solver.decode()
-        selected = score_hand(witness.hand, witness.context, witness.melds)
-        self.assertTrue(any(score.mask & BIT['double_riichi'] and score.mask & BIT['chankan'] for score in selected))
+        self.assertTrue(any({'riichi', 'ippatsu', 'chankan'} <= set(score.yaku)
+                            for score in score_hand(witness.hand, witness.context, witness.melds)))
 
     def test_projection_blocking_keeps_other_sets(self):
         solver = self.solver()

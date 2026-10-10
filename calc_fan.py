@@ -357,6 +357,11 @@ def evaluate_shape(groups: tuple[Group, ...], pair: int, win_group: int, context
         raise ValueError('More than four copies of a tile')
     if context.riichi and not closed:
         raise ValueError('Open hands cannot riichi')
+    if context.riichi == 2 and context.event == 'chankan':
+        # Standard hands can only rob kakan.  Its pon cannot predate double
+        # riichi, and passing the pon's winning discard causes permanent furiten.
+        # Kokushi robbing ankan is handled separately by special_scores.
+        raise ValueError('Double-riichi kakan ron is permanently furiten')
     if context.event == 'rinshan' and not any(group.kan for group in groups):
         raise ValueError('Four-player rinshan requires a kan')
     if context.event == 'chankan' and counts[context.win] != 1:

@@ -40,11 +40,22 @@ def report(directory: Path):
     for han in sorted(set(closed) | set(opened), key=int):
         a, b = closed.get(han, 0), opened.get(han, 0)
         lines.append(f'| {han} | {a:,} | {b:,} | {a + b:,} |')
+    lines.append(f"| 合计 | {summary['closed']['count']:,} | {summary['open']['count']:,} | {summary['combination_count']:,} |")
+    if 'revalidation' in summary:
+        proof = summary['revalidation']
+        lines.extend([
+            '', '## 规则修正与完成性复核', '',
+            '双立直后放过对手碰牌来源的待牌会导致永久振听，不能再抢其加杠；普通役模型已排除该组合。',
+            f"旧快照的 {proof['source_combinations_rechecked']:,} 条组合见证与 {proof['source_rejections_rechecked']:,} 条拒绝候选均按当前规则重新检查。",
+            f"移除 {proof['removed_source_combinations']:,} 种旧组合；当前求解器在排除重新确认的组合及具体无效候选后检查剩余空间。",
+            f"停止原因仍以本报告开头的 `{summary['termination']}` 为准，不能仅通过总数相减宣称完整。",
+            '复核来源摘要、规则参数、源码摘要与实际完成状态记录在 `summary.json` 中。',
+        ])
     records_note = ('原始记录和拒绝记录保存在同目录的 `records.zip` 中；复算可直接读取压缩包，无需解压。'
                     if (directory / ARCHIVE_NAME).exists() and not (directory / 'combinations.jsonl').exists()
                     else '原始记录见同目录的 `combinations.jsonl`，拒绝记录见 `rejections.jsonl`。')
     lines.extend([
-        f"| 合计 | {summary['closed']['count']:,} | {summary['open']['count']:,} | {summary['combination_count']:,} |", '',
+        '',
         '## 验证与证据边界', '',
         f"- 全部 {checked['witnesses_checked']:,} 条见证重新判役通过，未发现重复组合，逐番汇总一致。",
         '- 核心源代码哈希与运行快照一致。',

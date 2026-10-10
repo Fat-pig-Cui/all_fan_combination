@@ -13,43 +13,44 @@
       "3z"
     ],
     "riichi_min_live_tiles": 4,
+    "double_riichi_kakan_ron": "excluded_by_permanent_furiten",
     "selection": "maximum(base_points, raw_han, fu); retain exact ties"
   },
   "complete": true,
   "termination": "unsat",
-  "combination_count": 21179,
+  "combination_count": 20687,
   "models_checked": 26653,
-  "rejected_models": 5474,
-  "elapsed_seconds": 3813.273,
+  "rejected_models": 5966,
+  "elapsed_seconds": 75.843,
   "source_sha256": {
-    "calc_fan.py": "4586ab689a0afbcecea9f9791c2a65a7f72976ba986ed2513f6f51c0eb5a8f74",
-    "shape_solver.py": "64708b073a37c1ac1d69153ba8418dd5bd90a2f346b914b02ce68cc3f4777458",
-    "reachability.py": "c24b02d23dd3a5f180d01b58077f637414a140628f002ea9da9449a5ff070208",
-    "enumerate_combinations.py": "f6594830aea6823d4ba8d5eaecc10844cc4d13076da5ef47d352226296127aac"
+    "calc_fan.py": "699ebe5ed16fd8d80cd301dcaeed026547287709c0ed81d1c99095b3cf65690d",
+    "shape_solver.py": "fc09184f233860d668188fbff01dbe54f928b89a0b4e8b059fc091aad7ced6f8",
+    "reachability.py": "e2ed71f03f750ea93bb5f0a77879411a655afdd811798acda61fa2b370bd5600",
+    "enumerate_combinations.py": "b9009d0a8798c950937101760b4d74fb2e02253ba940a836dfbd6a6b47e77164"
   },
   "python_version": "3.9.6",
   "z3_version": "5.1.0",
   "closed": {
-    "count": 15762,
+    "count": 15270,
     "han_histogram": {
       "1": 12,
       "2": 63,
-      "3": 209,
-      "4": 473,
-      "5": 836,
-      "6": 1196,
-      "7": 1507,
-      "8": 1732,
-      "9": 1840,
-      "10": 1812,
-      "11": 1630,
-      "12": 1376,
-      "13": 1085,
-      "14": 806,
-      "15": 551,
-      "16": 346,
-      "17": 183,
-      "18": 78,
+      "3": 208,
+      "4": 465,
+      "5": 814,
+      "6": 1161,
+      "7": 1459,
+      "8": 1677,
+      "9": 1781,
+      "10": 1749,
+      "11": 1579,
+      "12": 1332,
+      "13": 1047,
+      "14": 780,
+      "15": 530,
+      "16": 334,
+      "17": 177,
+      "18": 75,
       "19": 24,
       "20": 3
     }
@@ -75,5 +76,14 @@
       "16": 21,
       "17": 9
     }
+  },
+  "revalidation": {
+    "method": "recalculate_seed_witnesses_then_solve_remaining_current_constraints",
+    "source_summary_sha256": "94d12ccdfcfae2377a534a830e530c380b3b7e973b396b7ebb491dcb2613bce6",
+    "source_combination_count": 21179,
+    "source_combinations_rechecked": 21179,
+    "source_rejections_rechecked": 5474,
+    "removed_source_combinations": 492,
+    "additional_solver_models": 0
   }
 }

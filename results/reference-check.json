@@ -3,6 +3,14 @@
   "cases_checked": 23,
   "passed": true,
   "mismatches": [],
+  "expected_rejections": [
+    {
+      "index": 21,
+      "reason": "permanent furiten from the post-double-riichi pon tile",
+      "reference_scores_ignored": true
+    }
+  ],
+  "scoring_cases_compared": 22,
   "normalization": "ignore zero-valued ura and yakuman fu; compare ordinary IDs/han/fu and natural IDs/multiples",
   "reference_sha256": {
     "calcFan.js": "42eeeef7209463024b297941c55c38965aaa6c50379399102ccc712391ee0b11",

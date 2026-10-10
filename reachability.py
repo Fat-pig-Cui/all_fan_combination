@@ -24,11 +24,14 @@ def condition_certificate(witness):
     }
     if context.riichi == 2 and context.ippatsu and closed_kans:
         return None
+    if context.riichi == 2 and context.event == 'chankan':
+        # This certificate covers ordinary yaku, not kokushi robbing ankan.
+        # A post-declaration pon requires passing the winning discard;
+        # permanent riichi furiten prevents robbing the later kakan.
+        return None
     if context.event == 'chankan':
         certificate['construction'].append('Opponent keeps three copies of the winning tile in a pon; rob the remaining copy at kakan declaration.')
-        if context.riichi == 2:
-            certificate['construction'].append('Opponent pon occurs after first-discard double riichi; this interrupts ippatsu but not double riichi.')
-        elif context.ippatsu:
+        if context.riichi:
             certificate['construction'].append('Opponent pon precedes ordinary riichi; kakan is robbed before completing and therefore before its kan interruption.')
     if context.event == 'haitei':
         certificate['construction'].append('Place winning tile at the final normal draw; any previous kans have already completed.')

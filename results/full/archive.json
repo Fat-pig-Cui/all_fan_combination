@@ -3,14 +3,14 @@
   "archive": "records.zip",
   "members": {
     "combinations.jsonl": {
-      "sha256": "7ec8acffc0f0faab9ad2357180bebcfd79d4129cae5ccd04bd9cce245dc97cda",
-      "size_bytes": 30425062,
-      "records": 21179
+      "sha256": "8eee550d4f33027ba11386d2d450699e43b0488c98803ccb8d5a5928e12243cb",
+      "size_bytes": 29636186,
+      "records": 20687
     },
     "rejections.jsonl": {
-      "sha256": "ff270b48d4510e6e3edb1a2a7c7ccb3bbcfb77c982af56c3b28588f9c6279885",
-      "size_bytes": 5348193,
-      "records": 5474
+      "sha256": "9077ca90569a810335e0383c5c30d9b329cf4ff5fd7aa7e48479b5c95de63204",
+      "size_bytes": 5515460,
+      "records": 5966
     }
   }
 }

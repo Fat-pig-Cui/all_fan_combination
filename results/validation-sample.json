@@ -20,130 +20,220 @@
     "event": "none"
   },
   {
-    "hand": "1133445566889s",
-    "win": "9s",
+    "hand": "33p 11223344556z",
+    "win": "6z",
+    "melds": [],
+    "tsumo": true,
+    "seat": "2z",
+    "round_wind": "1z",
+    "riichi": 1,
+    "ippatsu": false,
+    "event": "none"
+  },
+  {
+    "hand": "111999m 22p 11167s",
+    "win": "8s",
     "melds": [],
     "tsumo": false,
-    "seat": "2z",
+    "seat": "4z",
     "round_wind": "1z",
     "riichi": 2,
     "ippatsu": false,
     "event": "houtei"
   },
   {
-    "hand": "9p",
-    "win": "9p",
+    "hand": "68s 22z",
+    "win": "7s",
     "melds": [
       {
-        "kind": "pon",
-        "tiles": "555s"
-      },
-      {
-        "kind": "chi",
-        "tiles": "567s"
-      },
-      {
-        "kind": "chi",
-        "tiles": "678s"
+        "kind": "ankan",
+        "tiles": "8888m"
       },
       {
         "kind": "minkan",
-        "tiles": "7777z"
+        "tiles": "5555s"
+      },
+      {
+        "kind": "minkan",
+        "tiles": "4444z"
       }
     ],
     "tsumo": true,
-    "seat": "4z",
-    "round_wind": "1z",
+    "seat": "1z",
+    "round_wind": "3z",
     "riichi": 0,
     "ippatsu": false,
-    "event": "rinshan"
+    "event": "haitei"
   },
   {
-    "hand": "77778888999p 55s",
-    "win": "9p",
+    "hand": "33m 333p 333456s 11z",
+    "win": "3m",
     "melds": [],
     "tsumo": false,
-    "seat": "4z",
-    "round_wind": "3z",
+    "seat": "3z",
+    "round_wind": "1z",
+    "riichi": 1,
+    "ippatsu": false,
+    "event": "none"
+  },
+  {
+    "hand": "123345m 789p 2388s",
+    "win": "1s",
+    "melds": [],
+    "tsumo": false,
+    "seat": "3z",
+    "round_wind": "1z",
     "riichi": 2,
     "ippatsu": false,
     "event": "none"
   },
   {
-    "hand": "77p 55z",
-    "win": "5z",
+    "hand": "77m 66s",
+    "win": "7m",
+    "melds": [
+      {
+        "kind": "minkan",
+        "tiles": "2222m"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "3333m"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "4444m"
+      }
+    ],
+    "tsumo": false,
+    "seat": "3z",
+    "round_wind": "1z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "houtei"
+  },
+  {
+    "hand": "99p 66s",
+    "win": "6s",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "9999m"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "3333z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "7777z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "3z",
+    "round_wind": "3z",
+    "riichi": 1,
+    "ippatsu": false,
+    "event": "houtei"
+  },
+  {
+    "hand": "44m 77z",
+    "win": "4m",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "4444p"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "4444s"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "5555s"
+      }
+    ],
+    "tsumo": false,
+    "seat": "3z",
+    "round_wind": "2z",
+    "riichi": 1,
+    "ippatsu": true,
+    "event": "none"
+  },
+  {
+    "hand": "11112378m 55z",
+    "win": "9m",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "7777z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "1z",
+    "round_wind": "1z",
+    "riichi": 1,
+    "ippatsu": true,
+    "event": "chankan"
+  },
+  {
+    "hand": "5556677z",
+    "win": "6z",
     "melds": [
       {
         "kind": "chi",
         "tiles": "123s"
       },
       {
+        "kind": "ankan",
+        "tiles": "2222z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "4z",
+    "round_wind": "2z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "none"
+  },
+  {
+    "hand": "1222356789m",
+    "win": "4m",
+    "melds": [
+      {
         "kind": "pon",
-        "tiles": "999s"
+        "tiles": "111m"
+      }
+    ],
+    "tsumo": false,
+    "seat": "4z",
+    "round_wind": "3z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "none"
+  },
+  {
+    "hand": "88s 33555z",
+    "win": "3z",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "6666m"
       },
       {
         "kind": "ankan",
         "tiles": "4444z"
       }
     ],
-    "tsumo": true,
-    "seat": "3z",
-    "round_wind": "3z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "haitei"
-  },
-  {
-    "hand": "67s 77z",
-    "win": "5s",
-    "melds": [
-      {
-        "kind": "minkan",
-        "tiles": "2222s"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "3333s"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "4444s"
-      }
-    ],
     "tsumo": false,
-    "seat": "3z",
+    "seat": "1z",
     "round_wind": "1z",
-    "riichi": 0,
-    "ippatsu": false,
+    "riichi": 1,
+    "ippatsu": true,
     "event": "none"
   },
   {
-    "hand": "123s 6z",
-    "win": "6z",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "1111m"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "9999p"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "1111z"
-      }
-    ],
-    "tsumo": true,
-    "seat": "3z",
-    "round_wind": "3z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "haitei"
-  },
-  {
-    "hand": "2288m",
-    "win": "8m",
+    "hand": "9m 555s",
+    "win": "9m",
     "melds": [
       {
         "kind": "pon",
@@ -151,24 +241,13 @@
       },
       {
         "kind": "minkan",
-        "tiles": "6666m"
+        "tiles": "5555p"
       },
       {
         "kind": "ankan",
-        "tiles": "7777m"
+        "tiles": "1111z"
       }
     ],
-    "tsumo": true,
-    "seat": "1z",
-    "round_wind": "2z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "haitei"
-  },
-  {
-    "hand": "11m 566778p 345s 22z",
-    "win": "2z",
-    "melds": [],
     "tsumo": false,
     "seat": "2z",
     "round_wind": "1z",
@@ -177,28 +256,32 @@
     "event": "none"
   },
   {
-    "hand": "3345556788s",
-    "win": "4s",
+    "hand": "66m 33377s",
+    "win": "7s",
     "melds": [
       {
-        "kind": "pon",
-        "tiles": "777s"
+        "kind": "minkan",
+        "tiles": "7777m"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "7777p"
       }
     ],
     "tsumo": true,
     "seat": "1z",
-    "round_wind": "2z",
+    "round_wind": "3z",
     "riichi": 0,
     "ippatsu": false,
-    "event": "haitei"
+    "event": "none"
   },
   {
-    "hand": "3334z",
-    "win": "4z",
+    "hand": "1z",
+    "win": "1z",
     "melds": [
       {
-        "kind": "pon",
-        "tiles": "666m"
+        "kind": "chi",
+        "tiles": "123m"
       },
       {
         "kind": "ankan",
@@ -206,82 +289,7 @@
       },
       {
         "kind": "ankan",
-        "tiles": "5555z"
-      }
-    ],
-    "tsumo": true,
-    "seat": "4z",
-    "round_wind": "2z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "haitei"
-  },
-  {
-    "hand": "11789s 55566z",
-    "win": "6z",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "2222z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "1z",
-    "round_wind": "2z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "none"
-  },
-  {
-    "hand": "4666p 123456789s",
-    "win": "5p",
-    "melds": [],
-    "tsumo": false,
-    "seat": "4z",
-    "round_wind": "3z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "chankan"
-  },
-  {
-    "hand": "1m",
-    "win": "1m",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "7777m"
-      },
-      {
-        "kind": "minkan",
-        "tiles": "5555s"
-      },
-      {
-        "kind": "ankan",
         "tiles": "3333z"
-      },
-      {
-        "kind": "pon",
-        "tiles": "555z"
-      }
-    ],
-    "tsumo": true,
-    "seat": "2z",
-    "round_wind": "3z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "haitei"
-  },
-  {
-    "hand": "89s 77z",
-    "win": "7s",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "1111s"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "1111z"
       },
       {
         "kind": "ankan",
@@ -289,177 +297,100 @@
       }
     ],
     "tsumo": true,
+    "seat": "2z",
+    "round_wind": "1z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "haitei"
+  },
+  {
+    "hand": "1144466677z",
+    "win": "7z",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "5555s"
+      }
+    ],
+    "tsumo": false,
     "seat": "3z",
+    "round_wind": "3z",
+    "riichi": 1,
+    "ippatsu": false,
+    "event": "none"
+  },
+  {
+    "hand": "88p 44z",
+    "win": "4z",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "1111z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "3333z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "7777z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "2z",
     "round_wind": "2z",
     "riichi": 1,
     "ippatsu": false,
     "event": "none"
   },
   {
-    "hand": "999p 999s 6z",
-    "win": "6z",
-    "melds": [
-      {
-        "kind": "chi",
-        "tiles": "789m"
-      },
-      {
-        "kind": "pon",
-        "tiles": "999m"
-      }
-    ],
-    "tsumo": true,
-    "seat": "1z",
-    "round_wind": "3z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "haitei"
-  },
-  {
-    "hand": "555p 6667s",
-    "win": "7s",
-    "melds": [
-      {
-        "kind": "minkan",
-        "tiles": "5555m"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "5555s"
-      }
-    ],
-    "tsumo": false,
-    "seat": "2z",
-    "round_wind": "1z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "houtei"
-  },
-  {
-    "hand": "7899m",
-    "win": "9m",
-    "melds": [
-      {
-        "kind": "minkan",
-        "tiles": "1111z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "2222z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "4444z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "3z",
-    "round_wind": "3z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "houtei"
-  },
-  {
-    "hand": "999p 1166z",
-    "win": "6z",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "3333s"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "7777z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "3z",
-    "round_wind": "3z",
-    "riichi": 2,
-    "ippatsu": false,
-    "event": "houtei"
-  },
-  {
-    "hand": "11p 44z",
-    "win": "4z",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "9999s"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "3333z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "7777z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "2z",
-    "round_wind": "3z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "houtei"
-  },
-  {
-    "hand": "13m 11223388p 777z",
-    "win": "2m",
+    "hand": "122334567m 4599p",
+    "win": "6p",
     "melds": [],
     "tsumo": false,
     "seat": "2z",
     "round_wind": "1z",
+    "riichi": 1,
+    "ippatsu": true,
+    "event": "chankan"
+  },
+  {
+    "hand": "78m 33344666777z",
+    "win": "6m",
+    "melds": [],
+    "tsumo": false,
+    "seat": "2z",
+    "round_wind": "3z",
     "riichi": 0,
     "ippatsu": false,
     "event": "chankan"
   },
   {
-    "hand": "1155678p",
-    "win": "5p",
-    "melds": [
-      {
-        "kind": "pon",
-        "tiles": "666p"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "5555z"
-      }
-    ],
-    "tsumo": true,
-    "seat": "1z",
-    "round_wind": "2z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "rinshan"
-  },
-  {
-    "hand": "1123777888999m",
+    "hand": "1122233378999m",
     "win": "1m",
     "melds": [],
     "tsumo": false,
     "seat": "1z",
     "round_wind": "2z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "houtei"
+    "riichi": 1,
+    "ippatsu": true,
+    "event": "none"
   },
   {
     "hand": "3z",
     "win": "3z",
     "melds": [
       {
-        "kind": "minkan",
-        "tiles": "7777p"
+        "kind": "pon",
+        "tiles": "111m"
       },
       {
-        "kind": "pon",
-        "tiles": "999p"
+        "kind": "minkan",
+        "tiles": "8888p"
       },
       {
         "kind": "ankan",
-        "tiles": "2222z"
+        "tiles": "9999p"
       },
       {
         "kind": "ankan",
@@ -471,7 +402,7 @@
     "round_wind": "1z",
     "riichi": 0,
     "ippatsu": false,
-    "event": "haitei"
+    "event": "rinshan"
   },
   {
     "hand": "111m 13p 11444z",
@@ -485,17 +416,21 @@
     "tsumo": true,
     "seat": "2z",
     "round_wind": "2z",
-    "riichi": 2,
+    "riichi": 0,
     "ippatsu": false,
-    "event": "rinshan"
+    "event": "haitei"
   },
   {
-    "hand": "8m 999p 333555z",
-    "win": "8m",
+    "hand": "1117s 333z",
+    "win": "7s",
     "melds": [
       {
-        "kind": "chi",
-        "tiles": "789s"
+        "kind": "pon",
+        "tiles": "222s"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "5555z"
       }
     ],
     "tsumo": false,
@@ -506,39 +441,71 @@
     "event": "none"
   },
   {
-    "hand": "234m 24p 234s 44z",
+    "hand": "122334m 24p 234s 44z",
     "win": "3p",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "1111m"
-      }
-    ],
+    "melds": [],
     "tsumo": true,
     "seat": "3z",
     "round_wind": "1z",
     "riichi": 0,
     "ippatsu": false,
-    "event": "rinshan"
+    "event": "haitei"
   },
   {
-    "hand": "11m 123789p 13789s",
-    "win": "2s",
+    "hand": "1177889m 778899s",
+    "win": "9m",
     "melds": [],
     "tsumo": true,
     "seat": "3z",
     "round_wind": "1z",
+    "riichi": 2,
+    "ippatsu": false,
+    "event": "haitei"
+  },
+  {
+    "hand": "55666777889m 11s",
+    "win": "4m",
+    "melds": [],
+    "tsumo": false,
+    "seat": "1z",
+    "round_wind": "1z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "houtei"
+  },
+  {
+    "hand": "1122334456688p",
+    "win": "5p",
+    "melds": [],
+    "tsumo": true,
+    "seat": "2z",
+    "round_wind": "2z",
+    "riichi": 2,
+    "ippatsu": false,
+    "event": "haitei"
+  },
+  {
+    "hand": "123445566789p 3z",
+    "win": "3z",
+    "melds": [],
+    "tsumo": true,
+    "seat": "4z",
+    "round_wind": "2z",
     "riichi": 1,
     "ippatsu": false,
     "event": "none"
   },
   {
-    "hand": "13m 77p",
-    "win": "2m",
+    "hand": "3s",
+    "win": "3s",
     "melds": [
       {
+        "kind": "chi",
+        "tiles": "345s"
+      },
+      {
         "kind": "ankan",
-        "tiles": "1111z"
+        "tiles": "3333z"
       },
       {
         "kind": "ankan",
@@ -546,285 +513,114 @@
       },
       {
         "kind": "ankan",
-        "tiles": "5555z"
+        "tiles": "6666z"
       }
     ],
     "tsumo": true,
-    "seat": "3z",
-    "round_wind": "1z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "rinshan"
-  },
-  {
-    "hand": "11122223333m 11z",
-    "win": "1m",
-    "melds": [],
-    "tsumo": true,
     "seat": "2z",
     "round_wind": "2z",
-    "riichi": 2,
+    "riichi": 0,
     "ippatsu": false,
+    "event": "haitei"
+  },
+  {
+    "hand": "123999p 1s 333666z",
+    "win": "1s",
+    "melds": [],
+    "tsumo": true,
+    "seat": "1z",
+    "round_wind": "2z",
+    "riichi": 1,
+    "ippatsu": true,
     "event": "none"
   },
   {
-    "hand": "1112m",
-    "win": "3m",
+    "hand": "11m 999s 44z",
+    "win": "1m",
     "melds": [
       {
         "kind": "ankan",
-        "tiles": "4444m"
+        "tiles": "1111z"
+      },
+      {
+        "kind": "pon",
+        "tiles": "222z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "4z",
+    "round_wind": "3z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "haitei"
+  },
+  {
+    "hand": "2333444555666s",
+    "win": "7s",
+    "melds": [],
+    "tsumo": false,
+    "seat": "4z",
+    "round_wind": "2z",
+    "riichi": 1,
+    "ippatsu": false,
+    "event": "chankan"
+  },
+  {
+    "hand": "1111234446789p",
+    "win": "5p",
+    "melds": [],
+    "tsumo": true,
+    "seat": "4z",
+    "round_wind": "2z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "haitei"
+  },
+  {
+    "hand": "23p 123778899s 22z",
+    "win": "1p",
+    "melds": [],
+    "tsumo": false,
+    "seat": "1z",
+    "round_wind": "1z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "chankan"
+  },
+  {
+    "hand": "99s 55566z",
+    "win": "6z",
+    "melds": [
+      {
+        "kind": "pon",
+        "tiles": "111m"
       },
       {
         "kind": "ankan",
         "tiles": "5555m"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "7777m"
       }
     ],
-    "tsumo": true,
-    "seat": "1z",
+    "tsumo": false,
+    "seat": "4z",
     "round_wind": "1z",
     "riichi": 0,
     "ippatsu": false,
-    "event": "rinshan"
+    "event": "none"
   },
   {
-    "hand": "12344556678p 88s",
-    "win": "9p",
-    "melds": [],
-    "tsumo": true,
-    "seat": "4z",
-    "round_wind": "2z",
-    "riichi": 1,
-    "ippatsu": true,
-    "event": "haitei"
-  },
-  {
-    "hand": "33p 11134999s 666z",
-    "win": "2s",
+    "hand": "111789m 7999p 789s",
+    "win": "8p",
     "melds": [],
     "tsumo": false,
     "seat": "1z",
-    "round_wind": "3z",
-    "riichi": 1,
-    "ippatsu": false,
-    "event": "houtei"
-  },
-  {
-    "hand": "123789m 3344666z",
-    "win": "3z",
-    "melds": [],
-    "tsumo": true,
-    "seat": "4z",
     "round_wind": "2z",
-    "riichi": 2,
+    "riichi": 1,
     "ippatsu": true,
     "event": "none"
   },
   {
-    "hand": "2345566667888s",
-    "win": "5s",
-    "melds": [],
-    "tsumo": true,
-    "seat": "1z",
-    "round_wind": "3z",
-    "riichi": 1,
-    "ippatsu": false,
-    "event": "haitei"
-  },
-  {
-    "hand": "88p 23334445556s",
-    "win": "7s",
-    "melds": [],
-    "tsumo": true,
-    "seat": "4z",
-    "round_wind": "2z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "none"
-  },
-  {
-    "hand": "1122334446789p",
-    "win": "5p",
-    "melds": [],
-    "tsumo": true,
-    "seat": "4z",
-    "round_wind": "2z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "none"
-  },
-  {
-    "hand": "999m 3z",
-    "win": "3z",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "1111m"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "1111p"
-      },
-      {
-        "kind": "minkan",
-        "tiles": "1111s"
-      }
-    ],
-    "tsumo": false,
-    "seat": "4z",
-    "round_wind": "2z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "none"
-  },
-  {
-    "hand": "68m 678p 11667788s",
-    "win": "7m",
-    "melds": [],
-    "tsumo": false,
-    "seat": "2z",
-    "round_wind": "3z",
-    "riichi": 1,
-    "ippatsu": false,
-    "event": "chankan"
-  },
-  {
-    "hand": "55p 45689s 666z",
-    "win": "7s",
-    "melds": [
-      {
-        "kind": "chi",
-        "tiles": "123s"
-      }
-    ],
-    "tsumo": false,
-    "seat": "2z",
-    "round_wind": "1z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "chankan"
-  },
-  {
-    "hand": "23777888999s 11z",
-    "win": "1s",
-    "melds": [],
-    "tsumo": false,
-    "seat": "2z",
-    "round_wind": "2z",
-    "riichi": 2,
-    "ippatsu": false,
-    "event": "chankan"
-  },
-  {
-    "hand": "12233444s 33z",
-    "win": "3z",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "5555z"
-      }
-    ],
-    "tsumo": true,
-    "seat": "3z",
-    "round_wind": "3z",
-    "riichi": 1,
-    "ippatsu": false,
-    "event": "none"
-  },
-  {
-    "hand": "6m",
-    "win": "6m",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "1111m"
-      },
-      {
-        "kind": "pon",
-        "tiles": "111p"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "1111s"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "3333z"
-      }
-    ],
-    "tsumo": true,
-    "seat": "3z",
-    "round_wind": "3z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "rinshan"
-  },
-  {
-    "hand": "3333478889p 777z",
-    "win": "2p",
-    "melds": [],
-    "tsumo": false,
-    "seat": "2z",
-    "round_wind": "1z",
-    "riichi": 1,
-    "ippatsu": false,
-    "event": "chankan"
-  },
-  {
-    "hand": "8m 666z",
-    "win": "8m",
-    "melds": [
-      {
-        "kind": "chi",
-        "tiles": "123s"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "9999s"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "2222z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "2z",
-    "round_wind": "3z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "none"
-  },
-  {
-    "hand": "4588p",
-    "win": "6p",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "9999p"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "3333s"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "4444z"
-      }
-    ],
-    "tsumo": true,
-    "seat": "4z",
-    "round_wind": "2z",
-    "riichi": 2,
-    "ippatsu": false,
-    "event": "rinshan"
-  },
-  {
-    "hand": "1112334444s",
-    "win": "5s",
+    "hand": "11677889p 77z",
+    "win": "1p",
     "melds": [
       {
         "kind": "ankan",
@@ -833,289 +629,35 @@
     ],
     "tsumo": true,
     "seat": "1z",
-    "round_wind": "3z",
-    "riichi": 1,
+    "round_wind": "1z",
+    "riichi": 2,
     "ippatsu": false,
     "event": "rinshan"
   },
   {
-    "hand": "12346789p 66z",
-    "win": "5p",
+    "hand": "123789s 5577z",
+    "win": "5z",
     "melds": [
       {
         "kind": "ankan",
-        "tiles": "4444z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "4z",
-    "round_wind": "2z",
-    "riichi": 1,
-    "ippatsu": true,
-    "event": "none"
-  },
-  {
-    "hand": "5566677789p 777z",
-    "win": "5p",
-    "melds": [],
-    "tsumo": true,
-    "seat": "4z",
-    "round_wind": "1z",
-    "riichi": 2,
-    "ippatsu": true,
-    "event": "none"
-  },
-  {
-    "hand": "23444m 234p 34678s",
-    "win": "2s",
-    "melds": [],
-    "tsumo": true,
-    "seat": "4z",
-    "round_wind": "3z",
-    "riichi": 1,
-    "ippatsu": false,
-    "event": "none"
-  },
-  {
-    "hand": "789m 78p 22777z",
-    "win": "9p",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "9999s"
+        "tiles": "3333z"
       }
     ],
     "tsumo": true,
-    "seat": "1z",
-    "round_wind": "2z",
-    "riichi": 1,
-    "ippatsu": false,
-    "event": "none"
-  },
-  {
-    "hand": "44p 34s",
-    "win": "2s",
-    "melds": [
-      {
-        "kind": "pon",
-        "tiles": "222z"
-      },
-      {
-        "kind": "minkan",
-        "tiles": "5555z"
-      },
-      {
-        "kind": "minkan",
-        "tiles": "6666z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "4z",
-    "round_wind": "2z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "chankan"
-  },
-  {
-    "hand": "33m 123p 44455577z",
-    "win": "3m",
-    "melds": [],
-    "tsumo": false,
     "seat": "3z",
     "round_wind": "3z",
     "riichi": 2,
-    "ippatsu": true,
+    "ippatsu": false,
     "event": "none"
   },
   {
-    "hand": "55s 77z",
-    "win": "5s",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "1111p"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "5555z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "6666z"
-      }
-    ],
+    "hand": "223344p 2244477z",
+    "win": "7z",
+    "melds": [],
     "tsumo": false,
     "seat": "2z",
-    "round_wind": "2z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "houtei"
-  },
-  {
-    "hand": "77p 11z",
-    "win": "1z",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "9999p"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "3333z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "6666z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "4z",
-    "round_wind": "2z",
-    "riichi": 1,
-    "ippatsu": true,
-    "event": "none"
-  },
-  {
-    "hand": "1189s",
-    "win": "7s",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "2222z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "4444z"
-      },
-      {
-        "kind": "minkan",
-        "tiles": "7777z"
-      }
-    ],
-    "tsumo": true,
-    "seat": "1z",
     "round_wind": "1z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "haitei"
-  },
-  {
-    "hand": "2223777z",
-    "win": "3z",
-    "melds": [
-      {
-        "kind": "minkan",
-        "tiles": "7777p"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "5555z"
-      }
-    ],
-    "tsumo": true,
-    "seat": "1z",
-    "round_wind": "1z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "rinshan"
-  },
-  {
-    "hand": "5566z",
-    "win": "6z",
-    "melds": [
-      {
-        "kind": "minkan",
-        "tiles": "1111m"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "9999s"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "7777z"
-      }
-    ],
-    "tsumo": true,
-    "seat": "2z",
-    "round_wind": "2z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "haitei"
-  },
-  {
-    "hand": "99m 45p",
-    "win": "3p",
-    "melds": [
-      {
-        "kind": "minkan",
-        "tiles": "4444m"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "3333z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "6666z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "3z",
-    "round_wind": "1z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "houtei"
-  },
-  {
-    "hand": "3666z",
-    "win": "3z",
-    "melds": [
-      {
-        "kind": "minkan",
-        "tiles": "9999m"
-      },
-      {
-        "kind": "chi",
-        "tiles": "123p"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "2222z"
-      }
-    ],
-    "tsumo": true,
-    "seat": "2z",
-    "round_wind": "3z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "haitei"
-  },
-  {
-    "hand": "1s",
-    "win": "1s",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "1111m"
-      },
-      {
-        "kind": "chi",
-        "tiles": "789m"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "3333z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "5555z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "3z",
-    "round_wind": "3z",
-    "riichi": 0,
+    "riichi": 2,
     "ippatsu": false,
     "event": "none"
   },
@@ -1125,31 +667,177 @@
     "melds": [
       {
         "kind": "chi",
-        "tiles": "123m"
+        "tiles": "123s"
       },
       {
         "kind": "ankan",
-        "tiles": "1111s"
+        "tiles": "9999s"
       },
       {
         "kind": "ankan",
-        "tiles": "5555z"
+        "tiles": "2222z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "2z",
+    "round_wind": "3z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "rinshan"
+  },
+  {
+    "hand": "79999m 12399p 444z",
+    "win": "8m",
+    "melds": [],
+    "tsumo": false,
+    "seat": "4z",
+    "round_wind": "2z",
+    "riichi": 1,
+    "ippatsu": true,
+    "event": "none"
+  },
+  {
+    "hand": "12346789s 77z",
+    "win": "5s",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "1111z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "1z",
+    "round_wind": "3z",
+    "riichi": 1,
+    "ippatsu": false,
+    "event": "none"
+  },
+  {
+    "hand": "1113m 999p",
+    "win": "2m",
+    "melds": [
+      {
+        "kind": "minkan",
+        "tiles": "9999m"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "9999s"
+      }
+    ],
+    "tsumo": false,
+    "seat": "4z",
+    "round_wind": "1z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "chankan"
+  },
+  {
+    "hand": "345m 4577p 345s",
+    "win": "3p",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "8888m"
       }
     ],
     "tsumo": true,
     "seat": "4z",
-    "round_wind": "2z",
-    "riichi": 0,
-    "ippatsu": false,
+    "round_wind": "1z",
+    "riichi": 1,
+    "ippatsu": true,
     "event": "haitei"
   },
   {
-    "hand": "55p 66z",
-    "win": "6z",
+    "hand": "1178s",
+    "win": "9s",
     "melds": [
       {
         "kind": "minkan",
-        "tiles": "1111s"
+        "tiles": "1111z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "3333z"
+      },
+      {
+        "kind": "minkan",
+        "tiles": "4444z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "2z",
+    "round_wind": "3z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "houtei"
+  },
+  {
+    "hand": "1223377889999s",
+    "win": "1s",
+    "melds": [],
+    "tsumo": true,
+    "seat": "4z",
+    "round_wind": "2z",
+    "riichi": 1,
+    "ippatsu": true,
+    "event": "none"
+  },
+  {
+    "hand": "13p 77z",
+    "win": "2p",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "3333m"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "5555z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "6666z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "3z",
+    "round_wind": "3z",
+    "riichi": 1,
+    "ippatsu": false,
+    "event": "none"
+  },
+  {
+    "hand": "55s 44z",
+    "win": "5s",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "1111p"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "5555z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "6666z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "2z",
+    "round_wind": "2z",
+    "riichi": 1,
+    "ippatsu": true,
+    "event": "none"
+  },
+  {
+    "hand": "8889p",
+    "win": "7p",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "1111z"
       },
       {
         "kind": "ankan",
@@ -1157,24 +845,196 @@
       },
       {
         "kind": "ankan",
-        "tiles": "7777z"
+        "tiles": "6666z"
       }
     ],
     "tsumo": false,
     "seat": "4z",
+    "round_wind": "2z",
+    "riichi": 1,
+    "ippatsu": false,
+    "event": "chankan"
+  },
+  {
+    "hand": "11s 22555z",
+    "win": "1s",
+    "melds": [
+      {
+        "kind": "chi",
+        "tiles": "123s"
+      },
+      {
+        "kind": "pon",
+        "tiles": "777z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "1z",
+    "round_wind": "1z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "haitei"
+  },
+  {
+    "hand": "1116z",
+    "win": "6z",
+    "melds": [
+      {
+        "kind": "minkan",
+        "tiles": "7777p"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "5555z"
+      },
+      {
+        "kind": "minkan",
+        "tiles": "7777z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "2z",
     "round_wind": "3z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "rinshan"
+  },
+  {
+    "hand": "4666z",
+    "win": "4z",
+    "melds": [
+      {
+        "kind": "pon",
+        "tiles": "111m"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "1111z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "7777z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "2z",
+    "round_wind": "2z",
     "riichi": 0,
     "ippatsu": false,
     "event": "none"
   },
   {
-    "hand": "13m 12388s",
-    "win": "2m",
+    "hand": "78p 33z",
+    "win": "6p",
+    "melds": [
+      {
+        "kind": "minkan",
+        "tiles": "4444m"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "2222z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "6666z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "2z",
+    "round_wind": "2z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "haitei"
+  },
+  {
+    "hand": "56789m 66s",
+    "win": "4m",
     "melds": [
       {
         "kind": "chi",
-        "tiles": "123p"
+        "tiles": "123m"
       },
+      {
+        "kind": "ankan",
+        "tiles": "3333z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "3z",
+    "round_wind": "3z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "houtei"
+  },
+  {
+    "hand": "8s 555z",
+    "win": "8s",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "1111m"
+      },
+      {
+        "kind": "minkan",
+        "tiles": "2222z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "6666z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "4z",
+    "round_wind": "2z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "houtei"
+  },
+  {
+    "hand": "999m 999p 1z",
+    "win": "1z",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "9999s"
+      },
+      {
+        "kind": "minkan",
+        "tiles": "6666z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "2z",
+    "round_wind": "1z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "houtei"
+  },
+  {
+    "hand": "44p 44479s",
+    "win": "8s",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "2222s"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "5555z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "1z",
+    "round_wind": "1z",
+    "riichi": 1,
+    "ippatsu": true,
+    "event": "haitei"
+  },
+  {
+    "hand": "57m 778899p 88s",
+    "win": "6m",
+    "melds": [
       {
         "kind": "ankan",
         "tiles": "5555z"
@@ -1186,22 +1046,6 @@
     "riichi": 0,
     "ippatsu": false,
     "event": "haitei"
-  },
-  {
-    "hand": "66678p 88s 555z",
-    "win": "9p",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "5555p"
-      }
-    ],
-    "tsumo": true,
-    "seat": "2z",
-    "round_wind": "1z",
-    "riichi": 1,
-    "ippatsu": false,
-    "event": "rinshan"
   },
   {
     "hand": "1m 234888p 888s",
@@ -1215,17 +1059,17 @@
     "tsumo": true,
     "seat": "3z",
     "round_wind": "3z",
-    "riichi": 2,
+    "riichi": 1,
     "ippatsu": false,
     "event": "haitei"
   },
   {
-    "hand": "234p 44s 77z",
-    "win": "7z",
+    "hand": "4s 111777z",
+    "win": "4s",
     "melds": [
       {
-        "kind": "pon",
-        "tiles": "111z"
+        "kind": "chi",
+        "tiles": "234p"
       },
       {
         "kind": "ankan",
@@ -1237,98 +1081,36 @@
     "round_wind": "1z",
     "riichi": 0,
     "ippatsu": false,
-    "event": "none"
-  },
-  {
-    "hand": "1189p 123s 333777z",
-    "win": "7p",
-    "melds": [],
-    "tsumo": false,
-    "seat": "2z",
-    "round_wind": "3z",
-    "riichi": 2,
-    "ippatsu": false,
-    "event": "chankan"
-  },
-  {
-    "hand": "777p 3z",
-    "win": "3z",
-    "melds": [
-      {
-        "kind": "pon",
-        "tiles": "999p"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "5555z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "7777z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "1z",
-    "round_wind": "2z",
-    "riichi": 0,
-    "ippatsu": false,
     "event": "houtei"
   },
   {
-    "hand": "11678m 44777z",
-    "win": "4z",
+    "hand": "789p 78s 11777z",
+    "win": "9s",
     "melds": [
       {
         "kind": "ankan",
         "tiles": "3333z"
       }
     ],
-    "tsumo": false,
-    "seat": "3z",
-    "round_wind": "2z",
-    "riichi": 1,
-    "ippatsu": true,
-    "event": "none"
-  },
-  {
-    "hand": "3444p",
-    "win": "2p",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "6666p"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "7777p"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "8888p"
-      }
-    ],
-    "tsumo": false,
-    "seat": "4z",
-    "round_wind": "2z",
-    "riichi": 1,
-    "ippatsu": true,
-    "event": "none"
-  },
-  {
-    "hand": "3445555667788s",
-    "win": "3s",
-    "melds": [],
     "tsumo": true,
     "seat": "1z",
     "round_wind": "3z",
-    "riichi": 0,
+    "riichi": 1,
     "ippatsu": false,
-    "event": "haitei"
+    "event": "none"
   },
   {
-    "hand": "123m 1236p 123s",
-    "win": "6p",
+    "hand": "24p 33s",
+    "win": "3p",
     "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "5555m"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "9999m"
+      },
       {
         "kind": "ankan",
         "tiles": "7777z"
@@ -1336,22 +1118,81 @@
     ],
     "tsumo": true,
     "seat": "1z",
-    "round_wind": "3z",
-    "riichi": 2,
+    "round_wind": "2z",
+    "riichi": 1,
+    "ippatsu": true,
+    "event": "none"
+  },
+  {
+    "hand": "1167s",
+    "win": "8s",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "2222s"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "4444z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "7777z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "4z",
+    "round_wind": "2z",
+    "riichi": 1,
+    "ippatsu": false,
+    "event": "houtei"
+  },
+  {
+    "hand": "99p 11177z",
+    "win": "9p",
+    "melds": [
+      {
+        "kind": "pon",
+        "tiles": "999m"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "9999s"
+      }
+    ],
+    "tsumo": true,
+    "seat": "1z",
+    "round_wind": "1z",
+    "riichi": 0,
     "ippatsu": false,
     "event": "rinshan"
   },
   {
-    "hand": "3336667z",
+    "hand": "111m 1399p 999s 777z",
+    "win": "2p",
+    "melds": [],
+    "tsumo": false,
+    "seat": "1z",
+    "round_wind": "3z",
+    "riichi": 2,
+    "ippatsu": false,
+    "event": "none"
+  },
+  {
+    "hand": "3337z",
     "win": "7z",
     "melds": [
       {
-        "kind": "chi",
-        "tiles": "789m"
+        "kind": "pon",
+        "tiles": "666m"
       },
       {
-        "kind": "ankan",
+        "kind": "minkan",
         "tiles": "5555z"
+      },
+      {
+        "kind": "pon",
+        "tiles": "666z"
       }
     ],
     "tsumo": false,
@@ -1359,43 +1200,47 @@
     "round_wind": "1z",
     "riichi": 0,
     "ippatsu": false,
-    "event": "houtei"
+    "event": "none"
   },
   {
-    "hand": "9m 222333z",
+    "hand": "67899m 24p 111z",
+    "win": "3p",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "2222z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "3z",
+    "round_wind": "2z",
+    "riichi": 1,
+    "ippatsu": true,
+    "event": "haitei"
+  },
+  {
+    "hand": "7779m",
     "win": "9m",
     "melds": [
       {
         "kind": "ankan",
-        "tiles": "9999s"
+        "tiles": "1111m"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "3333z"
       },
       {
         "kind": "pon",
-        "tiles": "111z"
+        "tiles": "666z"
       }
     ],
     "tsumo": true,
-    "seat": "4z",
-    "round_wind": "1z",
+    "seat": "3z",
+    "round_wind": "3z",
     "riichi": 0,
     "ippatsu": false,
     "event": "rinshan"
-  },
-  {
-    "hand": "7788889p 111z",
-    "win": "7p",
-    "melds": [
-      {
-        "kind": "pon",
-        "tiles": "777z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "3z",
-    "round_wind": "1z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "houtei"
   },
   {
     "hand": "1377888m 111777z",
@@ -1421,8 +1266,8 @@
         "tiles": "1111z"
       },
       {
-        "kind": "minkan",
-        "tiles": "7777z"
+        "kind": "ankan",
+        "tiles": "2222z"
       }
     ],
     "tsumo": false,
@@ -1430,122 +1275,39 @@
     "round_wind": "1z",
     "riichi": 0,
     "ippatsu": false,
-    "event": "houtei"
-  },
-  {
-    "hand": "3p 444z",
-    "win": "3p",
-    "melds": [
-      {
-        "kind": "minkan",
-        "tiles": "2222z"
-      },
-      {
-        "kind": "minkan",
-        "tiles": "3333z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "6666z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "1z",
-    "round_wind": "3z",
-    "riichi": 0,
-    "ippatsu": false,
     "event": "none"
   },
   {
-    "hand": "11p 11z",
-    "win": "1p",
+    "hand": "7s 333z",
+    "win": "7s",
     "melds": [
       {
-        "kind": "ankan",
-        "tiles": "1111m"
-      },
-      {
-        "kind": "ankan",
+        "kind": "minkan",
         "tiles": "1111s"
       },
       {
-        "kind": "ankan",
-        "tiles": "3333z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "4z",
-    "round_wind": "3z",
-    "riichi": 1,
-    "ippatsu": false,
-    "event": "none"
-  },
-  {
-    "hand": "99s 33z",
-    "win": "3z",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "1111m"
+        "kind": "minkan",
+        "tiles": "4444s"
       },
       {
-        "kind": "ankan",
-        "tiles": "9999p"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "5555z"
+        "kind": "minkan",
+        "tiles": "7777z"
       }
     ],
-    "tsumo": false,
+    "tsumo": true,
     "seat": "3z",
     "round_wind": "3z",
     "riichi": 0,
     "ippatsu": false,
-    "event": "none"
+    "event": "rinshan"
   },
   {
-    "hand": "68p 778899s 22333z",
-    "win": "7p",
-    "melds": [],
-    "tsumo": false,
-    "seat": "3z",
-    "round_wind": "3z",
-    "riichi": 1,
-    "ippatsu": false,
-    "event": "houtei"
-  },
-  {
-    "hand": "13s 33z",
-    "win": "2s",
+    "hand": "11s 33z",
+    "win": "1s",
     "melds": [
       {
         "kind": "ankan",
-        "tiles": "9999m"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "9999p"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "9999s"
-      }
-    ],
-    "tsumo": false,
-    "seat": "4z",
-    "round_wind": "3z",
-    "riichi": 2,
-    "ippatsu": false,
-    "event": "houtei"
-  },
-  {
-    "hand": "7z",
-    "win": "7z",
-    "melds": [
-      {
-        "kind": "chi",
-        "tiles": "789p"
+        "tiles": "1111m"
       },
       {
         "kind": "ankan",
@@ -1553,33 +1315,105 @@
       },
       {
         "kind": "ankan",
-        "tiles": "3333z"
+        "tiles": "2222z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "2z",
+    "round_wind": "3z",
+    "riichi": 2,
+    "ippatsu": false,
+    "event": "none"
+  },
+  {
+    "hand": "99m 11s",
+    "win": "1s",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "2222z"
       },
       {
         "kind": "ankan",
         "tiles": "5555z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "7777z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "2z",
+    "round_wind": "3z",
+    "riichi": 1,
+    "ippatsu": false,
+    "event": "houtei"
+  },
+  {
+    "hand": "99p 13456789s 222z",
+    "win": "2s",
+    "melds": [],
+    "tsumo": false,
+    "seat": "2z",
+    "round_wind": "1z",
+    "riichi": 1,
+    "ippatsu": false,
+    "event": "houtei"
+  },
+  {
+    "hand": "6m",
+    "win": "6m",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "5555m"
+      },
+      {
+        "kind": "chi",
+        "tiles": "789m"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "3333z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "4444z"
       }
     ],
     "tsumo": true,
     "seat": "2z",
-    "round_wind": "2z",
+    "round_wind": "3z",
     "riichi": 0,
     "ippatsu": false,
-    "event": "haitei"
+    "event": "rinshan"
   },
   {
-    "hand": "112233p 78s 22555z",
-    "win": "9s",
-    "melds": [],
+    "hand": "123p 5z",
+    "win": "5z",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "9999s"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "6666z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "7777z"
+      }
+    ],
     "tsumo": true,
-    "seat": "2z",
+    "seat": "1z",
     "round_wind": "2z",
-    "riichi": 0,
+    "riichi": 2,
     "ippatsu": false,
     "event": "haitei"
   },
   {
-    "hand": "12778899p 77z",
+    "hand": "1277889999p",
     "win": "3p",
     "melds": [
       {
@@ -1587,16 +1421,16 @@
         "tiles": "2222z"
       }
     ],
-    "tsumo": true,
+    "tsumo": false,
     "seat": "3z",
     "round_wind": "2z",
-    "riichi": 2,
+    "riichi": 1,
     "ippatsu": false,
-    "event": "rinshan"
+    "event": "houtei"
   },
   {
-    "hand": "6678s",
-    "win": "6s",
+    "hand": "3345s",
+    "win": "3s",
     "melds": [
       {
         "kind": "ankan",
@@ -1608,15 +1442,15 @@
       },
       {
         "kind": "ankan",
-        "tiles": "1111z"
+        "tiles": "3333z"
       }
     ],
-    "tsumo": true,
-    "seat": "1z",
+    "tsumo": false,
+    "seat": "3z",
     "round_wind": "2z",
-    "riichi": 2,
-    "ippatsu": false,
-    "event": "rinshan"
+    "riichi": 1,
+    "ippatsu": true,
+    "event": "none"
   },
   {
     "hand": "12399m 11789p 222z",
@@ -1630,110 +1464,30 @@
     "event": "none"
   },
   {
-    "hand": "11112789s 55z",
-    "win": "3s",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "3333z"
-      }
-    ],
-    "tsumo": true,
-    "seat": "3z",
-    "round_wind": "3z",
-    "riichi": 2,
-    "ippatsu": false,
-    "event": "haitei"
-  },
-  {
-    "hand": "1199m 567p 111666z",
-    "win": "1m",
+    "hand": "111123999s 3355z",
+    "win": "3z",
     "melds": [],
     "tsumo": false,
-    "seat": "1z",
+    "seat": "3z",
     "round_wind": "3z",
     "riichi": 1,
-    "ippatsu": false,
-    "event": "none"
-  },
-  {
-    "hand": "89m 99s",
-    "win": "7m",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "5555m"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "9999p"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "1111z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "4z",
-    "round_wind": "1z",
-    "riichi": 1,
-    "ippatsu": true,
-    "event": "none"
-  },
-  {
-    "hand": "44m 55s",
-    "win": "4m",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "3333m"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "4444z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "7777z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "4z",
-    "round_wind": "1z",
-    "riichi": 2,
     "ippatsu": false,
     "event": "houtei"
   },
   {
-    "hand": "78p 999s 22555z",
-    "win": "9p",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "1111z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "1z",
-    "round_wind": "2z",
-    "riichi": 1,
-    "ippatsu": true,
-    "event": "chankan"
-  },
-  {
-    "hand": "13s 11122444555z",
-    "win": "2s",
+    "hand": "5699m 222444666z",
+    "win": "4m",
     "melds": [],
-    "tsumo": false,
+    "tsumo": true,
     "seat": "4z",
-    "round_wind": "2z",
+    "round_wind": "3z",
     "riichi": 0,
     "ippatsu": false,
     "event": "none"
   },
   {
-    "hand": "12m 99s",
-    "win": "3m",
+    "hand": "67m 99s",
+    "win": "5m",
     "melds": [
       {
         "kind": "ankan",
@@ -1741,47 +1495,80 @@
       },
       {
         "kind": "ankan",
-        "tiles": "1111p"
+        "tiles": "3333z"
       },
       {
         "kind": "ankan",
-        "tiles": "3333z"
+        "tiles": "7777z"
       }
     ],
     "tsumo": false,
+    "seat": "2z",
+    "round_wind": "3z",
+    "riichi": 1,
+    "ippatsu": true,
+    "event": "none"
+  },
+  {
+    "hand": "111999m 6z",
+    "win": "6z",
+    "melds": [
+      {
+        "kind": "minkan",
+        "tiles": "1111z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "2222z"
+      }
+    ],
+    "tsumo": true,
     "seat": "4z",
     "round_wind": "3z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "haitei"
+  },
+  {
+    "hand": "11m 13789s 444555z",
+    "win": "2s",
+    "melds": [],
+    "tsumo": false,
+    "seat": "4z",
+    "round_wind": "2z",
     "riichi": 1,
     "ippatsu": false,
     "event": "houtei"
   },
   {
-    "hand": "33m 888p 56888s",
-    "win": "4s",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "8888m"
-      }
-    ],
+    "hand": "12m 12344p 123s 222z",
+    "win": "3m",
+    "melds": [],
+    "tsumo": false,
+    "seat": "1z",
+    "round_wind": "2z",
+    "riichi": 2,
+    "ippatsu": true,
+    "event": "none"
+  },
+  {
+    "hand": "23333478p 11222z",
+    "win": "9p",
+    "melds": [],
     "tsumo": true,
-    "seat": "4z",
+    "seat": "2z",
     "round_wind": "2z",
     "riichi": 2,
     "ippatsu": false,
-    "event": "rinshan"
+    "event": "haitei"
   },
   {
-    "hand": "8p 111777z",
-    "win": "8p",
+    "hand": "9p 111666777z",
+    "win": "9p",
     "melds": [
       {
-        "kind": "minkan",
-        "tiles": "4444s"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "6666z"
+        "kind": "chi",
+        "tiles": "234s"
       }
     ],
     "tsumo": false,
@@ -1799,96 +1586,77 @@
     "seat": "1z",
     "round_wind": "2z",
     "riichi": 2,
-    "ippatsu": false,
-    "event": "haitei"
+    "ippatsu": true,
+    "event": "none"
   },
   {
-    "hand": "11m 89999p 555777z",
+    "hand": "89p 999s 55566777z",
     "win": "7p",
     "melds": [],
     "tsumo": false,
     "seat": "1z",
     "round_wind": "2z",
-    "riichi": 2,
+    "riichi": 1,
     "ippatsu": false,
-    "event": "houtei"
+    "event": "none"
   },
   {
-    "hand": "6799p",
-    "win": "5p",
+    "hand": "1234567889s",
+    "win": "8s",
     "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "1111p"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "2222p"
-      },
       {
         "kind": "ankan",
         "tiles": "1111z"
       }
     ],
-    "tsumo": false,
+    "tsumo": true,
     "seat": "1z",
     "round_wind": "1z",
-    "riichi": 1,
-    "ippatsu": false,
-    "event": "chankan"
-  },
-  {
-    "hand": "123p 79s 55566677z",
-    "win": "8s",
-    "melds": [],
-    "tsumo": false,
-    "seat": "4z",
-    "round_wind": "2z",
     "riichi": 2,
     "ippatsu": false,
-    "event": "houtei"
+    "event": "rinshan"
   },
   {
-    "hand": "789s 1555666z",
-    "win": "1z",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "9999p"
-      }
-    ],
+    "hand": "79m 123p 55566677z",
+    "win": "8m",
+    "melds": [],
     "tsumo": true,
     "seat": "4z",
     "round_wind": "2z",
+    "riichi": 1,
+    "ippatsu": true,
+    "event": "none"
+  },
+  {
+    "hand": "11m 111p 789s 33366z",
+    "win": "6z",
+    "melds": [],
+    "tsumo": true,
+    "seat": "2z",
+    "round_wind": "3z",
+    "riichi": 1,
+    "ippatsu": false,
+    "event": "haitei"
+  },
+  {
+    "hand": "11m 112233p 55z",
+    "win": "5z",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "1111s"
+      }
+    ],
+    "tsumo": true,
+    "seat": "1z",
+    "round_wind": "1z",
     "riichi": 1,
     "ippatsu": false,
     "event": "rinshan"
   },
   {
-    "hand": "11999m 89p 999s 555z",
-    "win": "7p",
-    "melds": [],
-    "tsumo": false,
-    "seat": "2z",
-    "round_wind": "2z",
-    "riichi": 2,
-    "ippatsu": false,
-    "event": "chankan"
-  },
-  {
-    "hand": "1111237999p 555z",
-    "win": "8p",
-    "melds": [],
-    "tsumo": true,
-    "seat": "1z",
-    "round_wind": "1z",
-    "riichi": 2,
-    "ippatsu": true,
-    "event": "none"
-  },
-  {
-    "hand": "5566z",
-    "win": "6z",
+    "hand": "99m 44z",
+    "win": "4z",
     "melds": [
       {
         "kind": "ankan",
@@ -1905,227 +1673,191 @@
     ],
     "tsumo": false,
     "seat": "3z",
-    "round_wind": "2z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "none"
-  },
-  {
-    "hand": "11223379m 55z",
-    "win": "8m",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "6666z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "1z",
-    "round_wind": "3z",
-    "riichi": 1,
-    "ippatsu": true,
-    "event": "chankan"
-  },
-  {
-    "hand": "13789p 33355z",
-    "win": "2p",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "6666z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "1z",
-    "round_wind": "3z",
-    "riichi": 1,
-    "ippatsu": true,
-    "event": "chankan"
-  },
-  {
-    "hand": "66679m 11155577z",
-    "win": "8m",
-    "melds": [],
-    "tsumo": false,
-    "seat": "2z",
-    "round_wind": "1z",
-    "riichi": 1,
-    "ippatsu": false,
-    "event": "chankan"
-  },
-  {
-    "hand": "1178m 789p 789s 666z",
-    "win": "9m",
-    "melds": [],
-    "tsumo": false,
-    "seat": "2z",
-    "round_wind": "1z",
-    "riichi": 1,
-    "ippatsu": true,
-    "event": "chankan"
-  },
-  {
-    "hand": "55m 11223p 333666z",
-    "win": "3p",
-    "melds": [],
-    "tsumo": true,
-    "seat": "1z",
     "round_wind": "3z",
     "riichi": 2,
     "ippatsu": false,
-    "event": "haitei"
-  },
-  {
-    "hand": "2555p",
-    "win": "2p",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "5555m"
-      },
-      {
-        "kind": "minkan",
-        "tiles": "5555s"
-      },
-      {
-        "kind": "minkan",
-        "tiles": "4444z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "4z",
-    "round_wind": "3z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "houtei"
-  },
-  {
-    "hand": "12389m 44p",
-    "win": "7m",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "1111z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "6666z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "1z",
-    "round_wind": "1z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "chankan"
-  },
-  {
-    "hand": "456p 7s",
-    "win": "7s",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "3333z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "5555z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "6666z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "3z",
-    "round_wind": "3z",
-    "riichi": 1,
-    "ippatsu": false,
     "event": "none"
   },
   {
-    "hand": "7z",
-    "win": "7z",
+    "hand": "11223379m 11s",
+    "win": "8m",
     "melds": [
-      {
-        "kind": "minkan",
-        "tiles": "9999p"
-      },
-      {
-        "kind": "pon",
-        "tiles": "111z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "5555z"
-      },
       {
         "kind": "ankan",
         "tiles": "6666z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "1z",
-    "round_wind": "1z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "none"
-  },
-  {
-    "hand": "88p 66777z",
-    "win": "8p",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "3333p"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "5555z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "3z",
-    "round_wind": "2z",
-    "riichi": 1,
-    "ippatsu": false,
-    "event": "none"
-  },
-  {
-    "hand": "2666z",
-    "win": "2z",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "1111s"
-      },
-      {
-        "kind": "pon",
-        "tiles": "999s"
-      },
-      {
-        "kind": "minkan",
-        "tiles": "3333z"
       }
     ],
     "tsumo": true,
-    "seat": "4z",
-    "round_wind": "1z",
-    "riichi": 0,
+    "seat": "1z",
+    "round_wind": "3z",
+    "riichi": 1,
     "ippatsu": false,
+    "event": "none"
+  },
+  {
+    "hand": "123999p 3355z",
+    "win": "3z",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "6666z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "1z",
+    "round_wind": "3z",
+    "riichi": 1,
+    "ippatsu": true,
+    "event": "none"
+  },
+  {
+    "hand": "666789m 1114455z",
+    "win": "5z",
+    "melds": [],
+    "tsumo": true,
+    "seat": "2z",
+    "round_wind": "1z",
+    "riichi": 1,
+    "ippatsu": true,
     "event": "haitei"
   },
   {
-    "hand": "111m 111s 5z",
+    "hand": "7888s",
+    "win": "9s",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "4444s"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "5555s"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "6666z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "2z",
+    "round_wind": "1z",
+    "riichi": 1,
+    "ippatsu": true,
+    "event": "none"
+  },
+  {
+    "hand": "99m 34444s 222555z",
+    "win": "5s",
+    "melds": [],
+    "tsumo": false,
+    "seat": "4z",
+    "round_wind": "2z",
+    "riichi": 2,
+    "ippatsu": true,
+    "event": "none"
+  },
+  {
+    "hand": "99p 55777z",
     "win": "5z",
     "melds": [
       {
         "kind": "pon",
-        "tiles": "111p"
+        "tiles": "666s"
       },
       {
         "kind": "ankan",
+        "tiles": "2222z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "2z",
+    "round_wind": "3z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "none"
+  },
+  {
+    "hand": "12389m 44p 111z",
+    "win": "7m",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "6666z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "1z",
+    "round_wind": "1z",
+    "riichi": 2,
+    "ippatsu": false,
+    "event": "rinshan"
+  },
+  {
+    "hand": "11s 55z",
+    "win": "5z",
+    "melds": [
+      {
+        "kind": "minkan",
+        "tiles": "2222z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "3333z"
+      },
+      {
+        "kind": "minkan",
+        "tiles": "6666z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "2z",
+    "round_wind": "1z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "haitei"
+  },
+  {
+    "hand": "9s 222z",
+    "win": "9s",
+    "melds": [
+      {
+        "kind": "minkan",
         "tiles": "1111z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "5555z"
+      },
+      {
+        "kind": "pon",
+        "tiles": "666z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "2z",
+    "round_wind": "2z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "houtei"
+  },
+  {
+    "hand": "111m 111p 11113s 44z",
+    "win": "2s",
+    "melds": [],
+    "tsumo": true,
+    "seat": "1z",
+    "round_wind": "1z",
+    "riichi": 1,
+    "ippatsu": true,
+    "event": "none"
+  },
+  {
+    "hand": "111p 111s 1133z",
+    "win": "3z",
+    "melds": [
+      {
+        "kind": "pon",
+        "tiles": "111m"
       }
     ],
     "tsumo": false,
@@ -2133,11 +1865,11 @@
     "round_wind": "3z",
     "riichi": 0,
     "ippatsu": false,
-    "event": "houtei"
+    "event": "none"
   },
   {
-    "hand": "12s 66z",
-    "win": "3s",
+    "hand": "79s 33z",
+    "win": "8s",
     "melds": [
       {
         "kind": "ankan",
@@ -2166,13 +1898,13 @@
     "tsumo": false,
     "seat": "3z",
     "round_wind": "2z",
-    "riichi": 0,
+    "riichi": 2,
     "ippatsu": false,
-    "event": "houtei"
+    "event": "none"
   },
   {
-    "hand": "345m 23p 66777z",
-    "win": "1p",
+    "hand": "1122344p 777z",
+    "win": "3p",
     "melds": [
       {
         "kind": "ankan",
@@ -2183,27 +1915,32 @@
     "seat": "4z",
     "round_wind": "2z",
     "riichi": 1,
-    "ippatsu": false,
+    "ippatsu": true,
     "event": "none"
   },
   {
-    "hand": "678m 89p 55566777z",
+    "hand": "678m 89p 33777z",
     "win": "7p",
-    "melds": [],
-    "tsumo": true,
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "5555z"
+      }
+    ],
+    "tsumo": false,
     "seat": "1z",
     "round_wind": "1z",
     "riichi": 1,
     "ippatsu": false,
-    "event": "haitei"
+    "event": "chankan"
   },
   {
-    "hand": "44p 34s",
+    "hand": "2789s",
     "win": "2s",
     "melds": [
       {
         "kind": "ankan",
-        "tiles": "2222m"
+        "tiles": "1111z"
       },
       {
         "kind": "ankan",
@@ -2215,31 +1952,15 @@
       }
     ],
     "tsumo": false,
-    "seat": "1z",
-    "round_wind": "1z",
-    "riichi": 2,
-    "ippatsu": false,
-    "event": "chankan"
-  },
-  {
-    "hand": "999m 111p 111s 5z",
-    "win": "5z",
-    "melds": [
-      {
-        "kind": "pon",
-        "tiles": "666z"
-      }
-    ],
-    "tsumo": false,
     "seat": "4z",
     "round_wind": "3z",
-    "riichi": 0,
+    "riichi": 2,
     "ippatsu": false,
     "event": "houtei"
   },
   {
-    "hand": "1116667z",
-    "win": "7z",
+    "hand": "1p 555z",
+    "win": "1p",
     "melds": [
       {
         "kind": "minkan",
@@ -2247,39 +1968,31 @@
       },
       {
         "kind": "ankan",
-        "tiles": "5555z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "4z",
-    "round_wind": "2z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "none"
-  },
-  {
-    "hand": "68p 222s 11177z",
-    "win": "7p",
-    "melds": [
+        "tiles": "1111z"
+      },
       {
         "kind": "ankan",
-        "tiles": "5555z"
+        "tiles": "3333z"
       }
     ],
     "tsumo": true,
     "seat": "1z",
-    "round_wind": "1z",
-    "riichi": 2,
+    "round_wind": "2z",
+    "riichi": 0,
     "ippatsu": false,
     "event": "rinshan"
   },
   {
-    "hand": "89m 99s 333z",
-    "win": "7m",
+    "hand": "89p 55z",
+    "win": "7p",
     "melds": [
       {
-        "kind": "pon",
-        "tiles": "666z"
+        "kind": "ankan",
+        "tiles": "9999s"
+      },
+      {
+        "kind": "minkan",
+        "tiles": "6666z"
       },
       {
         "kind": "ankan",
@@ -2287,57 +2000,78 @@
       }
     ],
     "tsumo": false,
-    "seat": "3z",
-    "round_wind": "3z",
+    "seat": "1z",
+    "round_wind": "2z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "none"
+  },
+  {
+    "hand": "34s 11166677z",
+    "win": "2s",
+    "melds": [
+      {
+        "kind": "pon",
+        "tiles": "555z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "4z",
+    "round_wind": "1z",
     "riichi": 0,
     "ippatsu": false,
     "event": "houtei"
   },
   {
-    "hand": "88p 123567s 44777z",
-    "win": "4z",
+    "hand": "234666s 5566677z",
+    "win": "7z",
     "melds": [],
+    "tsumo": false,
+    "seat": "1z",
+    "round_wind": "3z",
+    "riichi": 1,
+    "ippatsu": false,
+    "event": "none"
+  },
+  {
+    "hand": "12233477s 33z",
+    "win": "3z",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "7777z"
+      }
+    ],
     "tsumo": true,
     "seat": "4z",
     "round_wind": "3z",
     "riichi": 2,
-    "ippatsu": true,
-    "event": "none"
+    "ippatsu": false,
+    "event": "rinshan"
   },
   {
-    "hand": "234s 1115566677z",
-    "win": "7z",
-    "melds": [],
-    "tsumo": false,
-    "seat": "4z",
-    "round_wind": "1z",
-    "riichi": 1,
-    "ippatsu": true,
-    "event": "none"
-  },
-  {
-    "hand": "99s 33z",
-    "win": "3z",
+    "hand": "23m 99s",
+    "win": "1m",
     "melds": [
       {
-        "kind": "pon",
-        "tiles": "111m"
-      },
-      {
-        "kind": "pon",
-        "tiles": "999m"
+        "kind": "ankan",
+        "tiles": "9999m"
       },
       {
         "kind": "ankan",
-        "tiles": "6666z"
+        "tiles": "3333z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "7777z"
       }
     ],
-    "tsumo": true,
-    "seat": "1z",
+    "tsumo": false,
+    "seat": "4z",
     "round_wind": "3z",
-    "riichi": 0,
+    "riichi": 1,
     "ippatsu": false,
-    "event": "haitei"
+    "event": "houtei"
   },
   {
     "hand": "45p 999s 11777z",
@@ -2353,100 +2087,19 @@
     "round_wind": "2z",
     "riichi": 1,
     "ippatsu": false,
-    "event": "rinshan"
-  },
-  {
-    "hand": "79p 789s 22666777z",
-    "win": "8p",
-    "melds": [],
-    "tsumo": false,
-    "seat": "1z",
-    "round_wind": "3z",
-    "riichi": 1,
-    "ippatsu": true,
-    "event": "chankan"
-  },
-  {
-    "hand": "13m 222s 55666777z",
-    "win": "2m",
-    "melds": [],
-    "tsumo": true,
-    "seat": "1z",
-    "round_wind": "3z",
-    "riichi": 1,
-    "ippatsu": true,
     "event": "none"
   },
   {
-    "hand": "77p 57s",
-    "win": "6s",
+    "hand": "79p 22z",
+    "win": "8p",
     "melds": [
       {
         "kind": "ankan",
-        "tiles": "8888s"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "1111z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "5555z"
-      }
-    ],
-    "tsumo": true,
-    "seat": "3z",
-    "round_wind": "1z",
-    "riichi": 1,
-    "ippatsu": false,
-    "event": "rinshan"
-  },
-  {
-    "hand": "79s 44z",
-    "win": "8s",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "1111m"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "3333z"
+        "tiles": "9999s"
       },
       {
         "kind": "ankan",
         "tiles": "6666z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "3z",
-    "round_wind": "1z",
-    "riichi": 1,
-    "ippatsu": false,
-    "event": "none"
-  },
-  {
-    "hand": "8999p 333444555z",
-    "win": "7p",
-    "melds": [],
-    "tsumo": false,
-    "seat": "2z",
-    "round_wind": "3z",
-    "riichi": 2,
-    "ippatsu": false,
-    "event": "houtei"
-  },
-  {
-    "hand": "5566z",
-    "win": "6z",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "9999m"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "1111s"
       },
       {
         "kind": "ankan",
@@ -2454,51 +2107,65 @@
       }
     ],
     "tsumo": false,
-    "seat": "2z",
+    "seat": "1z",
+    "round_wind": "3z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "none"
+  },
+  {
+    "hand": "13m 55777z",
+    "win": "2m",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "2222s"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "6666z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "1z",
+    "round_wind": "3z",
+    "riichi": 1,
+    "ippatsu": false,
+    "event": "chankan"
+  },
+  {
+    "hand": "4456678m 222555z",
+    "win": "4m",
+    "melds": [],
+    "tsumo": false,
+    "seat": "3z",
     "round_wind": "2z",
+    "riichi": 2,
+    "ippatsu": true,
+    "event": "none"
+  },
+  {
+    "hand": "1189m 111222666z",
+    "win": "7m",
+    "melds": [],
+    "tsumo": false,
+    "seat": "4z",
+    "round_wind": "1z",
     "riichi": 2,
     "ippatsu": false,
     "event": "none"
   },
   {
-    "hand": "1116s",
-    "win": "6s",
+    "hand": "44p 11z",
+    "win": "1z",
     "melds": [
       {
         "kind": "ankan",
-        "tiles": "3333z"
+        "tiles": "6666p"
       },
       {
         "kind": "ankan",
         "tiles": "4444z"
-      },
-      {
-        "kind": "pon",
-        "tiles": "555z"
-      }
-    ],
-    "tsumo": true,
-    "seat": "4z",
-    "round_wind": "3z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "rinshan"
-  },
-  {
-    "hand": "1p",
-    "win": "1p",
-    "melds": [
-      {
-        "kind": "chi",
-        "tiles": "567p"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "3333z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "5555z"
       },
       {
         "kind": "ankan",
@@ -2507,37 +2174,63 @@
     ],
     "tsumo": false,
     "seat": "2z",
+    "round_wind": "1z",
+    "riichi": 1,
+    "ippatsu": true,
+    "event": "none"
+  },
+  {
+    "hand": "999m 99s 55566677z",
+    "win": "9s",
+    "melds": [],
+    "tsumo": false,
+    "seat": "2z",
     "round_wind": "2z",
-    "riichi": 0,
+    "riichi": 1,
     "ippatsu": false,
     "event": "houtei"
   },
   {
-    "hand": "6677z",
-    "win": "7z",
+    "hand": "1p",
+    "win": "1p",
     "melds": [
       {
         "kind": "ankan",
-        "tiles": "6666p"
+        "tiles": "3333p"
       },
       {
-        "kind": "ankan",
-        "tiles": "9999s"
+        "kind": "chi",
+        "tiles": "789p"
       },
       {
         "kind": "ankan",
         "tiles": "5555z"
+      },
+      {
+        "kind": "minkan",
+        "tiles": "6666z"
       }
     ],
     "tsumo": false,
     "seat": "3z",
     "round_wind": "3z",
-    "riichi": 2,
+    "riichi": 0,
     "ippatsu": false,
     "event": "houtei"
   },
   {
-    "hand": "1s 555z",
+    "hand": "11p 66788s 555666z",
+    "win": "7s",
+    "melds": [],
+    "tsumo": false,
+    "seat": "4z",
+    "round_wind": "3z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "none"
+  },
+  {
+    "hand": "1s 555666z",
     "win": "1s",
     "melds": [
       {
@@ -2547,21 +2240,17 @@
       {
         "kind": "ankan",
         "tiles": "2222z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "6666z"
       }
     ],
     "tsumo": true,
-    "seat": "3z",
+    "seat": "1z",
     "round_wind": "2z",
     "riichi": 0,
     "ippatsu": false,
     "event": "haitei"
   },
   {
-    "hand": "77p 78s",
+    "hand": "77p 78s 555z",
     "win": "9s",
     "melds": [
       {
@@ -2571,307 +2260,246 @@
       {
         "kind": "ankan",
         "tiles": "3333z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "5555z"
       }
     ],
-    "tsumo": true,
+    "tsumo": false,
     "seat": "3z",
     "round_wind": "3z",
     "riichi": 1,
-    "ippatsu": false,
-    "event": "rinshan"
-  },
-  {
-    "hand": "1s",
-    "win": "1s",
-    "melds": [
-      {
-        "kind": "minkan",
-        "tiles": "1111z"
-      },
-      {
-        "kind": "pon",
-        "tiles": "333z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "4444z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "5555z"
-      }
-    ],
-    "tsumo": true,
-    "seat": "2z",
-    "round_wind": "3z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "rinshan"
-  },
-  {
-    "hand": "78s 55777z",
-    "win": "6s",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "3333z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "6666z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "4z",
-    "round_wind": "1z",
-    "riichi": 1,
     "ippatsu": true,
-    "event": "none"
+    "event": "chankan"
   },
   {
-    "hand": "45p 11z",
-    "win": "3p",
+    "hand": "1122z",
+    "win": "1z",
     "melds": [
       {
         "kind": "ankan",
-        "tiles": "4444z"
+        "tiles": "1111p"
       },
-      {
-        "kind": "ankan",
-        "tiles": "6666z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "7777z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "4z",
-    "round_wind": "3z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "none"
-  },
-  {
-    "hand": "5566z",
-    "win": "6z",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "2222p"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "4444z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "7777z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "4z",
-    "round_wind": "1z",
-    "riichi": 2,
-    "ippatsu": false,
-    "event": "houtei"
-  },
-  {
-    "hand": "666s 6z",
-    "win": "6z",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "1111z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "5555z"
-      },
-      {
-        "kind": "minkan",
-        "tiles": "7777z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "1z",
-    "round_wind": "1z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "houtei"
-  },
-  {
-    "hand": "5666z",
-    "win": "5z",
-    "melds": [
       {
         "kind": "ankan",
         "tiles": "9999p"
       },
       {
         "kind": "ankan",
-        "tiles": "3333z"
-      },
-      {
-        "kind": "pon",
-        "tiles": "777z"
-      }
-    ],
-    "tsumo": true,
-    "seat": "3z",
-    "round_wind": "1z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "rinshan"
-  },
-  {
-    "hand": "111123m 9s 777z",
-    "win": "9s",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "3333z"
-      }
-    ],
-    "tsumo": true,
-    "seat": "3z",
-    "round_wind": "3z",
-    "riichi": 2,
-    "ippatsu": false,
-    "event": "none"
-  },
-  {
-    "hand": "1177s 777z",
-    "win": "7s",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "9999s"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "1111z"
+        "tiles": "5555z"
       }
     ],
     "tsumo": false,
-    "seat": "1z",
-    "round_wind": "1z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "houtei"
-  },
-  {
-    "hand": "1m 111789p 111z",
-    "win": "1m",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "7777z"
-      }
-    ],
-    "tsumo": true,
-    "seat": "1z",
-    "round_wind": "3z",
-    "riichi": 2,
-    "ippatsu": false,
-    "event": "haitei"
-  },
-  {
-    "hand": "12s 55z",
-    "win": "3s",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "9999s"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "1111z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "7777z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "1z",
-    "round_wind": "3z",
-    "riichi": 2,
-    "ippatsu": false,
-    "event": "chankan"
-  },
-  {
-    "hand": "44m 79s 111555z",
-    "win": "8s",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "7777z"
-      }
-    ],
-    "tsumo": true,
-    "seat": "2z",
-    "round_wind": "1z",
-    "riichi": 2,
-    "ippatsu": false,
-    "event": "rinshan"
-  },
-  {
-    "hand": "112233m 99s 33666z",
-    "win": "3z",
-    "melds": [],
-    "tsumo": false,
     "seat": "3z",
-    "round_wind": "2z",
+    "round_wind": "1z",
     "riichi": 1,
     "ippatsu": false,
     "event": "none"
   },
   {
-    "hand": "778899p 4445577z",
-    "win": "5z",
-    "melds": [],
-    "tsumo": true,
-    "seat": "4z",
-    "round_wind": "2z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "none"
-  },
-  {
-    "hand": "123456789p 4455z",
-    "win": "5z",
-    "melds": [],
-    "tsumo": false,
-    "seat": "2z",
-    "round_wind": "2z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "houtei"
-  },
-  {
-    "hand": "77899p 11s 555z",
-    "win": "8p",
+    "hand": "2444777z",
+    "win": "2z",
     "melds": [
       {
+        "kind": "chi",
+        "tiles": "234p"
+      },
+      {
         "kind": "ankan",
-        "tiles": "7777z"
+        "tiles": "6666z"
       }
     ],
     "tsumo": true,
-    "seat": "2z",
+    "seat": "4z",
+    "round_wind": "1z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "rinshan"
+  },
+  {
+    "hand": "45p 44455777z",
+    "win": "3p",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "6666z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "4z",
     "round_wind": "3z",
     "riichi": 0,
     "ippatsu": false,
     "event": "rinshan"
   },
   {
-    "hand": "1112z",
-    "win": "2z",
+    "hand": "7p 333z",
+    "win": "7p",
+    "melds": [
+      {
+        "kind": "chi",
+        "tiles": "567p"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "5555z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "7777z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "3z",
+    "round_wind": "3z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "rinshan"
+  },
+  {
+    "hand": "1115z",
+    "win": "5z",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "1111p"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "6666z"
+      },
+      {
+        "kind": "minkan",
+        "tiles": "7777z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "1z",
+    "round_wind": "1z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "none"
+  },
+  {
+    "hand": "4z",
+    "win": "4z",
+    "melds": [
+      {
+        "kind": "chi",
+        "tiles": "789p"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "1111z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "5555z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "6666z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "3z",
+    "round_wind": "2z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "haitei"
+  },
+  {
+    "hand": "2399s",
+    "win": "1s",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "3333z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "4444z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "7777z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "3z",
+    "round_wind": "2z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "houtei"
+  },
+  {
+    "hand": "1238999p 111777z",
+    "win": "7p",
+    "melds": [],
+    "tsumo": true,
+    "seat": "1z",
+    "round_wind": "3z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "none"
+  },
+  {
+    "hand": "123s 6z",
+    "win": "6z",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "9999s"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "1111z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "7777z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "1z",
+    "round_wind": "3z",
+    "riichi": 1,
+    "ippatsu": true,
+    "event": "none"
+  },
+  {
+    "hand": "44m 999s 11555777z",
+    "win": "1z",
+    "melds": [],
+    "tsumo": false,
+    "seat": "2z",
+    "round_wind": "1z",
+    "riichi": 2,
+    "ippatsu": false,
+    "event": "none"
+  },
+  {
+    "hand": "123789m 99s 33366z",
+    "win": "6z",
+    "melds": [],
+    "tsumo": true,
+    "seat": "3z",
+    "round_wind": "2z",
+    "riichi": 2,
+    "ippatsu": true,
+    "event": "none"
+  },
+  {
+    "hand": "1111223379999p",
+    "win": "8p",
+    "melds": [],
+    "tsumo": false,
+    "seat": "3z",
+    "round_wind": "3z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "houtei"
+  },
+  {
+    "hand": "789m 4z",
+    "win": "4z",
     "melds": [
       {
         "kind": "ankan",
@@ -2879,200 +2507,131 @@
       },
       {
         "kind": "ankan",
-        "tiles": "9999m"
-      },
-      {
-        "kind": "pon",
-        "tiles": "333z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "3z",
-    "round_wind": "3z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "houtei"
-  },
-  {
-    "hand": "9m",
-    "win": "9m",
-    "melds": [
-      {
-        "kind": "chi",
-        "tiles": "123s"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "2222z"
-      },
-      {
-        "kind": "minkan",
-        "tiles": "5555z"
+        "tiles": "3333z"
       },
       {
         "kind": "ankan",
         "tiles": "7777z"
       }
     ],
+    "tsumo": false,
+    "seat": "3z",
+    "round_wind": "3z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "none"
+  },
+  {
+    "hand": "77m 11s",
+    "win": "7m",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "1111z"
+      },
+      {
+        "kind": "minkan",
+        "tiles": "6666z"
+      },
+      {
+        "kind": "minkan",
+        "tiles": "7777z"
+      }
+    ],
     "tsumo": true,
-    "seat": "2z",
+    "seat": "4z",
+    "round_wind": "1z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "haitei"
+  },
+  {
+    "hand": "79s 22z",
+    "win": "8s",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "1111s"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "1111z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "7777z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "3z",
+    "round_wind": "1z",
+    "riichi": 2,
+    "ippatsu": false,
+    "event": "houtei"
+  },
+  {
+    "hand": "2223455p 777z",
+    "win": "2p",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "6666z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "1z",
     "round_wind": "3z",
     "riichi": 0,
     "ippatsu": false,
     "event": "rinshan"
   },
   {
-    "hand": "7788889p",
-    "win": "7p",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "3333z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "6666z"
-      }
-    ],
-    "tsumo": true,
-    "seat": "1z",
-    "round_wind": "3z",
-    "riichi": 2,
-    "ippatsu": false,
-    "event": "rinshan"
-  },
-  {
-    "hand": "111789p 9s 333555z",
+    "hand": "123p 9s 111333555z",
     "win": "9s",
-    "melds": [],
-    "tsumo": true,
-    "seat": "3z",
-    "round_wind": "3z",
-    "riichi": 1,
-    "ippatsu": false,
-    "event": "haitei"
-  },
-  {
-    "hand": "234p 3335556677z",
-    "win": "6z",
     "melds": [],
     "tsumo": false,
     "seat": "1z",
     "round_wind": "3z",
-    "riichi": 1,
-    "ippatsu": true,
+    "riichi": 0,
+    "ippatsu": false,
     "event": "none"
   },
   {
-    "hand": "11p 56s",
-    "win": "4s",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "2222z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "5555z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "6666z"
-      }
-    ],
+    "hand": "2334444p 555666z",
+    "win": "5p",
+    "melds": [],
+    "tsumo": false,
+    "seat": "1z",
+    "round_wind": "1z",
+    "riichi": 1,
+    "ippatsu": false,
+    "event": "chankan"
+  },
+  {
+    "hand": "11p 66s 222555666z",
+    "win": "6s",
+    "melds": [],
     "tsumo": false,
     "seat": "1z",
     "round_wind": "2z",
     "riichi": 2,
-    "ippatsu": false,
+    "ippatsu": true,
     "event": "none"
   },
   {
     "hand": "33m 23p 222555666z",
     "win": "1p",
     "melds": [],
-    "tsumo": false,
-    "seat": "2z",
-    "round_wind": "2z",
-    "riichi": 2,
-    "ippatsu": false,
-    "event": "none"
-  },
-  {
-    "hand": "1134s",
-    "win": "5s",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "7777s"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "3333z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "6666z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "3z",
-    "round_wind": "2z",
-    "riichi": 1,
-    "ippatsu": true,
-    "event": "chankan"
-  },
-  {
-    "hand": "33389p 11133z",
-    "win": "7p",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "6666z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "1z",
-    "round_wind": "1z",
-    "riichi": 2,
-    "ippatsu": false,
-    "event": "chankan"
-  },
-  {
-    "hand": "99m 33444666z",
-    "win": "3z",
-    "melds": [
-      {
-        "kind": "pon",
-        "tiles": "777z"
-      }
-    ],
     "tsumo": true,
     "seat": "2z",
-    "round_wind": "3z",
-    "riichi": 0,
+    "round_wind": "2z",
+    "riichi": 2,
     "ippatsu": false,
     "event": "haitei"
   },
   {
-    "hand": "7789999m 555z",
+    "hand": "1179m",
     "win": "8m",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "6666z"
-      }
-    ],
-    "tsumo": true,
-    "seat": "4z",
-    "round_wind": "3z",
-    "riichi": 2,
-    "ippatsu": false,
-    "event": "haitei"
-  },
-  {
-    "hand": "6688p",
-    "win": "6p",
     "melds": [
       {
         "kind": "ankan",
@@ -3088,107 +2647,102 @@
       }
     ],
     "tsumo": false,
-    "seat": "2z",
+    "seat": "3z",
+    "round_wind": "3z",
+    "riichi": 2,
+    "ippatsu": false,
+    "event": "houtei"
+  },
+  {
+    "hand": "3334489p 111555z",
+    "win": "7p",
+    "melds": [],
+    "tsumo": false,
+    "seat": "1z",
     "round_wind": "1z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "houtei"
+  },
+  {
+    "hand": "999p 1115556677z",
+    "win": "6z",
+    "melds": [],
+    "tsumo": false,
+    "seat": "2z",
+    "round_wind": "2z",
+    "riichi": 2,
+    "ippatsu": false,
+    "event": "houtei"
+  },
+  {
+    "hand": "789s 2224455566z",
+    "win": "6z",
+    "melds": [],
+    "tsumo": false,
+    "seat": "4z",
+    "round_wind": "3z",
+    "riichi": 2,
+    "ippatsu": true,
+    "event": "none"
+  },
+  {
+    "hand": "123p 1115556667z",
+    "win": "7z",
+    "melds": [],
+    "tsumo": false,
+    "seat": "2z",
+    "round_wind": "3z",
+    "riichi": 1,
+    "ippatsu": true,
+    "event": "none"
+  },
+  {
+    "hand": "55599s 11155566z",
+    "win": "6z",
+    "melds": [],
+    "tsumo": false,
+    "seat": "1z",
+    "round_wind": "3z",
     "riichi": 1,
     "ippatsu": false,
     "event": "none"
   },
   {
-    "hand": "1355p",
-    "win": "2p",
+    "hand": "6899m 444777z",
+    "win": "7m",
     "melds": [
       {
         "kind": "ankan",
-        "tiles": "4444p"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "3333z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "6666z"
-      }
-    ],
-    "tsumo": true,
-    "seat": "3z",
-    "round_wind": "3z",
-    "riichi": 2,
-    "ippatsu": false,
-    "event": "none"
-  },
-  {
-    "hand": "34s 77z",
-    "win": "2s",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "2222z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "5555z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "6666z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "2z",
-    "round_wind": "3z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "chankan"
-  },
-  {
-    "hand": "2225z",
-    "win": "5z",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "8888s"
-      },
-      {
-        "kind": "minkan",
-        "tiles": "6666z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "7777z"
+        "tiles": "2222p"
       }
     ],
     "tsumo": true,
     "seat": "4z",
-    "round_wind": "2z",
-    "riichi": 0,
+    "round_wind": "3z",
+    "riichi": 2,
     "ippatsu": false,
-    "event": "haitei"
+    "event": "rinshan"
   },
   {
-    "hand": "13m 55z",
-    "win": "2m",
+    "hand": "1399s 111z",
+    "win": "2s",
     "melds": [
       {
-        "kind": "minkan",
-        "tiles": "2222z"
+        "kind": "ankan",
+        "tiles": "4444z"
       },
       {
         "kind": "ankan",
         "tiles": "6666z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "7777z"
       }
     ],
-    "tsumo": false,
-    "seat": "2z",
+    "tsumo": true,
+    "seat": "4z",
     "round_wind": "3z",
     "riichi": 0,
     "ippatsu": false,
-    "event": "none"
+    "event": "rinshan"
   },
   {
     "hand": "789m 2z",
@@ -3210,18 +2764,14 @@
     "tsumo": true,
     "seat": "4z",
     "round_wind": "3z",
-    "riichi": 0,
+    "riichi": 2,
     "ippatsu": false,
-    "event": "rinshan"
+    "event": "haitei"
   },
   {
-    "hand": "6677z",
-    "win": "6z",
+    "hand": "12m 77z",
+    "win": "3m",
     "melds": [
-      {
-        "kind": "chi",
-        "tiles": "123m"
-      },
       {
         "kind": "ankan",
         "tiles": "2222z"
@@ -3229,6 +2779,10 @@
       {
         "kind": "ankan",
         "tiles": "5555z"
+      },
+      {
+        "kind": "pon",
+        "tiles": "666z"
       }
     ],
     "tsumo": false,
@@ -3236,10 +2790,10 @@
     "round_wind": "2z",
     "riichi": 0,
     "ippatsu": false,
-    "event": "houtei"
+    "event": "chankan"
   },
   {
-    "hand": "13s 44z",
+    "hand": "13s 44666z",
     "win": "2s",
     "melds": [
       {
@@ -3249,63 +2803,85 @@
       {
         "kind": "ankan",
         "tiles": "2222z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "6666z"
       }
     ],
-    "tsumo": false,
+    "tsumo": true,
     "seat": "2z",
     "round_wind": "2z",
-    "riichi": 0,
+    "riichi": 1,
     "ippatsu": false,
     "event": "none"
   },
   {
-    "hand": "99m 11p 111s 333555z",
-    "win": "9m",
+    "hand": "11m 111s 22255566z",
+    "win": "6z",
     "melds": [],
     "tsumo": false,
-    "seat": "3z",
-    "round_wind": "1z",
-    "riichi": 1,
-    "ippatsu": true,
-    "event": "none"
-  },
-  {
-    "hand": "35m 33s 111555666z",
-    "win": "4m",
-    "melds": [],
-    "tsumo": false,
-    "seat": "1z",
+    "seat": "2z",
     "round_wind": "3z",
     "riichi": 0,
     "ippatsu": false,
     "event": "houtei"
   },
   {
-    "hand": "12233s 11122555z",
-    "win": "1s",
-    "melds": [],
-    "tsumo": false,
-    "seat": "1z",
-    "round_wind": "1z",
-    "riichi": 2,
-    "ippatsu": false,
-    "event": "houtei"
-  },
-  {
-    "hand": "3357m",
-    "win": "6m",
+    "hand": "7999m",
+    "win": "8m",
     "melds": [
       {
         "kind": "ankan",
-        "tiles": "9999m"
+        "tiles": "1111m"
       },
       {
         "kind": "ankan",
         "tiles": "3333z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "5555z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "2z",
+    "round_wind": "3z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "rinshan"
+  },
+  {
+    "hand": "8m 456s",
+    "win": "8m",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "1111z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "6666z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "7777z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "1z",
+    "round_wind": "1z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "none"
+  },
+  {
+    "hand": "57m 55z",
+    "win": "6m",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "3333z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "6666z"
       },
       {
         "kind": "ankan",
@@ -3316,65 +2892,46 @@
     "seat": "3z",
     "round_wind": "3z",
     "riichi": 1,
-    "ippatsu": false,
+    "ippatsu": true,
     "event": "chankan"
   },
   {
-    "hand": "78p 11155666777z",
-    "win": "6p",
+    "hand": "55m 79p 444666777z",
+    "win": "8p",
     "melds": [],
     "tsumo": false,
-    "seat": "1z",
+    "seat": "4z",
     "round_wind": "1z",
-    "riichi": 1,
-    "ippatsu": false,
-    "event": "houtei"
-  },
-  {
-    "hand": "567s 2255566777z",
-    "win": "2z",
-    "melds": [],
-    "tsumo": false,
-    "seat": "3z",
-    "round_wind": "2z",
-    "riichi": 2,
-    "ippatsu": false,
-    "event": "houtei"
-  },
-  {
-    "hand": "4457m",
-    "win": "6m",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "3333z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "4444z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "5555z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "3z",
-    "round_wind": "3z",
     "riichi": 2,
     "ippatsu": false,
     "event": "none"
   },
   {
-    "hand": "99m 12s 333555666z",
-    "win": "3s",
+    "hand": "67788p 99s 333777z",
+    "win": "6p",
     "melds": [],
+    "tsumo": false,
+    "seat": "3z",
+    "round_wind": "3z",
+    "riichi": 1,
+    "ippatsu": true,
+    "event": "none"
+  },
+  {
+    "hand": "5688s 333555z",
+    "win": "7s",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "6666z"
+      }
+    ],
     "tsumo": false,
     "seat": "4z",
     "round_wind": "3z",
     "riichi": 1,
     "ippatsu": false,
-    "event": "none"
+    "event": "chankan"
   },
   {
     "hand": "112233p 6777z",
@@ -3385,12 +2942,12 @@
         "tiles": "5555z"
       }
     ],
-    "tsumo": true,
+    "tsumo": false,
     "seat": "1z",
     "round_wind": "1z",
     "riichi": 2,
     "ippatsu": false,
-    "event": "none"
+    "event": "houtei"
   },
   {
     "hand": "99m 789p 23s 777z",
@@ -3405,23 +2962,12 @@
     "seat": "3z",
     "round_wind": "3z",
     "riichi": 1,
-    "ippatsu": false,
-    "event": "rinshan"
-  },
-  {
-    "hand": "778899s 5566677z",
-    "win": "7z",
-    "melds": [],
-    "tsumo": true,
-    "seat": "3z",
-    "round_wind": "3z",
-    "riichi": 1,
     "ippatsu": true,
     "event": "none"
   },
   {
-    "hand": "78s 55z",
-    "win": "9s",
+    "hand": "45p 55z",
+    "win": "6p",
     "melds": [
       {
         "kind": "ankan",
@@ -3436,40 +2982,32 @@
         "tiles": "7777z"
       }
     ],
-    "tsumo": false,
-    "seat": "1z",
-    "round_wind": "1z",
-    "riichi": 1,
-    "ippatsu": true,
-    "event": "none"
-  },
-  {
-    "hand": "78m 55z",
-    "win": "9m",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "2222z"
-      },
-      {
-        "kind": "minkan",
-        "tiles": "6666z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "7777z"
-      }
-    ],
-    "tsumo": false,
+    "tsumo": true,
     "seat": "2z",
-    "round_wind": "2z",
+    "round_wind": "1z",
     "riichi": 0,
     "ippatsu": false,
     "event": "none"
   },
   {
-    "hand": "13m 99s",
-    "win": "2m",
+    "hand": "78s 33444666z",
+    "win": "9s",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "7777z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "1z",
+    "round_wind": "1z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "haitei"
+  },
+  {
+    "hand": "11m 89s",
+    "win": "7s",
     "melds": [
       {
         "kind": "ankan",
@@ -3484,17 +3022,165 @@
         "tiles": "7777z"
       }
     ],
-    "tsumo": true,
+    "tsumo": false,
+    "seat": "4z",
+    "round_wind": "1z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "chankan"
+  },
+  {
+    "hand": "23m 99s",
+    "win": "1m",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "1111z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "6666z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "7777z"
+      }
+    ],
+    "tsumo": false,
     "seat": "1z",
-    "round_wind": "2z",
+    "round_wind": "1z",
     "riichi": 1,
     "ippatsu": true,
     "event": "none"
   },
   {
-    "hand": "23m 11s 222555z",
-    "win": "1m",
+    "hand": "12m 22333666777z",
+    "win": "3m",
+    "melds": [],
+    "tsumo": false,
+    "seat": "3z",
+    "round_wind": "3z",
+    "riichi": 2,
+    "ippatsu": false,
+    "event": "none"
+  },
+  {
+    "hand": "35m 11s 222666777z",
+    "win": "4m",
+    "melds": [],
+    "tsumo": false,
+    "seat": "2z",
+    "round_wind": "2z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "houtei"
+  },
+  {
+    "hand": "11778899s 22277z",
+    "win": "7z",
+    "melds": [],
+    "tsumo": false,
+    "seat": "2z",
+    "round_wind": "2z",
+    "riichi": 2,
+    "ippatsu": false,
+    "event": "houtei"
+  },
+  {
+    "hand": "9m",
+    "win": "9m",
     "melds": [
+      {
+        "kind": "chi",
+        "tiles": "123s"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "2222z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "5555z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "7777z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "2z",
+    "round_wind": "2z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "haitei"
+  },
+  {
+    "hand": "78s 22255566777z",
+    "win": "9s",
+    "melds": [],
+    "tsumo": false,
+    "seat": "2z",
+    "round_wind": "1z",
+    "riichi": 1,
+    "ippatsu": true,
+    "event": "none"
+  },
+  {
+    "hand": "7z",
+    "win": "7z",
+    "melds": [
+      {
+        "kind": "chi",
+        "tiles": "789p"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "4444z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "5555z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "6666z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "4z",
+    "round_wind": "1z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "rinshan"
+  },
+  {
+    "hand": "778899p 2255z",
+    "win": "2z",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "7777z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "2z",
+    "round_wind": "2z",
+    "riichi": 2,
+    "ippatsu": false,
+    "event": "rinshan"
+  },
+  {
+    "hand": "3678p",
+    "win": "3p",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "2222z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "5555z"
+      },
       {
         "kind": "ankan",
         "tiles": "7777z"
@@ -3503,36 +3189,17 @@
     "tsumo": false,
     "seat": "4z",
     "round_wind": "2z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "chankan"
-  },
-  {
-    "hand": "13m 22333666777z",
-    "win": "2m",
-    "melds": [],
-    "tsumo": true,
-    "seat": "3z",
-    "round_wind": "3z",
-    "riichi": 1,
+    "riichi": 2,
     "ippatsu": false,
     "event": "none"
   },
   {
-    "hand": "11m 23s",
-    "win": "1s",
+    "hand": "1115556667z",
+    "win": "7z",
     "melds": [
       {
-        "kind": "ankan",
-        "tiles": "1111z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "5555z"
-      },
-      {
         "kind": "minkan",
-        "tiles": "6666z"
+        "tiles": "8888p"
       }
     ],
     "tsumo": false,
@@ -3543,64 +3210,9 @@
     "event": "none"
   },
   {
-    "hand": "1113789m 777z",
-    "win": "2m",
+    "hand": "1p 123s",
+    "win": "1p",
     "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "2222z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "2z",
-    "round_wind": "2z",
-    "riichi": 2,
-    "ippatsu": false,
-    "event": "chankan"
-  },
-  {
-    "hand": "11789p 22555777z",
-    "win": "2z",
-    "melds": [],
-    "tsumo": false,
-    "seat": "2z",
-    "round_wind": "3z",
-    "riichi": 2,
-    "ippatsu": false,
-    "event": "houtei"
-  },
-  {
-    "hand": "78s 33z",
-    "win": "9s",
-    "melds": [
-      {
-        "kind": "ankan",
-        "tiles": "1111z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "5555z"
-      },
-      {
-        "kind": "ankan",
-        "tiles": "7777z"
-      }
-    ],
-    "tsumo": false,
-    "seat": "1z",
-    "round_wind": "2z",
-    "riichi": 0,
-    "ippatsu": false,
-    "event": "chankan"
-  },
-  {
-    "hand": "1s",
-    "win": "1s",
-    "melds": [
-      {
-        "kind": "chi",
-        "tiles": "123s"
-      },
       {
         "kind": "ankan",
         "tiles": "3333z"
@@ -3615,20 +3227,112 @@
       }
     ],
     "tsumo": true,
-    "seat": "2z",
-    "round_wind": "3z",
+    "seat": "3z",
+    "round_wind": "2z",
     "riichi": 0,
     "ippatsu": false,
-    "event": "haitei"
+    "event": "none"
   },
   {
-    "hand": "13s 22z",
-    "win": "2s",
+    "hand": "9s",
+    "win": "9s",
     "melds": [
       {
         "kind": "ankan",
-        "tiles": "9999s"
+        "tiles": "1111p"
       },
+      {
+        "kind": "ankan",
+        "tiles": "3333z"
+      },
+      {
+        "kind": "pon",
+        "tiles": "555z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "7777z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "4z",
+    "round_wind": "3z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "houtei"
+  },
+  {
+    "hand": "678m 2225666777z",
+    "win": "5z",
+    "melds": [],
+    "tsumo": false,
+    "seat": "4z",
+    "round_wind": "2z",
+    "riichi": 1,
+    "ippatsu": false,
+    "event": "houtei"
+  },
+  {
+    "hand": "999p 1399s 222666z",
+    "win": "2s",
+    "melds": [],
+    "tsumo": false,
+    "seat": "2z",
+    "round_wind": "2z",
+    "riichi": 2,
+    "ippatsu": true,
+    "event": "none"
+  },
+  {
+    "hand": "5577z",
+    "win": "5z",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "1111s"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "3333z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "6666z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "3z",
+    "round_wind": "3z",
+    "riichi": 1,
+    "ippatsu": false,
+    "event": "houtei"
+  },
+  {
+    "hand": "78p 11s 333555777z",
+    "win": "9p",
+    "melds": [],
+    "tsumo": false,
+    "seat": "4z",
+    "round_wind": "3z",
+    "riichi": 1,
+    "ippatsu": false,
+    "event": "houtei"
+  },
+  {
+    "hand": "7999p 222555777z",
+    "win": "8p",
+    "melds": [],
+    "tsumo": false,
+    "seat": "4z",
+    "round_wind": "2z",
+    "riichi": 2,
+    "ippatsu": false,
+    "event": "houtei"
+  },
+  {
+    "hand": "79p 77z",
+    "win": "8p",
+    "melds": [
       {
         "kind": "ankan",
         "tiles": "1111z"
@@ -3636,22 +3340,104 @@
       {
         "kind": "ankan",
         "tiles": "5555z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "6666z"
       }
     ],
-    "tsumo": true,
-    "seat": "1z",
+    "tsumo": false,
+    "seat": "2z",
     "round_wind": "1z",
-    "riichi": 0,
+    "riichi": 1,
     "ippatsu": false,
     "event": "none"
   },
   {
-    "hand": "78p 33s",
+    "hand": "45m 22266777z",
+    "win": "3m",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "5555z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "2z",
+    "round_wind": "2z",
+    "riichi": 1,
+    "ippatsu": false,
+    "event": "rinshan"
+  },
+  {
+    "hand": "89m 55566677z",
+    "win": "7m",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "1111z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "2z",
+    "round_wind": "1z",
+    "riichi": 1,
+    "ippatsu": false,
+    "event": "rinshan"
+  },
+  {
+    "hand": "111p 3355566677z",
+    "win": "3z",
+    "melds": [],
+    "tsumo": false,
+    "seat": "3z",
+    "round_wind": "3z",
+    "riichi": 2,
+    "ippatsu": false,
+    "event": "houtei"
+  },
+  {
+    "hand": "123p 3335556667z",
+    "win": "7z",
+    "melds": [],
+    "tsumo": false,
+    "seat": "3z",
+    "round_wind": "3z",
+    "riichi": 1,
+    "ippatsu": false,
+    "event": "none"
+  },
+  {
+    "hand": "78p 33z",
     "win": "9p",
     "melds": [
       {
         "kind": "ankan",
-        "tiles": "2222z"
+        "tiles": "1111z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "6666z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "7777z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "1z",
+    "round_wind": "2z",
+    "riichi": 2,
+    "ippatsu": false,
+    "event": "haitei"
+  },
+  {
+    "hand": "24p 33s",
+    "win": "3p",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "1111z"
       },
       {
         "kind": "ankan",
@@ -3662,16 +3448,16 @@
         "tiles": "7777z"
       }
     ],
-    "tsumo": false,
-    "seat": "4z",
-    "round_wind": "2z",
+    "tsumo": true,
+    "seat": "1z",
+    "round_wind": "1z",
     "riichi": 1,
-    "ippatsu": false,
+    "ippatsu": true,
     "event": "none"
   },
   {
-    "hand": "6677p",
-    "win": "7p",
+    "hand": "12s 77z",
+    "win": "3s",
     "melds": [
       {
         "kind": "ankan",
@@ -3682,7 +3468,7 @@
         "tiles": "5555z"
       },
       {
-        "kind": "minkan",
+        "kind": "ankan",
         "tiles": "6666z"
       }
     ],
@@ -3694,14 +3480,95 @@
     "event": "houtei"
   },
   {
-    "hand": "111789m 5556677z",
-    "win": "6z",
-    "melds": [],
+    "hand": "67p 55566z",
+    "win": "5p",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "1111z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "7777z"
+      }
+    ],
     "tsumo": false,
     "seat": "1z",
-    "round_wind": "3z",
-    "riichi": 2,
+    "round_wind": "1z",
+    "riichi": 0,
+    "ippatsu": false,
+    "event": "chankan"
+  },
+  {
+    "hand": "3457p",
+    "win": "7p",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "1111z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "5555z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "6666z"
+      }
+    ],
+    "tsumo": true,
+    "seat": "3z",
+    "round_wind": "1z",
+    "riichi": 1,
     "ippatsu": true,
+    "event": "haitei"
+  },
+  {
+    "hand": "11s 33z",
+    "win": "3z",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "9999s"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "1111z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "7777z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "3z",
+    "round_wind": "3z",
+    "riichi": 1,
+    "ippatsu": false,
     "event": "none"
+  },
+  {
+    "hand": "45p 77z",
+    "win": "3p",
+    "melds": [
+      {
+        "kind": "ankan",
+        "tiles": "3333z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "5555z"
+      },
+      {
+        "kind": "ankan",
+        "tiles": "6666z"
+      }
+    ],
+    "tsumo": false,
+    "seat": "3z",
+    "round_wind": "3z",
+    "riichi": 1,
+    "ippatsu": true,
+    "event": "chankan"
   }
 ]

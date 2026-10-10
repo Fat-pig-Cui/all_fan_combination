@@ -123,7 +123,9 @@ class ShapeSolver:
         add(z3.Implies(self.riichi > 0, self.closed), z3.Implies(self.ippatsu, self.riichi > 0),
             z3.Implies(member(self.event, (1, 4)), z3.Not(self.tsumo)),
             z3.Implies(member(self.event, (2, 3)), self.tsumo),
-            z3.Implies(self.event == 1, z3.And(standard, win_copies == 1)),
+            # A kakan pon after double riichi requires passing a winning
+            # discard, which makes later ron permanently furiten.
+            z3.Implies(self.event == 1, z3.And(standard, win_copies == 1, self.riichi != 2)),
             z3.Implies(self.event == 2, z3.And(standard, kans > 0, z3.Not(self.ippatsu))),
             z3.Implies(self.event == 4, z3.Not(self.ippatsu)),
             z3.Implies(z3.And(self.riichi == 2, self.ippatsu), z3.And(kans == 0, z3.Not(member(self.event, (1, 3))))))

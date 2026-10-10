@@ -20,6 +20,6 @@
   {"hand": "1112345678999m", "win": "5m"},
   {"hand": "1123455678999m", "win": "1m"},
   {"hand": "19m 19p 19s 1234567z", "win": "1m"},
-  {"hand": "12m 123p 123s 456s 77p", "win": "3m", "riichi": 2, "event": "chankan"},
+  {"hand": "12m 123p 123s 456s 77p", "win": "3m", "riichi": 2, "event": "chankan", "expected_legal_win": false, "reason": "permanent furiten from the post-double-riichi pon tile"},
   {"hand": "12m 123p 123s 456s 77p", "win": "3m", "riichi": 1, "ippatsu": true, "event": "chankan"}
 ]

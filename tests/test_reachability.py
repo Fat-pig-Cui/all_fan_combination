@@ -38,10 +38,15 @@ class ReachabilityTests(unittest.TestCase):
         proof = condition_certificate(witness)
         self.assertIn('Opponent pon precedes ordinary riichi', ' '.join(proof['construction']))
 
-    def test_double_riichi_chankan_uses_later_pon_without_ippatsu(self):
+    def test_double_riichi_chankan_has_no_ordinary_reachability_certificate(self):
         witness = self.witness('12m 123p 123s 456s 77p', (), Context(2, riichi=2, event='chankan'))
+        self.assertIsNone(condition_certificate(witness))
+
+    def test_ordinary_riichi_chankan_without_ippatsu_can_use_earlier_pon(self):
+        witness = self.witness('12m 123p 123s 456s 77p', (), Context(2, riichi=1, event='chankan'))
         proof = condition_certificate(witness)
-        self.assertIn('after first-discard double riichi', ' '.join(proof['construction']))
+        self.assertIsNotNone(proof)
+        self.assertIn('Opponent pon precedes ordinary riichi', ' '.join(proof['construction']))
 
 
 if __name__ == '__main__':

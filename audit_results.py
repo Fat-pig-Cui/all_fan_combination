@@ -32,7 +32,7 @@ def audit(directory: Path):
         if not any(not score.yakuman and score.mask == mask and score.han == record['han'] and score.fu == record['witness_fu'] and score.closed == record['closed'] for score in selected):
             raise ValueError(f'line {number}: witness does not produce recorded selected score')
         if condition_certificate(SimpleNamespace(hand=hand, melds=melds, context=context)) is None:
-            raise ValueError(f'line {number}: illegal post-riichi kan')
+            raise ValueError(f'line {number}: unreachable winning conditions')
         seen.add(key)
         histogram[key[0]][record['han']] += 1
         total += 1

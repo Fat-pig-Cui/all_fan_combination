@@ -39,9 +39,18 @@ def main():
                                capture_output=True, text=True, check=True)
     native = json.loads(reference.stdout)
     mismatches = []
+    expected_rejections = []
     for index, (case, js) in enumerate(zip(cases, native)):
         reference_fans = sorted((fan['id'], fan['val']) for fan in js['fans'] if fan['val'])
         python = score_request(case)
+        if case.get('expected_legal_win') is False:
+            if python['legal_win']:
+                mismatches.append({'index': index, 'input': case, 'python': python,
+                                   'reason': 'An explicitly invalid scenario was accepted'})
+            else:
+                expected_rejections.append({'index': index, 'reason': case.get('reason', 'invalid scenario'),
+                                            'reference_scores_ignored': True})
+            continue
         matches = False
         for score in python['results']:
             if js['yiman']:
@@ -58,6 +67,8 @@ def main():
     payload = {
         'mode': 'offline local calculator comparison', 'cases_checked': len(cases),
         'passed': not mismatches, 'mismatches': mismatches,
+        'expected_rejections': expected_rejections,
+        'scoring_cases_compared': sum(case.get('expected_legal_win') is not False for case in cases),
         'normalization': 'ignore zero-valued ura and yakuman fu; compare ordinary IDs/han/fu and natural IDs/multiples',
         'reference_sha256': {name: hashlib.sha256((args.core / name).read_bytes()).hexdigest() for name in ('calcFan.js', 'constants.js', 'utils.js')},
     }

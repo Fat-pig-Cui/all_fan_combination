@@ -1,0 +1,12 @@
+{
+  "mode": "offline local calculator comparison",
+  "cases_checked": 200,
+  "passed": true,
+  "mismatches": [],
+  "normalization": "ignore zero-valued ura and yakuman fu; compare ordinary IDs/han/fu and natural IDs/multiples",
+  "reference_sha256": {
+    "calcFan.js": "42eeeef7209463024b297941c55c38965aaa6c50379399102ccc712391ee0b11",
+    "constants.js": "af61c8f4ca1f4c2b2515bdaa823f65a810364e289fd3e52de6dc9c516e9b5812",
+    "utils.js": "87403600adb5af4b0747e236750f73f8950f9b0e199d5afc8031cc02d81b2950"
+  }
+}

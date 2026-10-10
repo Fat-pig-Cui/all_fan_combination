@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "scope": {
+    "players": 4,
+    "ranked": true,
+    "natural_yakuman": false,
+    "dora_in_combinations": false,
+    "dora_for_partition_selection": 0,
+    "include_ordinary_han_13_plus": true,
+    "round_winds": [
+      "1z",
+      "2z",
+      "3z"
+    ],
+    "riichi_min_live_tiles": 4,
+    "selection": "maximum(base_points, raw_han, fu); retain exact ties"
+  },
+  "complete": true,
+  "termination": "unsat",
+  "combination_count": 21179,
+  "models_checked": 26653,
+  "rejected_models": 5474,
+  "elapsed_seconds": 3813.273,
+  "source_sha256": {
+    "calc_fan.py": "4586ab689a0afbcecea9f9791c2a65a7f72976ba986ed2513f6f51c0eb5a8f74",
+    "shape_solver.py": "64708b073a37c1ac1d69153ba8418dd5bd90a2f346b914b02ce68cc3f4777458",
+    "reachability.py": "c24b02d23dd3a5f180d01b58077f637414a140628f002ea9da9449a5ff070208",
+    "enumerate_combinations.py": "f6594830aea6823d4ba8d5eaecc10844cc4d13076da5ef47d352226296127aac"
+  },
+  "python_version": "3.9.6",
+  "z3_version": "5.1.0",
+  "closed": {
+    "count": 15762,
+    "han_histogram": {
+      "1": 12,
+      "2": 63,
+      "3": 209,
+      "4": 473,
+      "5": 836,
+      "6": 1196,
+      "7": 1507,
+      "8": 1732,
+      "9": 1840,
+      "10": 1812,
+      "11": 1630,
+      "12": 1376,
+      "13": 1085,
+      "14": 806,
+      "15": 551,
+      "16": 346,
+      "17": 183,
+      "18": 78,
+      "19": 24,
+      "20": 3
+    }
+  },
+  "open": {
+    "count": 5417,
+    "han_histogram": {
+      "1": 13,
+      "2": 69,
+      "3": 186,
+      "4": 300,
+      "5": 447,
+      "6": 582,
+      "7": 683,
+      "8": 736,
+      "9": 677,
+      "10": 588,
+      "11": 452,
+      "12": 306,
+      "13": 192,
+      "14": 105,
+      "15": 51,
+      "16": 21,
+      "17": 9
+    }
+  }
+}

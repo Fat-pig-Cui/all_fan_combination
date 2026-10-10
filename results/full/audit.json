@@ -1,0 +1,8 @@
+{
+  "witnesses_checked": 21179,
+  "unique": true,
+  "all_witnesses_recalculated": true,
+  "enumeration_complete": true,
+  "termination": "unsat",
+  "source_hashes_match": true
+}

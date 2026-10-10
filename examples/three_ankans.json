@@ -1,0 +1,11 @@
+{
+  "hand": "56s 55p",
+  "win": "4s",
+  "tsumo": true,
+  "event": "rinshan",
+  "melds": [
+    {"kind": "ankan", "tiles": "1111m"},
+    {"kind": "ankan", "tiles": "2222p"},
+    {"kind": "ankan", "tiles": "3333s"}
+  ]
+}

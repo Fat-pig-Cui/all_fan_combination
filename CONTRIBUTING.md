@@ -28,14 +28,16 @@ python audit_results.py results/full
 ```bash
 python enumerate_combinations.py --output results/local-run
 python tools/report_results.py results/local-run
+python tools/pack_results.py results/local-run
 ```
 
 ## 发布结果快照
 
 `results/full/` 是已发布基线，不是开发时的默认工作目录。
 核心源码改变后，旧快照的源码校验会失败；不要只修改哈希来掩盖模型变化。
-发布更新时应将新完整运行的见证、拒绝记录、汇总、复算结果和报告一起更新，
-随后重新生成 `results/SHA256SUMS`，并记录统计差异及其原因。
+发布更新时应将新完整运行的 `records.zip`、`archive.json`、汇总、复算结果和报告一起更新。
+打包操作保留本地JSONL；验证压缩内容后，待发布快照只保留压缩包，不再附带大JSONL副本。
+替换基线后重新生成报告，再更新 `results/SHA256SUMS`，并记录统计差异及其原因。
 
 GitHub Actions运行测试、文件／源码哈希检查和全部见证复算，不在每次提交中重新执行完整枚举。
 本地通过这些检查不等于已在GitHub执行过工作流。

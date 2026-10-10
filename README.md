@@ -5,8 +5,10 @@
 A standalone Python riichi evaluator and a witness-based enumerator for ordinary yaku combinations in four-player ranked Mahjong Soul rules.
 
 从合法和牌结构出发，计算完整役集合，再按 **门清状态＋役种集合** 去重。
-本项目独立运行，不读取或修改 `all_yaku_combos` 的人工组合表，不需要雀魂服务器或牌谱验证。
+本项目独立运行，不读取或修改 [all_yaku_combos](https://github.com/Fat-pig-Cui/all_yaku_combos) 的人工组合表，不需要雀魂服务器或牌谱验证。
 这是非官方的理论研究工具。采用 [MIT许可证](LICENSE)。
+
+方案介绍见根目录的小论文 [基于合法牌形见证的役种组合枚举](PAPER.md)，重点讨论建模、计分择优、条件可达性及穷尽判据。
 
 ## 已完成的枚举
 
@@ -71,7 +73,9 @@ python tools/report_results.py results/local-run
 `--max-models` 限制候选数，`--limit` 限制已接受组合数，二者都用于诊断。
 重复使用已有输出目录必须带 `--resume`，避免误覆盖。
 枚举命令退出码：0表示完成，3表示限量／超时／中断等不完整运行，2表示输入或参数错误。
-对已完成目录使用 `--resume` 会返回保存的汇总，不会重新执行完整枚举。
+对未压缩的已完成运行目录使用 `--resume` 会返回保存的汇总，不会重新执行完整枚举。
+枚举输出及续算使用JSONL；已发布ZIP快照用于读取与复算，不作为枚举输出目录。
+如需将快照作为独立工作目录，应先将压缩包解压到新目录，并复制对应的 `summary.json`。
 
 ## 统计口径
 
@@ -103,6 +107,8 @@ python tools/report_results.py results/local-run
 | `audit_results.py` | 不依赖求解器，逐条复算已保存的见证与统计 |
 | `tools/report_results.py` | 对停止后的结果检查源码哈希、复算全部见证并生成中文统计报告 |
 | `tools/verify_snapshot.py` | 不依赖Z3，校验已发布文件与核心源码的SHA-256 |
+| `tools/pack_results.py` | 将原始见证与拒绝记录压缩为ZIP，保留原始内容摘要 |
+| `result_records.py` | 统一读取本地JSONL和已发布ZIP记录 |
 | `tests/` | 判役边界、约束与Python方程一致性、条件可达性、输出／续算检查 |
 | `tools/check_reference.py` | 可选的本地JavaScript算法对照，仅用于开发核对 |
 
@@ -178,6 +184,8 @@ python tools/report_results.py results/local-run
 限量、超时和人工中断都保存已确认见证，但 `complete=false`。
 每种组合有一条实际牌形见证；暂时没找到见证不等于组合不可能，只有最终穷尽才完成排除。
 原始源代码哈希改变后不能直接续算，以免把不同模型的结果混在一起。
+公开快照将两份大记录文件存放于 `results/full/records.zip`；复算直接读取压缩包，无需解压。
+压缩包及解压后成员分别有摘要校验，原始内容保持一致。约34.12 MiB的记录压缩为约1.05 MiB。
 公开快照与文件摘要见 [results/README.md](results/README.md)；本地新运行目录默认被Git忽略。
 
 ## 参考算法与验证边界

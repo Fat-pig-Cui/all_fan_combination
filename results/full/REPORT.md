@@ -48,5 +48,5 @@
 python3 audit_results.py results/full
 ```
 
-原始记录见同目录的 `combinations.jsonl`，拒绝记录见 `rejections.jsonl`，机器汇总见 `summary.json`。
+原始记录和拒绝记录保存在同目录的 `records.zip` 中；复算可直接读取压缩包，无需解压。机器汇总见 `summary.json`。
 本报告由 `tools/report_results.py` 根据汇总和重新计算结果生成。

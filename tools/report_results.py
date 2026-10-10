@@ -10,6 +10,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from audit_results import audit
+from result_records import ARCHIVE_NAME
 
 
 def report(directory: Path):
@@ -39,6 +40,9 @@ def report(directory: Path):
     for han in sorted(set(closed) | set(opened), key=int):
         a, b = closed.get(han, 0), opened.get(han, 0)
         lines.append(f'| {han} | {a:,} | {b:,} | {a + b:,} |')
+    records_note = ('原始记录和拒绝记录保存在同目录的 `records.zip` 中；复算可直接读取压缩包，无需解压。'
+                    if (directory / ARCHIVE_NAME).exists() and not (directory / 'combinations.jsonl').exists()
+                    else '原始记录见同目录的 `combinations.jsonl`，拒绝记录见 `rejections.jsonl`。')
     lines.extend([
         f"| 合计 | {summary['closed']['count']:,} | {summary['open']['count']:,} | {summary['combination_count']:,} |", '',
         '## 验证与证据边界', '',
@@ -49,7 +53,7 @@ def report(directory: Path):
         '- 完成性限于 `THEORY.md` 定义的有限模型；修改规则、宝牌择优或三麻配置须重新枚举。', '',
         '## 复算', '', '```bash',
         f'python3 audit_results.py {directory.as_posix()}', '```', '',
-        '原始记录见同目录的 `combinations.jsonl`，拒绝记录见 `rejections.jsonl`，机器汇总见 `summary.json`。',
+        records_note + '机器汇总见 `summary.json`。',
         '本报告由 `tools/report_results.py` 根据汇总和重新计算结果生成。', '',
     ])
     target = directory / 'REPORT.md'

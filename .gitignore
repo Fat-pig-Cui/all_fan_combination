@@ -13,6 +13,7 @@ Thumbs.db
 .env
 .env.*
 *.json.tmp
+*.zip.tmp
 
 # Keep published snapshots; ignore new enumerations and local comparisons.
 /results/*
@@ -23,8 +24,8 @@ Thumbs.db
 !/results/reference-sample-check.json
 !/results/full/
 /results/full/*
-!/results/full/combinations.jsonl
-!/results/full/rejections.jsonl
+!/results/full/records.zip
+!/results/full/archive.json
 !/results/full/summary.json
 !/results/full/audit.json
 !/results/full/REPORT.md

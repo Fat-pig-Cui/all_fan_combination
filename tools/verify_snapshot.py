@@ -5,9 +5,12 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from result_records import verify_archive
 
 
 def digest_file(path: Path) -> str:
@@ -41,8 +44,14 @@ def verify(root: Path = ROOT):
         path = (root / name).resolve()
         if root not in path.parents or digest_file(path) != expected:
             raise ValueError('Core source hash mismatch: ' + name)
-    return {'artifacts_checked': len(checked), 'source_hashes_match': True,
-            'enumeration_complete': True, 'combination_count': summary['combination_count']}
+    result = {'artifacts_checked': len(checked), 'source_hashes_match': True,
+              'enumeration_complete': True, 'combination_count': summary['combination_count']}
+    archive_path = root / 'results/full/records.zip'
+    if archive_path.exists():
+        if not {'results/full/records.zip', 'results/full/archive.json'} <= checked:
+            raise ValueError('Manifest does not cover the compressed snapshot and its metadata')
+        result.update(verify_archive(archive_path.parent))
+    return result
 
 
 def main():

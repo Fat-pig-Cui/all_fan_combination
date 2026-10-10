@@ -10,13 +10,14 @@ from types import SimpleNamespace
 
 from calc_fan import BIT, ORDER, YAKU, context_from_dict, parse_meld, parse_tiles, score_hand
 from reachability import condition_certificate
+from result_records import iter_record_lines
 
 
 def audit(directory: Path):
     seen = set()
     histogram = {True: Counter(), False: Counter()}
     total = 0
-    for number, line in enumerate((directory / 'combinations.jsonl').read_text().splitlines(), 1):
+    for number, line in enumerate(iter_record_lines(directory, 'combinations.jsonl'), 1):
         record = json.loads(line)
         context = context_from_dict(record['witness'])
         hand = parse_tiles(record['witness']['hand'])

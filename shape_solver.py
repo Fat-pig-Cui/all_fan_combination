@@ -52,8 +52,10 @@ class Witness:
 
 
 class ShapeSolver:
-    def __init__(self, *, timeout_ms=0, closed=None, kind=None, context=None, seed=0, players=4):
+    def __init__(self, *, timeout_ms=0, closed=None, kind=None, context=None, seed=0, players=4,
+                 natural=False):
         self.rules = get_rules(players)
+        self.natural_mode = natural
         self.solver = z3.Solver()
         self.solver.set(random_seed=seed)
         if timeout_ms:
@@ -77,6 +79,7 @@ class ShapeSolver:
         self.event = z3.Int('event')
         self.closed = z3.Bool('closed')
         self.north_draw = z3.Bool('north_replacement')
+        self.first_turn = z3.Bool('first_turn')
         standard, seven = self.kind == 0, self.kind == 1
         add(member(self.kind, (0, 1)), self.pair >= 0, self.pair < 34,
             self.win >= 0, self.win < 34, self.delta >= 0, self.delta <= 2,
@@ -92,8 +95,12 @@ class ShapeSolver:
             for name in ('tsumo', 'riichi', 'ippatsu'):
                 add(getattr(self, name) == getattr(context, name))
             add(self.event == EVENTS.index(context.event))
+            add(self.first_turn == context.first_turn)
+            add(self.seat == context.seat, self.round == context.round_wind)
             if context.win_source != 'auto':
                 add(self.north_draw == (context.win_source == 'north_replacement'))
+        else:
+            add(z3.Not(self.first_turn))
 
         keys = []
         for i in range(4):
@@ -136,6 +143,8 @@ class ShapeSolver:
         add(z3.Implies(self.riichi > 0, self.closed), z3.Implies(self.ippatsu, self.riichi > 0),
             z3.Implies(member(self.event, (1, 4)), z3.Not(self.tsumo)),
             z3.Implies(member(self.event, (2, 3)), self.tsumo),
+            z3.Implies(self.first_turn, z3.And(self.riichi == 0, z3.Not(self.north_draw),
+                                               every(z3.And(z3.Not(self.open[i]), z3.Not(self.kan[i])) for i in range(4)))),
             # A kakan pon after double riichi requires passing a winning
             # discard, which makes later ron permanently furiten.
             z3.Implies(self.event == 1, z3.And(standard, win_copies == 1, self.riichi != 2)),
@@ -155,21 +164,22 @@ class ShapeSolver:
         def only(values):
             return every(self.counts[tile] == 0 for tile in range(34) if tile not in values)
 
-        # Every natural yakuman is excluded using the actual tile inventory,
-        # winning-group assignment and hidden/open status.
-        add(z3.Not(only(HONORS)), z3.Not(only(GREEN)), z3.Not(only(TERMINALS)))
-        add(z3.Implies(standard, z3.And(
-            concealed < 4, kans < 4,
-            z3.Not(every(has_triplet(tile) for tile in DRAGONS)),
-            z3.Not(every(has_triplet(tile) for tile in WINDS)),
-            z3.Not(z3.And(member(self.pair, WINDS), count_true(has_triplet(tile) for tile in WINDS) == 3)))))
-        nine_gates = []
-        for suit in range(3):
-            offset = 9 * suit
-            nine_gates.append(z3.And(self.closed, standard, kans == 0,
-                                    self.counts[offset] >= 3, self.counts[offset + 8] >= 3,
-                                    every(self.counts[offset + rank] >= 1 for rank in range(1, 8))))
-        add(z3.Not(either(nine_gates)))
+        if not self.natural_mode:
+            # Every natural yakuman is excluded using the actual tile inventory,
+            # winning-group assignment and hidden/open status.
+            add(z3.Not(only(HONORS)), z3.Not(only(GREEN)), z3.Not(only(TERMINALS)))
+            add(z3.Implies(standard, z3.And(
+                concealed < 4, kans < 4,
+                z3.Not(every(has_triplet(tile) for tile in DRAGONS)),
+                z3.Not(every(has_triplet(tile) for tile in WINDS)),
+                z3.Not(z3.And(member(self.pair, WINDS), count_true(has_triplet(tile) for tile in WINDS) == 3)))))
+            nine_gates = []
+            for suit in range(3):
+                offset = 9 * suit
+                nine_gates.append(z3.And(self.closed, standard, kans == 0,
+                                        self.counts[offset] >= 3, self.counts[offset + 8] >= 3,
+                                        every(self.counts[offset + rank] >= 1 for rank in range(1, 8))))
+            add(z3.Not(either(nine_gates)))
 
         role = {}
         role['menzen_tsumo'] = z3.And(self.closed, self.tsumo)
@@ -210,9 +220,46 @@ class ShapeSolver:
         role['sanshoku_doukou'] = either(every(has_triplet(suit * 9 + rank) for suit in range(3)) for rank in range(9))
         self.yaku = [z3.Bool('yaku_' + name) for name in ORDER]
         add(*(flag == role[name] for flag, name in zip(self.yaku, ORDER)))
-        add(either(self.yaku))
+        natural = {}
+        tianhou = z3.And(self.first_turn, self.seat == 27)
+        natural['tenhou'] = z3.And(self.first_turn, self.tsumo, self.seat == 27)
+        natural['chiihou'] = z3.And(self.first_turn, self.tsumo, self.seat != 27)
+        natural['tsuuiisou'] = only(HONORS)
+        natural['ryuuiisou'] = only(GREEN)
+        natural['chinroutou'] = only(TERMINALS)
+        natural['daisangen'] = z3.And(standard, every(has_triplet(tile) for tile in DRAGONS))
+        natural['daisuushii'] = z3.And(standard, every(has_triplet(tile) for tile in WINDS))
+        natural['shousuushii'] = z3.And(standard, member(self.pair, WINDS),
+                                        count_true(has_triplet(tile) for tile in WINDS) == 3)
+        natural['suuankou'] = z3.And(standard, concealed == 4, self.win_group != -1, z3.Not(tianhou))
+        natural['suuankou_tanki'] = z3.And(standard, concealed == 4,
+                                           z3.Or(self.win_group == -1, tianhou))
+        natural['suukantsu'] = z3.And(standard, kans == 4)
+        pure_gates = []
+        for suit in range(3):
+            offset = 9 * suit
+            minimum = (3, 1, 1, 1, 1, 1, 1, 1, 3)
+            base = z3.And(self.closed, standard, kans == 0,
+                          self.counts[offset] >= 3, self.counts[offset + 8] >= 3,
+                          every(self.counts[offset + rank] >= needed for rank, needed in enumerate(minimum)))
+            before = every(self.counts[offset + rank] - z3.If(self.win == offset + rank, 1, 0) == needed
+                           for rank, needed in enumerate(minimum))
+            pure_gates.append(z3.And(base, z3.Or(tianhou, before)))
+        natural['chuuren'] = z3.And(z3.Not(either(pure_gates)), either(
+            z3.And(self.closed, standard, kans == 0,
+                   self.counts[suit * 9] >= 3, self.counts[suit * 9 + 8] >= 3,
+                   every(self.counts[suit * 9 + rank] >= 1 for rank in range(1, 8))) for suit in range(3)))
+        natural['junsei_chuuren'] = either(pure_gates)
+        self.yakuman_names = tuple(sorted(natural))
+        self.yakuman_flags = [z3.Bool('yakuman_' + name) for name in self.yakuman_names]
+        add(*(flag == natural[name] for flag, name in zip(self.yakuman_flags, self.yakuman_names)))
+        if self.natural_mode:
+            add(either(self.yakuman_flags))
+        else:
+            add(either(self.yaku))
         self.decision_vars = [self.kind, self.pair, self.win, self.win_group, self.delta,
-                              self.tsumo, self.seat, self.round, self.riichi, self.ippatsu, self.event, self.north_draw]
+                              self.tsumo, self.seat, self.round, self.riichi, self.ippatsu, self.event,
+                              self.north_draw, self.first_turn]
         self.decision_vars += self.tile + self.seq + self.open + self.kan + self.pairs
 
     def check(self):
@@ -225,6 +272,7 @@ class ShapeSolver:
         context = Context(win=integer(self.win), tsumo=boolean(self.tsumo), seat=integer(self.seat),
                           round_wind=integer(self.round), riichi=integer(self.riichi),
                           ippatsu=boolean(self.ippatsu), event=EVENTS[integer(self.event)],
+                          first_turn=boolean(self.first_turn),
                           players=self.rules.players, north_count=int(boolean(self.north_draw)),
                           win_source='north_replacement' if boolean(self.north_draw) else 'auto')
         mask = sum((1 << i) for i, flag in enumerate(self.yaku) if boolean(flag))
@@ -244,6 +292,11 @@ class ShapeSolver:
 
     def block_projection(self, closed: bool, mask: int):
         self.solver.add(z3.Or(self.closed != closed, *(flag != bool(mask & (1 << i)) for i, flag in enumerate(self.yaku))))
+
+    def block_yakuman_projection(self, names):
+        names = set(names)
+        self.solver.add(z3.Or(*(flag != (name in names)
+                                for name, flag in zip(self.yakuman_names, self.yakuman_flags))))
 
     def block_model(self, model=None):
         model = model if model is not None else self.solver.model()

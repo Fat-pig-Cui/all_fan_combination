@@ -24,6 +24,10 @@ A standalone Python riichi evaluator and witness-based enumerator for ordinary y
 
 按完整役集合比较，两种玩法共有18,706种，四麻独有1,981种，三麻独有155种。三麻独有项全部包含岭上；拔北使若干四麻无法开杠的牌形也能补牌和牌。
 
+## 自然役满复合分析
+
+自然役满单独按“完整役满集合”枚举，不混入上面的普通役组合计数。当前四麻得到99个集合，三麻得到99个集合；四麻参考合集记载98个，差异是开放杠形的“四杠子＋大四喜＋字一色”：四种风牌各开杠、以另一张字牌作雀头，牌数和四张限制均允许。完整倍数分布、每个集合的牌形见证以及三麻结果见 [自然役满分析报告](results/yakuman/REPORT.md) 和 [机器汇总](results/yakuman/summary.json)。
+
 这次计数不含宝牌与自然役满；13番以上普通役集合保留。
 完整性限于本文和 `THEORY.md` 定义的有限结构模型及条件可达性构造，不是所有牌山与对手操作的逐步穷举。
 四麻全部20,687条当前见证已重新判役与检查条件。23个四麻边界牌例中22个比较计分、1个检查非法过程应被拒绝；另200个从四麻快照抽取的牌例与本地JavaScript参考算法计分对照通过。
@@ -134,6 +138,7 @@ python tools/report_results.py results/local-run
 | `tools/pack_results.py` | 将原始见证与拒绝记录压缩为ZIP，保留原始内容摘要 |
 | `tools/revalidate_snapshot.py` | 重新判定旧快照的所有候选，再由当前求解器检查剩余空间；只有 `unsat` 标记完整 |
 | `tools/enumerate_sanma.py` | 将既有四麻牌形作为三麻搜索提示；重新判役、检查证书后继续求解全部剩余集合 |
+| `tools/analyze_yakuman.py` | 独立枚举自然役满复合集合，并生成四麻／三麻牌形见证与差异报告 |
 | `result_records.py` | 统一读取本地JSONL和已发布ZIP记录 |
 | `tests/` | 判役边界、约束与Python方程一致性、条件可达性、输出／续算检查 |
 | `tools/check_reference.py` | 可选的本地JavaScript算法对照，仅用于开发核对 |

@@ -433,7 +433,7 @@ def evaluate_shape(groups: tuple[Group, ...], pair: int, win_group: int, context
     elif len(WINDS & set(triplets)) == 3 and pair in WINDS:
         natural.add('shousuushii')
     if concealed == 4:
-        natural.add('suuankou_tanki' if win_group == -1 else 'suuankou')
+        natural.add('suuankou_tanki' if win_group == -1 or (context.first_turn and context.seat == 27) else 'suuankou')
     if kans == 4:
         natural.add('suukantsu')
     suits = {tile // 9 for tile in tiles if tile < 27}
@@ -443,7 +443,8 @@ def evaluate_shape(groups: tuple[Group, ...], pair: int, win_group: int, context
         if all(counts[offset + number] >= needed for number, needed in enumerate(minimum)):
             before = counts.copy()
             before[context.win] -= 1
-            pure = all(before[offset + number] == needed for number, needed in enumerate(minimum))
+            pure = (context.first_turn and context.seat == 27) or all(
+                before[offset + number] == needed for number, needed in enumerate(minimum))
             natural.add('junsei_chuuren' if pure else 'chuuren')
     if natural:
         return Score((), 0, 0, closed, tuple(sorted(natural)), groups, pair, win_group)
@@ -510,7 +511,7 @@ def special_scores(completed: tuple[int, ...], context: Context) -> tuple[Score,
     if set(counts) == ORPHANS and sorted(counts.values()) == [1] * 12 + [2]:
         before = counts.copy()
         before[context.win] -= 1
-        pure = all(before[tile] == 1 for tile in ORPHANS)
+        pure = (context.first_turn and context.seat == 27) or all(before[tile] == 1 for tile in ORPHANS)
         names = natural | {'kokushi_13' if pure else 'kokushi'}
         return (Score((), 0, 0, True, tuple(sorted(names)), kind='kokushi'),)
     if len(counts) != 7 or set(counts.values()) != {2}:

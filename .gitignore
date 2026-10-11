@@ -36,3 +36,5 @@ Thumbs.db
 !/results/sanma/summary.json
 !/results/sanma/audit.json
 !/results/sanma/REPORT.md
+!/results/yakuman/
+!/results/yakuman/*

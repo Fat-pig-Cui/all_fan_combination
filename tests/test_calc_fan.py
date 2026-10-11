@@ -137,6 +137,12 @@ class CalcFanTests(unittest.TestCase):
         result = evaluate_shape((Group(31), Group(32), Group(33), Group(27)), 28, -1, Context(28))
         self.assertEqual(result.yakuman_multiple, 4)  # daisangen + all honors + suuankou tanki
 
+    def test_open_four_kans_can_stack_big_four_winds_and_all_honors(self):
+        melds = tuple(Group(tile, kan=True, open=True) for tile in range(27, 31))
+        result = score_hand((33,), Context(33, tsumo=True), melds)[0]
+        self.assertEqual(set(result.yakuman), {'daisuushii', 'suukantsu', 'tsuuiisou'})
+        self.assertFalse(result.closed)
+
     def test_green_and_non_green_color_are_not_blindly_identified(self):
         green = (Group(19, True), Group(19, True), Group(23), Group(25))
         self.assertIn('ryuuiisou', evaluate_shape(green, 32, 0, Context(19)).yakuman)
@@ -226,6 +232,17 @@ class CalcFanTests(unittest.TestCase):
         hand, melds = before_win(self.sequences, 16, Context(0, tsumo=True))
         result = score_hand(hand, Context(0, tsumo=True, first_turn=True), melds)[0]
         self.assertIn('tenhou', result.yakuman)
+
+    def test_tenhou_upgrades_upper_yakuman_but_chiihou_uses_wait(self):
+        groups = (Group(0), Group(10), Group(20), Group(12))
+        # The dealer's first-turn win is the upper four-concealed-triplet form.
+        dealer = evaluate_shape(groups, 33, 3, Context(12, tsumo=True, first_turn=True, seat=27))
+        self.assertIn('suuankou_tanki', dealer.yakuman)
+        self.assertNotIn('suuankou', dealer.yakuman)
+        # A non-dealer first-turn win keeps the ordinary form for a non-tanki wait.
+        nondealer = evaluate_shape(groups, 33, 3, Context(12, tsumo=True, first_turn=True, seat=28))
+        self.assertIn('suuankou', nondealer.yakuman)
+        self.assertNotIn('suuankou_tanki', nondealer.yakuman)
 
     def test_waits_ignore_yaku(self):
         self.assertEqual(waits(parse_tiles('11m 22m 33p 44p 55s 66s 7z')), frozenset({33}))

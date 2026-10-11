@@ -16,6 +16,8 @@
 | `sanma/summary.json` | 门清14,748／副露4,113、3张余牌立直门槛、规则指纹与 `unsat` |
 | `sanma/records.zip` | 三麻18,861条见证与2,613条拒绝候选，约1.06 MiB |
 | `sanma/archive.json`、`sanma/audit.json` | 三麻压缩成员摘要及全部见证复算结果 |
+| `yakuman/REPORT.md`、`yakuman/summary.json` | 四麻／三麻自然役满复合集合、倍数分布和参考合集差异 |
+| `yakuman/witnesses.jsonl` | 每个自然役满集合的一条可复核牌形见证 |
 | `reference-check.json` | 22个四麻边界牌例的本地JavaScript计分对照，加1个非法过程拒绝检查 |
 | `validation-sample.json` | 从修正后完整快照均匀抽取的200个牌例 |
 | `reference-sample-check.json` | 上述200个牌例的本地算法对照 |

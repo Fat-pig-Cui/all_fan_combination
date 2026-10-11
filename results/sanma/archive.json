@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "archive": "records.zip",
+  "members": {
+    "combinations.jsonl": {
+      "sha256": "1fb74d9468b13c60291e451ec5f47508b6a01d9578bb98bd61da696a807e3544",
+      "size_bytes": 31758233,
+      "records": 18861
+    },
+    "rejections.jsonl": {
+      "sha256": "98e9f5a15f952432e6caa79c780c60a68b6c1ad0509c12ce984f6610ed52303d",
+      "size_bytes": 2752300,
+      "records": 2613
+    }
+  }
+}

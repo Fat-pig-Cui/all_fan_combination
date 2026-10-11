@@ -1,0 +1,11 @@
+{
+  "players": 3,
+  "hand": "22446688p22446s",
+  "win": "6s",
+  "tsumo": true,
+  "event": "rinshan",
+  "win_source": "north_replacement",
+  "north_count": 1,
+  "riichi": 2,
+  "melds": []
+}

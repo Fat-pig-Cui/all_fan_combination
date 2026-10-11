@@ -29,3 +29,10 @@ Thumbs.db
 !/results/full/summary.json
 !/results/full/audit.json
 !/results/full/REPORT.md
+!/results/sanma/
+/results/sanma/*
+!/results/sanma/records.zip
+!/results/sanma/archive.json
+!/results/sanma/summary.json
+!/results/sanma/audit.json
+!/results/sanma/REPORT.md

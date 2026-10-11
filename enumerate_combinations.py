@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Enumerate distinct four-player ordinary-yaku sets by structural witnesses.
+"""Enumerate four/three-player ordinary-yaku sets by structural witnesses.
 
 Z3 proposes complete winning structures.  calc_fan.py independently checks
 all decompositions and score selection; reachability.py proves the relevant
@@ -23,22 +23,28 @@ import z3
 from calc_fan import BIT, ORDER, YAKU, compact_tiles, score_hand, tile_name
 from reachability import condition_certificate
 from shape_solver import ShapeSolver
+from rules import get_rules
 
 
 def source_hashes():
     root = Path(__file__).resolve().parent
-    names = ('calc_fan.py', 'shape_solver.py', 'reachability.py', 'enumerate_combinations.py')
+    names = ('calc_fan.py', 'shape_solver.py', 'reachability.py', 'enumerate_combinations.py', 'rules.py')
     return {name: hashlib.sha256((root / name).read_bytes()).hexdigest() for name in names}
 
 
 def scenario(witness):
     context = witness.context
-    return {
+    result = {
         'hand': compact_tiles(witness.hand), 'win': tile_name(context.win),
         'melds': [group.to_dict() for group in witness.melds],
         'tsumo': context.tsumo, 'seat': tile_name(context.seat), 'round_wind': tile_name(context.round_wind),
         'riichi': context.riichi, 'ippatsu': context.ippatsu, 'event': context.event,
     }
+    if context.players != 4 or context.north_count or context.win_source != 'auto':
+        result.update(players=context.players, north_count=context.north_count, win_source=context.win_source)
+    if context.live_tiles is not None:
+        result['live_tiles'] = context.live_tiles
+    return result
 
 
 def combination_record(witness, score, certificate):
@@ -52,14 +58,16 @@ def combination_record(witness, score, certificate):
     }
 
 
-def summary_for(records, *, complete, reason, models, rejected, elapsed, hashes):
+def summary_for(records, *, complete, reason, models, rejected, elapsed, hashes, players=4):
+    rules = get_rules(players)
     result = {
         'schema_version': 1,
-        'scope': {'players': 4, 'ranked': True, 'natural_yakuman': False, 'dora_in_combinations': False,
+        'scope': {'players': players, 'ranked': True, 'natural_yakuman': False, 'dora_in_combinations': False,
                   'dora_for_partition_selection': 0, 'include_ordinary_han_13_plus': True,
-                  'round_winds': ['1z', '2z', '3z'], 'riichi_min_live_tiles': 4,
+                  'round_winds': ['1z', '2z', '3z'], 'riichi_min_live_tiles': rules.riichi_min_live_tiles,
                   'double_riichi_kakan_ron': 'excluded_by_permanent_furiten',
                   'selection': 'maximum(base_points, raw_han, fu); retain exact ties'},
+        'rules': rules.to_dict(), 'rules_fingerprint': rules.fingerprint,
         'complete': complete, 'termination': reason,
         'combination_count': len(records), 'models_checked': models,
         'rejected_models': rejected, 'elapsed_seconds': round(elapsed, 3),
@@ -78,7 +86,8 @@ def write_summary(directory, payload):
     temporary.replace(directory / 'summary.json')
 
 
-def enumerate_sets(directory: Path, *, limit=0, max_models=0, timeout_ms=0, resume=False, seed=0, log_every=100):
+def enumerate_sets(directory: Path, *, limit=0, max_models=0, timeout_ms=0, resume=False, seed=0, log_every=100, players=4):
+    rules = get_rules(players)
     directory.mkdir(parents=True, exist_ok=True)
     records_path = directory / 'combinations.jsonl'
     hashes = source_hashes()
@@ -89,14 +98,18 @@ def enumerate_sets(directory: Path, *, limit=0, max_models=0, timeout_ms=0, resu
         for line in records_path.read_text().splitlines():
             if line.strip():
                 records.append(json.loads(line))
+        if any(record['witness'].get('players', 4) != players for record in records):
+            raise ValueError('Player count differs from resume records')
         previous_path = directory / 'summary.json'
         if previous_path.exists():
             previous = json.loads(previous_path.read_text())
             if previous.get('source_sha256') != hashes:
                 raise ValueError('Source changed since this result; choose a fresh output directory')
+            if previous.get('rules_fingerprint') != rules.fingerprint:
+                raise ValueError('Rules differ from this result; choose a fresh output directory')
             if previous.get('complete'):
                 return previous
-    solver = ShapeSolver(timeout_ms=timeout_ms, seed=seed)
+    solver = ShapeSolver(timeout_ms=timeout_ms, seed=seed, players=players)
     seen = set()
     for record in records:
         key = (record['closed'], record['mask'])
@@ -110,7 +123,7 @@ def enumerate_sets(directory: Path, *, limit=0, max_models=0, timeout_ms=0, resu
     reason = 'running'
     def checkpoint():
         payload = summary_for(records, complete=complete, reason=reason, models=models,
-                              rejected=rejected, elapsed=time.monotonic() - start, hashes=hashes)
+                              rejected=rejected, elapsed=time.monotonic() - start, hashes=hashes, players=players)
         write_summary(directory, payload)
         return payload
     checkpoint()
@@ -165,7 +178,8 @@ def enumerate_sets(directory: Path, *, limit=0, max_models=0, timeout_ms=0, resu
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--output', type=Path, default=Path('results/full'))
+    parser.add_argument('--players', type=int, choices=(3, 4), default=4)
+    parser.add_argument('--output', type=Path)
     parser.add_argument('--limit', type=int, default=0, help='accepted-set limit; 0 means no limit')
     parser.add_argument('--max-models', type=int, default=0, help='diagnostic model limit; 0 means no limit')
     parser.add_argument('--timeout-ms', type=int, default=0, help='per solver check; 0 means no timeout')
@@ -173,12 +187,14 @@ def main():
     parser.add_argument('--seed', type=int, default=0)
     parser.add_argument('--log-every', type=int, default=100)
     args = parser.parse_args()
+    if args.output is None:
+        args.output = Path('results/sanma' if args.players == 3 else 'results/full')
     if min(args.limit, args.max_models, args.timeout_ms) < 0 or args.log_every < 1:
         parser.error('Limits must be nonnegative; log interval must be positive')
     try:
         payload = enumerate_sets(args.output, limit=args.limit, max_models=args.max_models,
                                  timeout_ms=args.timeout_ms, resume=args.resume,
-                                 seed=args.seed, log_every=args.log_every)
+                                 seed=args.seed, log_every=args.log_every, players=args.players)
     except ValueError as error:
         parser.exit(2, str(error) + '\n')
     print(json.dumps(payload, ensure_ascii=False, indent=2))

@@ -34,4 +34,6 @@ jobs:
       - name: Verify published artifacts and source hashes
         run: python tools/verify_snapshot.py
       - name: Recalculate every published witness
-        run: python audit_results.py results/full
+        run: |
+          python audit_results.py results/full
+          python audit_results.py results/sanma

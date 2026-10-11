@@ -12,6 +12,7 @@ Python 3.9 或更新版本；使用虚拟环境安装 `requirements.txt`。
 python -m unittest discover -s tests -v
 python tools/verify_snapshot.py
 python audit_results.py results/full
+python audit_results.py results/sanma
 ```
 
 可选JavaScript对照需要Node.js和单独取得的参考源码；具体命令见README。
@@ -34,6 +35,7 @@ python tools/pack_results.py results/local-run
 ## 发布结果快照
 
 `results/full/` 是已发布基线，不是开发时的默认工作目录。
+`results/sanma/` 是独立的三麻基线；更改三麻规则时同步判役、求解、条件证书与 `rules.py`，不要混入四麻续算。新的三麻运行用 `--players 3` 和独立目录；余牌门槛当前为用户确认的3张。
 核心源码改变后，旧快照的源码校验会失败；不要只修改哈希来掩盖模型变化。
 发布更新时应将新完整运行的 `records.zip`、`archive.json`、汇总、复算结果和报告一起更新。
 打包操作保留本地JSONL；验证压缩内容后，待发布快照只保留压缩包，不再附带大JSONL副本。

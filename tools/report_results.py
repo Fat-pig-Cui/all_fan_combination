@@ -27,7 +27,7 @@ def report(directory: Path):
     complete = summary['complete'] and summary['termination'] == 'unsat'
     status = '已穷尽当前理论模型' if complete else '尚未穷尽，只是已确认组合的下界'
     lines = [
-        '# 四麻普通役组合枚举结果', '',
+        '# ' + ('三麻' if summary['scope']['players'] == 3 else '四麻') + '普通役组合枚举结果', '',
         f"状态：**{status}**。停止原因：`{summary['termination']}`。", '',
         f"已确认 **{summary['combination_count']:,}** 种组合：门清 **{summary['closed']['count']:,}**，副露 **{summary['open']['count']:,}**。", '',
         '计数单位为“门清性＋完整计分役集合”，不区分手牌、符数或支付金额。',
@@ -41,6 +41,26 @@ def report(directory: Path):
         a, b = closed.get(han, 0), opened.get(han, 0)
         lines.append(f'| {han} | {a:,} | {b:,} | {a + b:,} |')
     lines.append(f"| 合计 | {summary['closed']['count']:,} | {summary['open']['count']:,} | {summary['combination_count']:,} |")
+    if summary['scope']['players'] == 3:
+        lines.extend([
+            '', '## 三麻规则与过程证书', '',
+            '- 108张牌；2至8万不存在，禁止吃，北为客风；牌和役ID沿用共用编码。',
+            '- 暗杠与拔北均不破门清；拔北区与手牌共同检查北的四张上限。',
+            '- 拔北补牌计岭上，可与平和、七对子和二杯口复合；拔北宝牌不进入组合或拆分择优。',
+            f"- 立直至少剩{summary['scope']['riichi_min_live_tiles']}张通常牌；两家摸牌后自己可在一发内海底自摸。门槛由用户于2026-10-11确认。",
+            '- 立直后拔北使用刚摸的北，手牌和听牌不变；暗杠仍逐次检查完整听牌集合。',
+            '- 抢北只是荣和来源，不提供抢杠役；不重复计数与普通舍牌荣和相同的役集合。',
+            '- 杠与拔北共用8张补牌资源，通常山仅剩最后一张时不能开杠或拔北。',
+            '- 自摸损属于支付层，本次只计算普通役集合与基本点，不枚举支付金额。',
+        ])
+    if 'search_hints' in summary:
+        proof = summary['search_hints']
+        lines.extend([
+            '', '## 搜索与完成判据', '',
+            f"读取四麻的 {proof['source_records_read']:,} 条牌形候选，置换花色并按三麻重新判役、检查条件，得到 {proof['sets_confirmed_from_hints']:,} 个已确认集合。",
+            '四麻只提供搜索提示，不读取人工表，不直接继承其役集合、计数或排除状态。',
+            f"当前三麻求解器继续检查剩余空间，补充 {proof['additional_solver_sets']:,} 个集合；只有最终 `unsat` 才标记完整。",
+        ])
     if 'revalidation' in summary:
         proof = summary['revalidation']
         lines.extend([

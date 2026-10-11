@@ -1,0 +1,8 @@
+{
+  "players": 3,
+  "hand": "123456p789s555z4z",
+  "win": "4z",
+  "tsumo": false,
+  "win_source": "north_ron",
+  "melds": []
+}

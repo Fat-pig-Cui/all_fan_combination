@@ -3,8 +3,8 @@
   "archive": "records.zip",
   "members": {
     "combinations.jsonl": {
-      "sha256": "8eee550d4f33027ba11386d2d450699e43b0488c98803ccb8d5a5928e12243cb",
-      "size_bytes": 29636186,
+      "sha256": "5eef74e34e7a9416f399b65fbf754ca25ed8149aa6cab37dd5c17f8a1f057ee2",
+      "size_bytes": 32784153,
       "records": 20687
     },
     "rejections.jsonl": {

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Independent four-player ranked riichi evaluator (Python standard library).
+"""Independent four/three-player ranked riichi evaluator (standard library).
 
 Input hand is BEFORE winning; the winning tile is supplied separately.
 Reference: GrandDawn / Fat-pig-Cui's MIT calcFan.js, riichi branch only.
@@ -16,6 +16,8 @@ from dataclasses import asdict, dataclass, replace
 from functools import lru_cache
 from pathlib import Path
 from typing import Iterable, Optional
+
+from rules import get_rules
 
 
 # Stable IDs match the ordinary riichi IDs in the reference calcFan.js.
@@ -178,9 +180,17 @@ class Context:
     event: str = 'none'
     first_turn: bool = False
     dora: int = 0
+    players: int = 4
+    north_count: int = 0
+    win_source: str = 'auto'
+    live_tiles: Optional[int] = None
+
+    @property
+    def rules(self):
+        return get_rules(self.players)
 
     def __post_init__(self):
-        if self.win not in range(34) or self.seat not in WINDS or self.round_wind not in WINDS:
+        if self.win not in self.rules.available_tiles or self.seat not in self.rules.seats or self.round_wind not in self.rules.round_winds:
             raise ValueError('Invalid win/seat/round tile')
         if self.riichi not in (0, 1, 2) or self.event not in {'none', 'chankan', 'rinshan', 'haitei', 'houtei'}:
             raise ValueError('Invalid riichi/event')
@@ -196,10 +206,53 @@ class Context:
             raise ValueError('Double-riichi ippatsu cannot reach this event')
         if self.dora < 0:
             raise ValueError('Dora must be nonnegative')
+        if isinstance(self.north_count, bool) or self.north_count not in range(5):
+            raise ValueError('north_count must be 0..4')
+        if self.north_count and not self.rules.north_extraction:
+            raise ValueError('North extraction requires three-player rules')
+        if self.win_source not in {'auto', 'kan_replacement', 'north_replacement', 'north_ron'}:
+            raise ValueError('Invalid win_source')
+        if self.win_source in {'kan_replacement', 'north_replacement'} and self.event != 'rinshan':
+            raise ValueError('Replacement source requires rinshan')
+        if self.win_source == 'north_replacement' and (self.players != 3 or not self.north_count):
+            raise ValueError('North replacement requires an extracted north')
+        if self.win_source == 'north_ron' and (self.players != 3 or self.tsumo or self.win != 30 or self.event != 'none'):
+            raise ValueError('Robbing north is ron on 4z without chankan/last-tile yaku')
+        if self.live_tiles is not None and (isinstance(self.live_tiles, bool) or not isinstance(self.live_tiles, int) or self.live_tiles < 0):
+            raise ValueError('live_tiles must be nonnegative or omitted')
 
 
 def han_for(yaku: Iterable[str], closed: bool) -> int:
     return sum(YAKU[name][2 if closed else 3] for name in yaku)
+
+
+def validate_inventory(tiles, groups, context):
+    """Physical tile resources, extraction area and the winning response."""
+    if any(t not in context.rules.available_tiles for t in tiles):
+        raise ValueError('Tile is unavailable in this ruleset')
+    if not context.rules.allow_chi and any(g.sequence and g.open for g in groups):
+        raise ValueError('Chi is forbidden in three-player rules')
+    counts = Counter(tiles)
+    counts[30] += context.north_count
+    if max(counts.values()) > 4:
+        raise ValueError('More than four physical copies, including extracted north')
+    if sum(g.kan for g in groups) + context.north_count > context.rules.replacement_tiles:
+        raise ValueError('Replacement tile capacity exceeded')
+    if context.event == 'chankan' and counts[context.win] != 1:
+        raise ValueError('An opponent needs the other three copies for kakan/ankan')
+    if context.event == 'rinshan':
+        if context.live_tiles is not None and context.live_tiles < 2:
+            raise ValueError('Cannot kan/extract north with fewer than two live tiles')
+        if context.win_source == 'north_replacement':
+            pass
+        elif not any(g.kan for g in groups):
+            raise ValueError('Kan replacement requires a declared kan; specify north_replacement for nuki')
+    if context.win_source == 'north_ron' and context.live_tiles is not None and context.live_tiles < 2:
+        raise ValueError('Opponent cannot extract north at the last live tile')
+    if context.first_turn and context.north_count:
+        raise ValueError('Extraction interrupts first-turn yakuman')
+    if context.riichi == 2 and context.ippatsu and context.north_count:
+        raise ValueError('Extraction interrupts first-discard double-riichi ippatsu')
 
 
 def base_points(fu: int, han: int, yakuman: int = 0) -> int:
@@ -353,6 +406,7 @@ def evaluate_shape(groups: tuple[Group, ...], pair: int, win_group: int, context
     closed = not any(group.open for group in groups)
     tiles = tuple(tile for group in groups for tile in group.tiles) + (pair, pair)
     counts = Counter(tiles)
+    validate_inventory(tiles, groups, context)
     if max(counts.values()) > 4:
         raise ValueError('More than four copies of a tile')
     if context.riichi and not closed:
@@ -362,8 +416,6 @@ def evaluate_shape(groups: tuple[Group, ...], pair: int, win_group: int, context
         # riichi, and passing the pon's winning discard causes permanent furiten.
         # Kokushi robbing ankan is handled separately by special_scores.
         raise ValueError('Double-riichi kakan ron is permanently furiten')
-    if context.event == 'rinshan' and not any(group.kan for group in groups):
-        raise ValueError('Four-player rinshan requires a kan')
     if context.event == 'chankan' and counts[context.win] != 1:
         raise ValueError('An opponent needs the other three copies for kakan')
     if context.first_turn and (any(group.fixed for group in groups) or context.riichi):
@@ -452,6 +504,7 @@ def evaluate_shape(groups: tuple[Group, ...], pair: int, win_group: int, context
 
 
 def special_scores(completed: tuple[int, ...], context: Context) -> tuple[Score, ...]:
+    validate_inventory(completed, (), context)
     counts = Counter(completed)
     natural = tile_yakuman(completed, context)
     if set(counts) == ORPHANS and sorted(counts.values()) == [1] * 12 + [2]:
@@ -464,7 +517,7 @@ def special_scores(completed: tuple[int, ...], context: Context) -> tuple[Score,
         return ()
     if natural:
         return (Score((), 0, 0, True, tuple(sorted(natural)), kind='chiitoitsu'),)
-    if context.event in {'chankan', 'rinshan'}:
+    if context.event == 'chankan' or (context.event == 'rinshan' and context.win_source != 'north_replacement'):
         return ()
     result = {'chiitoitsu'} | situational(context, True) | flush_yaku(completed)
     if all(tile not in ORPHANS for tile in completed):
@@ -486,14 +539,13 @@ def score_hand(hand: Iterable[int], context: Context, melds: Iterable[Group] = (
         raise ValueError('Invalid tile number')
     completed = hand + (context.win,)
     physical = completed + tuple(tile for group in melds for tile in group.tiles)
+    validate_inventory(physical, melds, context)
     if max(Counter(physical).values()) > 4:
         raise ValueError('More than four physical copies, including fixed melds')
     if context.riichi and any(group.open for group in melds):
         raise ValueError('Open hand cannot declare riichi')
     if context.riichi == 2 and context.ippatsu and melds:
         raise ValueError('First-discard double-riichi ippatsu cannot include own kans/calls')
-    if context.event == 'rinshan' and not any(group.kan for group in melds):
-        raise ValueError('Four-player rinshan requires a declared kan')
     if context.event == 'chankan' and Counter(physical)[context.win] != 1:
         raise ValueError('Opponent kakan/ankan requires the other three copies')
     if context.first_turn and (melds or context.riichi):
@@ -531,14 +583,19 @@ def score_hand(hand: Iterable[int], context: Context, melds: Iterable[Group] = (
 
 
 @lru_cache(maxsize=65536)
-def waits(hand: tuple[int, ...], melds: tuple[Group, ...] = ()) -> frozenset[int]:
+def waits(hand: tuple[int, ...], melds: tuple[Group, ...] = (), players: int = 4) -> frozenset[int]:
     """Structural waits, independent of yaku, payments and ron restrictions."""
     if len(hand) != 13 - 3 * len(melds):
         raise ValueError('Wait input must be a before-win hand')
+    rules = get_rules(players)
+    if any(t not in rules.available_tiles for t in hand + tuple(t for g in melds for t in g.tiles)):
+        raise ValueError('Wait input contains an unavailable tile')
+    if not rules.allow_chi and any(g.open and g.sequence for g in melds):
+        raise ValueError('Chi is forbidden in three-player waits')
     full_counts = Counter(hand + tuple(tile for group in melds for tile in group.tiles))
     result = set()
     concealed = Counter(hand)
-    for win in range(34):
+    for win in rules.available_tiles:
         if full_counts[win] >= 4:
             continue
         counts = tuple(concealed[tile] + int(tile == win) for tile in range(34))
@@ -555,7 +612,9 @@ def context_from_dict(data: dict) -> Context:
     return Context(win=one_tile(data['win']), tsumo=data.get('tsumo', False),
                    seat=one_tile(data.get('seat', '1z')), round_wind=one_tile(data.get('round_wind', '1z')),
                    riichi=data.get('riichi', 0), ippatsu=data.get('ippatsu', False),
-                   event=data.get('event', 'none'), first_turn=data.get('first_turn', False), dora=data.get('dora', 0))
+                   event=data.get('event', 'none'), first_turn=data.get('first_turn', False), dora=data.get('dora', 0),
+                   players=data.get('players', 4), north_count=data.get('north_count', 0),
+                   win_source=data.get('win_source', 'auto'), live_tiles=data.get('live_tiles'))
 
 
 def score_request(data: dict) -> dict:

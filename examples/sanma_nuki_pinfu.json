@@ -1,0 +1,10 @@
+{
+  "players": 3,
+  "hand": "123456789p23s55s",
+  "win": "1s",
+  "tsumo": true,
+  "event": "rinshan",
+  "win_source": "north_replacement",
+  "north_count": 1,
+  "melds": []
+}

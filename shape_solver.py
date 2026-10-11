@@ -12,6 +12,7 @@ from typing import Optional
 import z3
 
 from calc_fan import Context, Group, ORDER, DRAGONS, WINDS, HONORS, TERMINALS, GREEN, ORPHANS
+from rules import get_rules
 
 
 EVENTS = ('none', 'chankan', 'rinshan', 'haitei', 'houtei')
@@ -51,7 +52,8 @@ class Witness:
 
 
 class ShapeSolver:
-    def __init__(self, *, timeout_ms=0, closed=None, kind=None, context=None, seed=0):
+    def __init__(self, *, timeout_ms=0, closed=None, kind=None, context=None, seed=0, players=4):
+        self.rules = get_rules(players)
         self.solver = z3.Solver()
         self.solver.set(random_seed=seed)
         if timeout_ms:
@@ -74,24 +76,31 @@ class ShapeSolver:
         self.ippatsu = z3.Bool('ippatsu')
         self.event = z3.Int('event')
         self.closed = z3.Bool('closed')
+        self.north_draw = z3.Bool('north_replacement')
         standard, seven = self.kind == 0, self.kind == 1
         add(member(self.kind, (0, 1)), self.pair >= 0, self.pair < 34,
             self.win >= 0, self.win < 34, self.delta >= 0, self.delta <= 2,
-            self.seat >= 27, self.seat <= 30, self.round >= 27, self.round <= 29,
+            member(self.seat, self.rules.seats), member(self.round, self.rules.round_winds),
             self.riichi >= 0, self.riichi <= 2, self.event >= 0, self.event <= 4)
         if closed is not None:
             add(self.closed == closed)
         if kind is not None:
             add(self.kind == (0 if kind == 'standard' else 1))
         if context is not None:
+            if context.players != players:
+                raise ValueError('Context and solver player counts differ')
             for name in ('tsumo', 'riichi', 'ippatsu'):
                 add(getattr(self, name) == getattr(context, name))
             add(self.event == EVENTS.index(context.event))
+            if context.win_source != 'auto':
+                add(self.north_draw == (context.win_source == 'north_replacement'))
 
         keys = []
         for i in range(4):
             add(self.tile[i] >= 0, self.tile[i] < 34)
             add(z3.Implies(self.seq[i], z3.And(self.tile[i] < 27, self.tile[i] % 9 <= 6, z3.Not(self.kan[i]))))
+            if not self.rules.allow_chi:
+                add(z3.Not(z3.And(self.seq[i], self.open[i])))
             add(z3.Implies(seven, z3.And(self.tile[i] == 0, z3.Not(self.seq[i]), z3.Not(self.open[i]), z3.Not(self.kan[i]))))
             keys.append(self.tile[i] * 8 + z3.If(self.seq[i], 4, 0) + z3.If(self.open[i], 2, 0) + z3.If(self.kan[i], 1, 0))
         add(z3.Implies(standard, every(keys[i] <= keys[i + 1] for i in range(3))))
@@ -116,6 +125,10 @@ class ShapeSolver:
                          2 * count_true(self.pairs[i] == tile for i in range(7)))
         self.counts = [physical_count(tile) for tile in range(34)]
         add(every(count <= 4 for count in self.counts))
+        add(*(self.counts[t] == 0 for t in range(34) if t not in self.rules.available_tiles))
+        add(z3.Implies(self.north_draw, z3.And(self.event == 2, self.counts[30] <= 3)))
+        if not self.rules.north_extraction:
+            add(z3.Not(self.north_draw))
         win_copies = physical_count(self.win)
         kans = count_true(self.kan)
         nseq = count_true(self.seq)
@@ -126,9 +139,12 @@ class ShapeSolver:
             # A kakan pon after double riichi requires passing a winning
             # discard, which makes later ron permanently furiten.
             z3.Implies(self.event == 1, z3.And(standard, win_copies == 1, self.riichi != 2)),
-            z3.Implies(self.event == 2, z3.And(standard, kans > 0, z3.Not(self.ippatsu))),
+            z3.Implies(self.event == 2, z3.And(z3.Or(self.north_draw, z3.And(standard, kans > 0)), z3.Not(self.ippatsu))),
             z3.Implies(self.event == 4, z3.Not(self.ippatsu)),
             z3.Implies(z3.And(self.riichi == 2, self.ippatsu), z3.And(kans == 0, z3.Not(member(self.event, (1, 3))))))
+        add(kans + z3.If(self.north_draw, 1, 0) <= self.rules.replacement_tiles)
+        if not self.rules.ippatsu_haitei_possible:
+            add(z3.Not(z3.And(self.ippatsu, self.event == 3)))
 
         def has_triplet(tile):
             return z3.And(standard, either(z3.And(z3.Not(self.seq[i]), self.tile[i] == tile) for i in range(4)))
@@ -196,7 +212,7 @@ class ShapeSolver:
         add(*(flag == role[name] for flag, name in zip(self.yaku, ORDER)))
         add(either(self.yaku))
         self.decision_vars = [self.kind, self.pair, self.win, self.win_group, self.delta,
-                              self.tsumo, self.seat, self.round, self.riichi, self.ippatsu, self.event]
+                              self.tsumo, self.seat, self.round, self.riichi, self.ippatsu, self.event, self.north_draw]
         self.decision_vars += self.tile + self.seq + self.open + self.kan + self.pairs
 
     def check(self):
@@ -208,7 +224,9 @@ class ShapeSolver:
         boolean = lambda expr: z3.is_true(model.eval(expr, model_completion=True))
         context = Context(win=integer(self.win), tsumo=boolean(self.tsumo), seat=integer(self.seat),
                           round_wind=integer(self.round), riichi=integer(self.riichi),
-                          ippatsu=boolean(self.ippatsu), event=EVENTS[integer(self.event)])
+                          ippatsu=boolean(self.ippatsu), event=EVENTS[integer(self.event)],
+                          players=self.rules.players, north_count=int(boolean(self.north_draw)),
+                          win_source='north_replacement' if boolean(self.north_draw) else 'auto')
         mask = sum((1 << i) for i, flag in enumerate(self.yaku) if boolean(flag))
         closed = boolean(self.closed)
         if integer(self.kind) == 1:
@@ -246,7 +264,8 @@ class ShapeSolver:
         context = witness.context
         different += [self.win != context.win, self.tsumo != context.tsumo, self.seat != context.seat,
                       self.round != context.round_wind, self.riichi != context.riichi,
-                      self.ippatsu != context.ippatsu, self.event != EVENTS.index(context.event)]
+                      self.ippatsu != context.ippatsu, self.event != EVENTS.index(context.event),
+                      self.north_draw != (context.win_source == 'north_replacement')]
         fixed_count = count_true(z3.Or(self.open[i], self.kan[i]) for i in range(4))
         different.append(fixed_count != len(witness.melds))
         for group, multiplicity in Counter(witness.melds).items():

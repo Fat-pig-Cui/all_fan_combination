@@ -23,6 +23,7 @@ from enumerate_combinations import combination_record, scenario, source_hashes, 
 from reachability import condition_certificate
 from result_records import iter_record_lines
 from shape_solver import ShapeSolver
+from rules import get_rules
 
 
 def revalidate(source: Path, output: Path, *, timeout_ms=0, limit=0):
@@ -30,8 +31,13 @@ def revalidate(source: Path, output: Path, *, timeout_ms=0, limit=0):
     if source == output or output.exists():
         raise ValueError('Choose a new output directory; the source snapshot is read-only')
     old_summary = (source / 'summary.json').read_bytes()
+    prior = json.loads(old_summary)
+    players = prior.get('scope', {}).get('players', 4)
+    rules = get_rules(players)
+    if 'rules' in prior and prior['rules'] != rules.to_dict():
+        raise ValueError('Revalidation cannot silently change the rules profile')
     output.mkdir(parents=True)
-    solver = ShapeSolver(timeout_ms=timeout_ms)
+    solver = ShapeSolver(timeout_ms=timeout_ms, players=players)
     records, seen = [], set()
     start = time.monotonic()
     hashes = source_hashes()
@@ -44,14 +50,18 @@ def revalidate(source: Path, output: Path, *, timeout_ms=0, limit=0):
 
     def checkpoint():
         summary = summary_for(records, complete=complete, reason=reason, models=models,
-                              rejected=rejected, elapsed=time.monotonic() - start, hashes=hashes)
+                              rejected=rejected, elapsed=time.monotonic() - start, hashes=hashes, players=players)
         summary['revalidation'] = dict(proof)
+        if 'search_hints' in prior:
+            summary['search_hints'] = prior['search_hints']
         write_summary(output, summary)
         return summary
 
     def prior_witness(record, accepted):
         data = record['witness']
         context = context_from_dict(data)
+        if context.players != players:
+            raise ValueError('Witness and source summary player counts differ')
         melds = tuple(parse_meld(item) for item in data.get('melds', []))
         names = record['yaku'] if accepted else record['target_yaku']
         return SimpleNamespace(hand=parse_tiles(data['hand']), melds=melds, context=context,

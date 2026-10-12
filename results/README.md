@@ -40,6 +40,7 @@ python -m zipfile -e results/full/records.zip results/local-extracted
 python tools/verify_snapshot.py
 python audit_results.py results/full
 python audit_results.py results/sanma
+python tools/verify_yakuman.py results/yakuman
 ```
 
 完整枚举耗时依机器和求解器状态而异。2026-10-10旧模型从零运行约64分钟；本次重新判定旧候选后求解剩余空间，约76秒，最终同样以当前模型的`unsat`确认完成。

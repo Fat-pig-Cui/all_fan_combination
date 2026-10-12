@@ -26,7 +26,7 @@ A standalone Python riichi evaluator and witness-based enumerator for ordinary y
 
 ## 自然役满复合分析
 
-自然役满单独按“完整役满集合”枚举，不混入上面的普通役组合计数。当前四麻得到99个集合，三麻得到99个集合；四麻参考合集记载98个，差异是开放杠形的“四杠子＋大四喜＋字一色”：四种风牌各开杠、以另一张字牌作雀头，牌数和四张限制均允许。完整倍数分布、每个集合的牌形见证以及三麻结果见 [自然役满分析报告](results/yakuman/REPORT.md) 和 [机器汇总](results/yakuman/summary.json)。
+自然役满单独按“完整役满集合”枚举，不混入上面的普通役组合计数。当前四麻得到99个集合，三麻得到99个集合；四麻数量与已修订的参考合集一致。其中包括开放杠形的“四杠子＋大四喜＋字一色”：四种风牌各开杠、以另一张字牌作雀头，至少一组杠为明杠，因而不会额外成立四暗刻单骑。完整倍数分布、每个集合的牌形见证以及三麻结果见 [自然役满分析报告](results/yakuman/REPORT.md) 和 [机器汇总](results/yakuman/summary.json)。
 
 这次计数不含宝牌与自然役满；13番以上普通役集合保留。
 完整性限于本文和 `THEORY.md` 定义的有限结构模型及条件可达性构造，不是所有牌山与对手操作的逐步穷举。
@@ -62,6 +62,7 @@ python calc_fan.py examples/sanma_rob_north.json
 python tools/verify_snapshot.py
 python audit_results.py results/full
 python audit_results.py results/sanma
+python tools/verify_yakuman.py results/yakuman
 
 # 运行测试
 python -m unittest discover -s tests -v
@@ -94,6 +95,9 @@ python audit_results.py results/local-run
 
 # 枚举停止后，复算并生成同目录的 REPORT.md 和 audit.json
 python tools/report_results.py results/local-run
+
+# 重新枚举自然役满（默认同时生成四麻和三麻）
+python tools/analyze_yakuman.py --players all
 ```
 
 `--timeout-ms` 设置每次求解的时间上限；默认0不设上限。超时返回 `unknown`，不会伪装成穷举完成。
@@ -139,6 +143,7 @@ python tools/report_results.py results/local-run
 | `tools/revalidate_snapshot.py` | 重新判定旧快照的所有候选，再由当前求解器检查剩余空间；只有 `unsat` 标记完整 |
 | `tools/enumerate_sanma.py` | 将既有四麻牌形作为三麻搜索提示；重新判役、检查证书后继续求解全部剩余集合 |
 | `tools/analyze_yakuman.py` | 独立枚举自然役满复合集合，并生成四麻／三麻牌形见证与差异报告 |
+| `tools/verify_yakuman.py` | 重新判定自然役满见证，检查役满组合、倍数及结果统计 |
 | `result_records.py` | 统一读取本地JSONL和已发布ZIP记录 |
 | `tests/` | 判役边界、约束与Python方程一致性、条件可达性、输出／续算检查 |
 | `tools/check_reference.py` | 可选的本地JavaScript算法对照，仅用于开发核对 |

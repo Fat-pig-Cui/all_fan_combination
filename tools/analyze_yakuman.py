@@ -13,6 +13,7 @@ import json
 import sys
 from collections import Counter
 from pathlib import Path
+from types import SimpleNamespace
 
 import z3
 
@@ -90,9 +91,7 @@ def enumerate_kokushi(found, players):
             hand = list(completed)
             hand.remove(win)
             context = Context(win=win, **common)
-            class W:
-                pass
-            witness = W()
+            witness = SimpleNamespace()
             witness.hand = tuple(hand)
             witness.context = context
             witness.kind = 'kokushi'
@@ -128,23 +127,23 @@ def report(data):
         '## 结果', '',
         '| 玩法 | 役满集合数 | 倍数分布 |', '|---|---:|---|',
     ]
-    for players in (4, 3):
+    for players in sorted(map(int, data), reverse=True):
         item = data[str(players)]
         dist = '、'.join(f"{key}倍:{value}" for key, value in item['multipliers'].items())
         lines.append(f"| {'四麻' if players == 4 else '三麻'} | {item['combination_count']} | {dist} |")
+    if '4' in data:
+        four = data['4']['combination_count']
+        lines += ['', f'四麻得到 **{four}** 个完整集合；已修订的参考合集列出 **99** 个。',
+                  '其中“四杠子＋大四喜＋字一色”（四倍役满）使用四种风牌各一组杠、另一张字牌作雀头；至少一组杠为明杠，因而不会额外成立四暗刻单骑。']
     lines += [
         '', '## 判定范围', '',
         '- 天和、地和使用首巡自摸上下文；天和会把四暗刻、纯正九莲、国士无双提升为对应上位役满，地和则按实际等待形区分。',
         '- 普通形与七对子由结构约束提出，再由 `calc_fan.py` 独立复核；国士无双由显式十三幺牌形复核。',
         '- 本次枚举不把宝牌、累计役满支付档位或普通役加入自然役满集合。',
-        '- 四麻参考资料是 `majsoul-replay-editor/products/4P/所有役满合集/README.md`；其中列出的参考总行数为98，作为文献对照，不作为求解器输入。',
+        '- 四麻参考资料是 `majsoul-replay-editor/products/4P/所有役满合集/README.md`；修订后的完整役满集合总数为99，作为文献对照，不作为求解器输入。',
         '', '## 读取方式', '',
         '机器结果见 `results/yakuman/summary.json`，每个集合保留一个可复核的牌形见证。',
     ]
-    four = data['4']['combination_count']
-    lines.insert(9, f'四麻与参考资料的行数对照：计算得到 **{four}** 行，参考资料记载 **98** 行；多出的集合见下文说明。')
-    if four == 99:
-        lines.insert(10, '差异是“四杠子＋大四喜＋字一色”（四倍役满）：四种风牌各开杠、以另一张字牌作雀头，结构上可以成立；参考合集未列出该开放杠组合。')
     return '\n'.join(lines) + '\n'
 
 
@@ -156,17 +155,14 @@ def main():
     args.output.mkdir(parents=True, exist_ok=True)
     selected = (3, 4) if args.players == 'all' else (int(args.players),)
     data = {str(players): profile(players) for players in selected}
-    # Keep a stable two-profile document when the default command is used.
-    for players in (3, 4):
-        data.setdefault(str(players), profile(players))
     payload = {'schema_version': 1, 'profiles': data}
     (args.output / 'summary.json').write_text(json.dumps(payload, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     (args.output / 'REPORT.md').write_text(report(data), encoding='utf-8')
     with (args.output / 'witnesses.jsonl').open('w', encoding='utf-8') as handle:
-        for players in (4, 3):
+        for players in sorted(map(int, data), reverse=True):
             for combination in data[str(players)]['combinations']:
                 handle.write(json.dumps({'players': players, **combination}, ensure_ascii=False) + '\n')
-    print(json.dumps({players: data[str(players)]['combination_count'] for players in (4, 3)}, ensure_ascii=False))
+    print(json.dumps({players: data[players]['combination_count'] for players in sorted(data, key=int, reverse=True)}, ensure_ascii=False))
 
 
 if __name__ == '__main__':

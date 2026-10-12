@@ -37,3 +37,4 @@ jobs:
         run: |
           python audit_results.py results/full
           python audit_results.py results/sanma
+          python tools/verify_yakuman.py results/yakuman

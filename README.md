@@ -8,32 +8,43 @@ A standalone Python riichi evaluator and witness-based enumerator for ordinary y
 本项目独立运行，不读取或修改 [all_yaku_combos](https://github.com/Fat-pig-Cui/all_yaku_combos) 的人工组合表，不需要雀魂服务器或牌谱验证。
 这是非官方的理论研究工具。采用 [MIT许可证](LICENSE)。
 
+## 文档导航
+
+| 文档 | 内容 |
+| :---: | :---: |
+| [PAPER.md](doc/PAPER.md) | 四麻、三麻与组合枚举方法论文 |
+| [PAPER_GUYI.md](doc/PAPER_GUYI.md) | 古役差量枚举与番数分布 |
+| [SANMA.md](doc/SANMA.md) | 三麻模型与四麻差异 |
+| [THEORY.md](doc/THEORY.md) | 有限结构模型与可达性边界 |
+| [RULES_AND_PROVENANCE.md](doc/RULES_AND_PROVENANCE.md) | 规则审查、来源与验证边界 |
+| [results/README.md](doc/results/README.md) | 快照、审计与结果目录说明 |
+
 ## 已完成的枚举
 
-四麻当前完整模型共 **20,687** 种组合：门清 **15,270**，副露 **5,417**；求解器以 `unsat` 结束，全部见证已复算。逐番分布和验证边界见 [结果报告](results/full/REPORT.md)，机器状态见 [summary.json](results/full/summary.json)。
+四麻当前完整模型共 **20,687** 种组合：门清 **15,270**，副露 **5,417**；求解器以 `unsat` 结束，全部见证已复算。逐番分布和验证边界见 [结果报告](doc/results/full/REPORT.md)，机器状态见 [summary.json](results/full/summary.json)。
 
-三麻完整枚举为 **18,861种**：门清 **14,748种**，副露 **4,113种**，当前求解器返回 `unsat`，全部见证已复算。结果与逐番分布见 [三麻报告](results/sanma/REPORT.md)，完整配置见 [三麻汇总](results/sanma/summary.json)。
-牌组为108张，禁止吃，北为客风，拔北补牌可计岭上，立直至少剩3张通常牌；三麻不直接继承四麻计数。实现与存在性构造边界见 [三麻方案](SANMA_DESIGN.md)。
+三麻完整枚举为 **18,861种**：门清 **14,748种**，副露 **4,113种**，当前求解器返回 `unsat`，全部见证已复算。结果与逐番分布见 [三麻报告](doc/results/sanma/REPORT.md)，完整配置见 [三麻汇总](results/sanma/summary.json)。
+牌组为108张，禁止吃，北为客风，拔北补牌可计岭上，立直至少剩3张通常牌；三麻不直接继承四麻计数。实现与存在性构造边界见 [三麻方案](doc/SANMA.md)。
 
 | 配置 | 门清 | 副露 | 合计 |
-|---|---:|---:|---:|
+| :---: | :---: | :---: | :---: |
 | 四麻 | 15,270 | 5,417 | 20,687 |
 | 三麻 | 14,748 | 4,113 | 18,861 |
 
-按完整役集合比较，两种玩法共有18,706种，四麻独有1,981种，三麻独有155种。三麻独有项全部包含岭上；拔北使若干四麻无法开杠的牌形也能补牌和牌。分类与原因见[三麻与四麻普通役组合差异](SANMA_COMPARISON.md)。
+按完整役集合比较，两种玩法共有18,706种，四麻独有1,981种，三麻独有155种。三麻独有项全部包含岭上；拔北使若干四麻无法开杠的牌形也能补牌和牌。分类与原因见[三麻与四麻普通役组合差异](doc/SANMA.md)。
 
 ## 自然役满复合分析
 
-自然役满单独按“完整役满集合”枚举，不混入上面的普通役组合计数。当前四麻得到99个集合，三麻得到99个集合；四麻数量与已修订的参考合集一致。其中包括开放杠形的“四杠子＋大四喜＋字一色”：四种风牌各开杠、以另一张字牌作雀头，至少一组杠为明杠，因而不会额外成立四暗刻单骑。完整倍数分布、每个集合的牌形见证以及三麻结果见 [自然役满分析报告](results/yakuman/REPORT.md) 和 [机器汇总](results/yakuman/summary.json)。
+自然役满单独按“完整役满集合”枚举，不混入上面的普通役组合计数。当前四麻得到99个集合，三麻得到99个集合；四麻数量与已修订的参考合集一致。其中包括开放杠形的“四杠子＋大四喜＋字一色”：四种风牌各开杠、以另一张字牌作雀头，至少一组杠为明杠，因而不会额外成立四暗刻单骑。完整倍数分布、每个集合的牌形见证以及三麻结果见 [自然役满分析报告](doc/results/yakuman/REPORT.md) 和 [机器汇总](results/yakuman/summary.json)。
 
 这次计数不含宝牌与自然役满；13番以上普通役集合保留。
-完整性限于本文和 `THEORY.md` 定义的有限结构模型及条件可达性构造，不是所有牌山与对手操作的逐步穷举。
+完整性限于本文和 `doc/THEORY.md` 定义的有限结构模型及条件可达性构造，不是所有牌山与对手操作的逐步穷举。
 四麻全部20,687条当前见证已重新判役与检查条件。23个四麻边界牌例中22个比较计分、1个检查非法过程应被拒绝；另200个从四麻快照抽取的牌例与本地JavaScript参考算法计分对照通过。
-规则注意事项、已修正错误和其余验证边界见 [规则审查记录](RULE_AUDIT.md)。
+规则注意事项、已修正错误和其余验证边界见 [规则审查记录](doc/RULES_AND_PROVENANCE.md)。
 
 ## 古役扩展
 
-古役普通役差量已整合到 [guyi](guyi/README.md)。四麻开启古役后共有 **57,805** 种普通役组合，三麻共有 **48,177** 种；报告同时列出基线、消失集合、新增集合，以及按“恰好包含哪些古役”分组的可相加表格。古役的独立算法流程见 [古役论文](PAPER_GUYI.md)。古役代码使用独立规则模块，不改变主目录的段位场默认结果。
+古役普通役差量已整合到 [guyi](doc/guyi/README.md)。四麻开启古役后共有 **57,805** 种普通役组合，三麻共有 **48,177** 种；报告同时列出基线、消失集合、新增集合，以及按“恰好包含哪些古役”分组的可相加表格。古役的独立算法流程见 [古役论文](doc/PAPER_GUYI.md)。古役代码使用独立规则模块，不改变主目录的段位场默认结果。
 单元测试、文件／源码哈希和全部见证复算由 [GitHub Actions](.github/workflows/checks.yml) 配置执行。
 
 与人工推导仓库 `all_yaku_combos` 的完整役集合、番数和专题分布已逐条对齐。
@@ -228,14 +239,14 @@ python tools/analyze_yakuman.py --players all
 原始源代码哈希改变后不能直接续算，以免把不同模型的结果混在一起。
 公开快照将两份大记录文件分别存放于 `results/full/records.zip` 和 `results/sanma/records.zip`；复算直接读取压缩包，无需解压。
 压缩包及解压后成员分别有摘要校验，原始内容保持一致。四麻约36.53 MiB压缩为1.09 MiB，三麻约32.91 MiB压缩为1.06 MiB。
-公开快照与文件摘要见 [results/README.md](results/README.md)；本地新运行目录默认被Git忽略。
+公开快照与文件摘要见 [results/README.md](doc/results/README.md)；本地新运行目录默认被Git忽略。
 
 ## 参考算法与验证边界
 
 `calc_fan.py` 独立编写，参考 `majsoul-replay-editor` 的 `calcFan.js` 立直分支与 `calcSudian` 的比较规则。
 默认计分器没有移植川麻、国标和活动规则，也不在段位场结果中启用古役；古役扩展使用仓库内独立的 `guyi/` 规则模块和差量报告。项目不依赖全局数据或 JavaScript 运行时。
 同分不同役保留全部择优解释，避免理论结果依赖JavaScript DFS的首次命中顺序；自然役满在所有解释中优先。
-参考快照、算法差异及来源记录见 `PROVENANCE.md`。
+参考快照、算法差异及来源记录见 `doc/RULES_AND_PROVENANCE.md`。
 
 可选的本地算法对照：
 
@@ -249,4 +260,4 @@ python tools/check_reference.py --core /path/to/replay-editor/core \
 需要自行取得参考源码及Node.js。`--core` 必须显式指定；默认报告写入被Git忽略的
 `results/local-reference-check.json`，不覆盖仓库附带的对照报告。
 
-规则反例、算法变更和结果更新流程见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+规则反例、算法变更和结果更新流程见 [CONTRIBUTING.md](doc/CONTRIBUTING.md)。

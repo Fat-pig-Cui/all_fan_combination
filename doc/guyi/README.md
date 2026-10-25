@@ -15,7 +15,7 @@
 
 四麻报告见 [ORDINARY_DELTA.md](ORDINARY_DELTA.md)，三麻报告见 [SANMA_ORDINARY_DELTA.md](SANMA_ORDINARY_DELTA.md)。两份报告中的“含某古役”表用于观察覆盖范围，按“恰好包含哪些古役”分组的表用于互斥相加。四麻的 47 类互斥分组共 38,671 种。
 
-完整新增、消失集合和机器可读分组表分别保存在 [ordinary_delta.zip](ordinary_delta.zip) 与 [sanma_ordinary_delta.zip](sanma_ordinary_delta.zip)。压缩包中的 CSV 记录示例牌型、和牌条件和门清／副露状态；暗杠使用五张相同数字的文档显示法，和牌张独立写在手牌之后。
+完整新增、消失集合和机器可读分组表分别保存在 [ordinary_delta.zip](../../guyi/ordinary_delta.zip) 与 [sanma_ordinary_delta.zip](../../guyi/sanma_ordinary_delta.zip)。压缩包中的 CSV 记录示例牌型、和牌条件和门清／副露状态；暗杠使用五张相同数字的文档显示法，和牌张独立写在手牌之后。
 
 ## 规则范围
 
@@ -27,7 +27,7 @@
 
 ## 复算
 
-古役独立计番器位于 [ordinary](ordinary/)，其 `rules.py`、`calc_fan.py` 和 `shape_solver.py` 不覆盖主目录同名模块。四麻分片驱动在 [enumerate_ordinary_sharded.py](enumerate_ordinary_sharded.py)，三麻驱动在 [enumerate_sanma_delta.py](enumerate_sanma_delta.py)。
+古役独立计番器位于 [ordinary](../../guyi/ordinary/)，其 `rules.py`、`calc_fan.py` 和 `shape_solver.py` 不覆盖主目录同名模块。四麻分片驱动在 [enumerate_ordinary_sharded.py](../../guyi/enumerate_ordinary_sharded.py)，三麻驱动在 [enumerate_sanma_delta.py](../../guyi/enumerate_sanma_delta.py)。
 
 从仓库根目录创建环境后运行：
 

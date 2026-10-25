@@ -55,7 +55,7 @@ def verify(root: Path = ROOT):
     profiles = {'4': {'combination_count': summary['combination_count'], 'complete': True}}
     sanma = root / 'results/sanma'
     if sanma.exists():
-        required = {'results/sanma/' + name for name in ('summary.json', 'records.zip', 'archive.json', 'audit.json', 'REPORT.md')}
+        required = {('results/sanma/' + name if name != 'REPORT.md' else 'doc/results/sanma/REPORT.md') for name in ('summary.json', 'records.zip', 'archive.json', 'audit.json', 'REPORT.md')}
         if not required <= checked:
             raise ValueError('Manifest does not cover the sanma snapshot')
         data = json.loads((sanma / 'summary.json').read_text(encoding='utf-8'))

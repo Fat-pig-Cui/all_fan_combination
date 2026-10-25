@@ -10,9 +10,7 @@ A standalone Python riichi evaluator and witness-based enumerator for ordinary y
 
 ## 已完成的枚举
 
-2026-10-11已修正双立直与普通抢杠的永久振听遗漏。旧快照的21,179条组合见证与5,474条拒绝候选均重新判定，移除492种无效组合；当前求解器检查剩余约束并返回 `unsat`。
-修正后的理论模型共 **20,687** 种组合：门清 **15,270**，副露 **5,417**。逐番分布和全部见证复算结果见
-[结果报告](results/full/REPORT.md)，机器状态见 [summary.json](results/full/summary.json)。
+四麻当前完整模型共 **20,687** 种组合：门清 **15,270**，副露 **5,417**；求解器以 `unsat` 结束，全部见证已复算。逐番分布和验证边界见 [结果报告](results/full/REPORT.md)，机器状态见 [summary.json](results/full/summary.json)。
 
 三麻完整枚举为 **18,861种**：门清 **14,748种**，副露 **4,113种**，当前求解器返回 `unsat`，全部见证已复算。结果与逐番分布见 [三麻报告](results/sanma/REPORT.md)，完整配置见 [三麻汇总](results/sanma/summary.json)。
 牌组为108张，禁止吃，北为客风，拔北补牌可计岭上，立直至少剩3张通常牌；三麻不直接继承四麻计数。实现与存在性构造边界见 [三麻方案](SANMA_DESIGN.md)。
@@ -32,10 +30,13 @@ A standalone Python riichi evaluator and witness-based enumerator for ordinary y
 完整性限于本文和 `THEORY.md` 定义的有限结构模型及条件可达性构造，不是所有牌山与对手操作的逐步穷举。
 四麻全部20,687条当前见证已重新判役与检查条件。23个四麻边界牌例中22个比较计分、1个检查非法过程应被拒绝；另200个从四麻快照抽取的牌例与本地JavaScript参考算法计分对照通过。
 规则注意事项、已修正错误和其余验证边界见 [规则审查记录](RULE_AUDIT.md)。
+
+## 古役扩展
+
+古役普通役差量已整合到 [guyi](guyi/README.md)。四麻开启古役后共有 **57,805** 种普通役组合，三麻共有 **48,177** 种；报告同时列出基线、消失集合、新增集合，以及按“恰好包含哪些古役”分组的可相加表格。古役的独立算法流程见 [古役论文](PAPER_GUYI.md)。古役代码使用独立规则模块，不改变主目录的段位场默认结果。
 单元测试、文件／源码哈希和全部见证复算由 [GitHub Actions](.github/workflows/checks.yml) 配置执行。
 
 与人工推导仓库 `all_yaku_combos` 的完整役集合、番数和专题分布已逐条对齐。
-两次对比报告与机器数据保存在 [对比归档](archive/README.md)，用于记录本次修正过程。
 
 ## 安装与运行
 
@@ -71,8 +72,7 @@ python -m unittest discover -s tests -v
 ### 从零枚举与续算
 
 `results/full/` 与 `results/sanma/` 分别保存四麻、三麻快照。新的枚举使用独立目录，避免与基线混用。
-从零运行可能耗时较长；2026-10-10旧模型运行约64分钟。2026-10-11复核重新判定旧候选，再求解当前模型的剩余空间，约76秒；两者不是相同的运行方式，耗时随机器和求解器状态变化。
-本次三麻先重新判断四麻牌形提示，再搜索三麻剩余空间，约489秒；最终输入检查完善后又复核全部三麻候选，仍为18,861种。这些时间不能等同于三麻从零求解的耗时。
+从零运行可能耗时较长；实际耗时随机器和求解器状态变化。已发布快照只作为当前结果的复算入口，新枚举应使用独立输出目录。
 
 ```bash
 # 完整枚举：只有求解器返回 unsat 才标记 complete=true
@@ -87,7 +87,7 @@ python tools/enumerate_sanma.py --output results/local-sanma-seeded
 # 限量检查：退出码3，明确标记不完整，不作为最终总数
 python enumerate_combinations.py --output results/local-sample --limit 100
 
-# 已有结果需要显式续算；源代码改变时拒绝混用旧结果
+# 已有结果需要显式续算；源代码改变时拒绝混用不同模型结果
 python enumerate_combinations.py --output results/local-run --resume
 
 # 对保存的每一条见证重新判役、检查暗杠听牌和去重
@@ -140,7 +140,7 @@ python tools/analyze_yakuman.py --players all
 | `tools/report_results.py` | 对停止后的结果检查源码哈希、复算全部见证并生成中文统计报告 |
 | `tools/verify_snapshot.py` | 不依赖Z3，校验已发布文件与核心源码的SHA-256 |
 | `tools/pack_results.py` | 将原始见证与拒绝记录压缩为ZIP，保留原始内容摘要 |
-| `tools/revalidate_snapshot.py` | 重新判定旧快照的所有候选，再由当前求解器检查剩余空间；只有 `unsat` 标记完整 |
+| `tools/revalidate_snapshot.py` | 重新判定输入快照的所有候选，再由当前求解器检查剩余空间；只有 `unsat` 标记完整 |
 | `tools/enumerate_sanma.py` | 将既有四麻牌形作为三麻搜索提示；重新判役、检查证书后继续求解全部剩余集合 |
 | `tools/analyze_yakuman.py` | 独立枚举自然役满复合集合，并生成四麻／三麻牌形见证与差异报告 |
 | `tools/verify_yakuman.py` | 重新判定自然役满见证，检查役满组合、倍数及结果统计 |
@@ -160,7 +160,7 @@ python tools/analyze_yakuman.py --players all
 ```
 
 这相当于在有限牌形空间中按目标役集合查找见证，省去大量产生同一结果的重复牌面。
-它不从旧仓库的两两冲突表生成候选，也不以旧总数作为终止条件。
+它不从人工冲突表生成候选，也不以外部总数作为终止条件。
 
 ## 条件役的理论可达性
 
@@ -233,7 +233,7 @@ python tools/analyze_yakuman.py --players all
 ## 参考算法与验证边界
 
 `calc_fan.py` 独立编写，参考 `majsoul-replay-editor` 的 `calcFan.js` 立直分支与 `calcSudian` 的比较规则。
-没有移植川麻、国标、古役、活动规则、全局数据或JavaScript运行时。
+默认计分器没有移植川麻、国标和活动规则，也不在段位场结果中启用古役；古役扩展使用仓库内独立的 `guyi/` 规则模块和差量报告。项目不依赖全局数据或 JavaScript 运行时。
 同分不同役保留全部择优解释，避免理论结果依赖JavaScript DFS的首次命中顺序；自然役满在所有解释中优先。
 参考快照、算法差异及来源记录见 `PROVENANCE.md`。
 

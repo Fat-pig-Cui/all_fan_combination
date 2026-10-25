@@ -1,0 +1,239 @@
+{
+  "complete": true,
+  "termination": "unsat",
+  "combination_count": 57805,
+  "closed": 34737,
+  "open": 23068,
+  "models": 7328,
+  "rejected": 2583,
+  "elapsed_seconds": 554.688,
+  "source_sha256": {
+    "calc_fan.py": "3858e724ddf9e57825ce834d152b366eefe4294ed841d1b6adfd70b209bd1483",
+    "enumerate_guyi.py": "45224348d89440d2d71bdee561ab185813f906e67a9514e3bb6a19b3e2440834",
+    "reachability.py": "28f159f3a1134b8cf1a4161b137f6f84e47c5f0d5f6929dddfe6b4f1d06a8027",
+    "result_records.py": "c81c6da19aa10cd1427351a88dc1431b4b6978a630cf45a1e005244ffe239d92",
+    "rules.py": "6aaf89703dc652788fbcab4f7489c75ab03922e9ba4fc8a777b0cbded8df133e",
+    "shape_solver.py": "cb8fb19fa12fde75977266c8f0cc64b473f7446ce7ab3f9a6943efd101b744e9"
+  },
+  "driver_sha256": "17c4ea66a93599b10c51f5bdc9a3456b309d12b6939ab88974a4e23d5f731d02",
+  "z3_version": "5.1.0",
+  "shard_count": 52,
+  "shards_done": [
+    [
+      false,
+      0
+    ],
+    [
+      false,
+      4
+    ],
+    [
+      false,
+      8
+    ],
+    [
+      false,
+      16
+    ],
+    [
+      false,
+      32
+    ],
+    [
+      false,
+      1073741824
+    ],
+    [
+      false,
+      2147483648
+    ],
+    [
+      false,
+      3221225472
+    ],
+    [
+      false,
+      68719476736
+    ],
+    [
+      false,
+      137438953472
+    ],
+    [
+      true,
+      0
+    ],
+    [
+      true,
+      1
+    ],
+    [
+      true,
+      2
+    ],
+    [
+      true,
+      3
+    ],
+    [
+      true,
+      4
+    ],
+    [
+      true,
+      6
+    ],
+    [
+      true,
+      9
+    ],
+    [
+      true,
+      11
+    ],
+    [
+      true,
+      17
+    ],
+    [
+      true,
+      19
+    ],
+    [
+      true,
+      32
+    ],
+    [
+      true,
+      34
+    ],
+    [
+      true,
+      131072
+    ],
+    [
+      true,
+      131073
+    ],
+    [
+      true,
+      131076
+    ],
+    [
+      true,
+      131081
+    ],
+    [
+      true,
+      131089
+    ],
+    [
+      true,
+      131104
+    ],
+    [
+      true,
+      536870914
+    ],
+    [
+      true,
+      536870915
+    ],
+    [
+      true,
+      536870918
+    ],
+    [
+      true,
+      536870931
+    ],
+    [
+      true,
+      537001984
+    ],
+    [
+      true,
+      537001985
+    ],
+    [
+      true,
+      1073741824
+    ],
+    [
+      true,
+      1073741826
+    ],
+    [
+      true,
+      1073872896
+    ],
+    [
+      true,
+      1610612738
+    ],
+    [
+      true,
+      1610743808
+    ],
+    [
+      true,
+      2147483648
+    ],
+    [
+      true,
+      2147483650
+    ],
+    [
+      true,
+      2147614720
+    ],
+    [
+      true,
+      3221225472
+    ],
+    [
+      true,
+      3221225474
+    ],
+    [
+      true,
+      3221356544
+    ],
+    [
+      true,
+      68719476737
+    ],
+    [
+      true,
+      68719476739
+    ],
+    [
+      true,
+      68719607809
+    ],
+    [
+      true,
+      69256347651
+    ],
+    [
+      true,
+      137438953472
+    ],
+    [
+      true,
+      137438953474
+    ],
+    [
+      true,
+      137439084544
+    ]
+  ],
+  "coverage_unsat": true,
+  "inherited_proof": {
+    "shards": 32,
+    "stronger_by_conjunction": true,
+    "prior_summary_sha256": "1dafea5ceedbfa1feae236e0e879a4eb059997645088d7fb62c6f0430dd240e0",
+    "prior_driver_sha256": "379da870a7532a9ffe1ab8935f884f76a1dc0e0e9ac8969876d9f92c66ce62c3",
+    "prior_keys_sha256": "aa6c94f9813151ac69c30f6bc5703c3f6cca065c319ed4d2211b2a88de40b8e0"
+  }
+}

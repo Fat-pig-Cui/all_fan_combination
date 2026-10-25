@@ -1,4 +1,5 @@
 .venv/
+.venv-guyi/
 venv/
 __pycache__/
 *.py[cod]
@@ -15,7 +16,7 @@ Thumbs.db
 *.json.tmp
 *.zip.tmp
 
-# Keep published snapshots; ignore new enumerations and local comparisons.
+# Published root snapshots are tracked; local enumerations and extracted data are not.
 /results/*
 !/results/README.md
 !/results/SHA256SUMS
@@ -37,4 +38,31 @@ Thumbs.db
 !/results/sanma/audit.json
 !/results/sanma/REPORT.md
 !/results/yakuman/
-!/results/yakuman/*
+/results/yakuman/*
+!/results/yakuman/summary.json
+!/results/yakuman/witnesses.jsonl
+!/results/yakuman/REPORT.md
+
+# Ancient-yaku current snapshots keep only compressed witnesses and metadata.
+/guyi/ordinary/results/
+!/guyi/ordinary/results/
+!/guyi/ordinary/results/records.zip
+!/guyi/ordinary/results/archive.json
+!/guyi/ordinary/results/summary.json
+!/guyi/ordinary/results/delta_summary.json
+!/guyi/ordinary/results/proof_parent/
+!/guyi/ordinary/results/proof_parent/driver.py
+!/guyi/ordinary/results/proof_parent/keys.json
+!/guyi/ordinary/results/proof_parent/summary.json
+/guyi/ordinary/results_reproduced/
+/guyi/ordinary/results_sanma_reproduced/
+/guyi/ordinary/results_sanma_ancient/
+!/guyi/ordinary/results_sanma_ancient/
+!/guyi/ordinary/results_sanma_ancient/records.zip
+!/guyi/ordinary/results_sanma_ancient/archive.json
+!/guyi/ordinary/results_sanma_ancient/summary.json
+/guyi/ordinary/sanma_ranked_baseline/
+!/guyi/ordinary/sanma_ranked_baseline/
+!/guyi/ordinary/sanma_ranked_baseline/archive.json
+!/guyi/ordinary/sanma_ranked_baseline/records.zip
+!/guyi/ordinary/sanma_ranked_baseline/summary.json

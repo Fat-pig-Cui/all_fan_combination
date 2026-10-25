@@ -1,0 +1,152 @@
+{
+  "complete": false,
+  "termination": "interrupted",
+  "combination_count": 53060,
+  "closed": 29992,
+  "open": 23068,
+  "models": 12382,
+  "rejected": 10474,
+  "elapsed_seconds": 618.16,
+  "source_sha256": {
+    "calc_fan.py": "3858e724ddf9e57825ce834d152b366eefe4294ed841d1b6adfd70b209bd1483",
+    "enumerate_guyi.py": "45224348d89440d2d71bdee561ab185813f906e67a9514e3bb6a19b3e2440834",
+    "reachability.py": "28f159f3a1134b8cf1a4161b137f6f84e47c5f0d5f6929dddfe6b4f1d06a8027",
+    "result_records.py": "c81c6da19aa10cd1427351a88dc1431b4b6978a630cf45a1e005244ffe239d92",
+    "rules.py": "6aaf89703dc652788fbcab4f7489c75ab03922e9ba4fc8a777b0cbded8df133e",
+    "shape_solver.py": "cb8fb19fa12fde75977266c8f0cc64b473f7446ce7ab3f9a6943efd101b744e9"
+  },
+  "driver_sha256": "379da870a7532a9ffe1ab8935f884f76a1dc0e0e9ac8969876d9f92c66ce62c3",
+  "z3_version": "5.1.0",
+  "shard_count": 52,
+  "shards_done": [
+    [
+      false,
+      0
+    ],
+    [
+      false,
+      4
+    ],
+    [
+      false,
+      8
+    ],
+    [
+      false,
+      16
+    ],
+    [
+      false,
+      32
+    ],
+    [
+      false,
+      1073741824
+    ],
+    [
+      false,
+      2147483648
+    ],
+    [
+      false,
+      3221225472
+    ],
+    [
+      false,
+      68719476736
+    ],
+    [
+      false,
+      137438953472
+    ],
+    [
+      true,
+      0
+    ],
+    [
+      true,
+      1
+    ],
+    [
+      true,
+      2
+    ],
+    [
+      true,
+      3
+    ],
+    [
+      true,
+      4
+    ],
+    [
+      true,
+      6
+    ],
+    [
+      true,
+      9
+    ],
+    [
+      true,
+      11
+    ],
+    [
+      true,
+      17
+    ],
+    [
+      true,
+      19
+    ],
+    [
+      true,
+      32
+    ],
+    [
+      true,
+      34
+    ],
+    [
+      true,
+      131072
+    ],
+    [
+      true,
+      131073
+    ],
+    [
+      true,
+      131076
+    ],
+    [
+      true,
+      131081
+    ],
+    [
+      true,
+      131089
+    ],
+    [
+      true,
+      131104
+    ],
+    [
+      true,
+      536870914
+    ],
+    [
+      true,
+      536870915
+    ],
+    [
+      true,
+      536870918
+    ],
+    [
+      true,
+      536870931
+    ]
+  ],
+  "coverage_unsat": true
+}

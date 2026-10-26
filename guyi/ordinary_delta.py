@@ -19,7 +19,7 @@ from reachability import condition_certificate
 from result_records import iter_record_lines, verify_archive
 
 ANCIENT = ORDER[30:]
-RESULTS = ROOT / 'ordinary' / 'results'
+RESULTS = ROOT / 'ordinary' / 'results_reproduced'
 
 
 def key(r):
@@ -88,7 +88,7 @@ def main():
             old = json.loads((parent / 'summary.json').read_text())
             assert old['source_sha256'] == summary['source_sha256']
             assert len(old['shards_done']) == p['shards']
-    baseline_dir = ROOT / 'ordinary' / 'baseline'
+    baseline_dir = ROOT.parent / 'results' / 'full'
     baseline_audit = verify_archive(baseline_dir)
     baseline = {key(r): r for r in map(json.loads, iter_record_lines(baseline_dir, 'combinations.jsonl'))}
     records = list(map(json.loads, iter_record_lines(RESULTS, 'combinations.jsonl')))
@@ -236,4 +236,10 @@ def main():
 
 
 if __name__ == '__main__':
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('results', nargs='?', type=Path, default=RESULTS,
+                        help='completed ancient-yaku result directory')
+    args = parser.parse_args()
+    RESULTS = args.results.resolve()
     main()

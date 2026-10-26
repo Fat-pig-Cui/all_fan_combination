@@ -43,26 +43,10 @@ Thumbs.db
 !/results/yakuman/witnesses.jsonl
 !/results/yakuman/REPORT.md
 
-# Ancient-yaku current snapshots keep only compressed witnesses and metadata.
+# Ancient-yaku enumeration outputs are reproducible working data.
+/guyi/ordinary/baseline/
 /guyi/ordinary/results/
-!/guyi/ordinary/results/
-!/guyi/ordinary/results/records.zip
-!/guyi/ordinary/results/archive.json
-!/guyi/ordinary/results/summary.json
-!/guyi/ordinary/results/delta_summary.json
-!/guyi/ordinary/results/proof_parent/
-!/guyi/ordinary/results/proof_parent/driver.py
-!/guyi/ordinary/results/proof_parent/keys.json
-!/guyi/ordinary/results/proof_parent/summary.json
 /guyi/ordinary/results_reproduced/
-/guyi/ordinary/results_sanma_reproduced/
 /guyi/ordinary/results_sanma_ancient/
-!/guyi/ordinary/results_sanma_ancient/
-!/guyi/ordinary/results_sanma_ancient/records.zip
-!/guyi/ordinary/results_sanma_ancient/archive.json
-!/guyi/ordinary/results_sanma_ancient/summary.json
+/guyi/ordinary/results_sanma_reproduced/
 /guyi/ordinary/sanma_ranked_baseline/
-!/guyi/ordinary/sanma_ranked_baseline/
-!/guyi/ordinary/sanma_ranked_baseline/archive.json
-!/guyi/ordinary/sanma_ranked_baseline/records.zip
-!/guyi/ordinary/sanma_ranked_baseline/summary.json

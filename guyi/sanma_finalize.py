@@ -13,12 +13,10 @@ def main():
                '--mode', 'ancient', '--output-root', str(OUTPUT)]
     if (OUTPUT / 'results_sanma_ancient' / 'summary.json').exists():
         command.append('--resume')
-    for path in [ROOT / 'ordinary' / 'sanma_ranked_baseline']:
-        if not path.exists():
-            continue
-        command.extend(['--seed', str(path)])
+    command.extend(['--seed', str(ROOT.parent / 'results' / 'sanma')])
     subprocess.run(command, cwd=ROOT, check=True)
-    subprocess.run([sys.executable, str(ROOT / 'sanma_delta_report.py')], cwd=ROOT, check=True)
+    subprocess.run([sys.executable, str(ROOT / 'sanma_delta_report.py'),
+                    str(OUTPUT / 'results_sanma_ancient')], cwd=ROOT, check=True)
 
 
 if __name__ == '__main__':

@@ -78,16 +78,14 @@ def removal_reason(k):
 
 
 def main():
-    baseline_dir = ORDINARY / 'sanma_ranked_baseline'
+    baseline_dir = ORDINARY.parents[1] / 'results' / 'sanma'
     baseline_audit = verify_archive(baseline_dir)
     baseline_summary = json.loads((baseline_dir / 'summary.json').read_text())
     assert baseline_summary['complete'] and baseline_summary['scope']['players'] == 3
     baseline_records = records(baseline_dir)
     ancient_paths = [Path(p) for p in sys.argv[1:]] if len(sys.argv) > 1 else []
     if not ancient_paths:
-        # The published snapshot is kept under ordinary/results_sanma_ancient;
-        # a local corrected/full run may still be supplied explicitly.
-        ancient_paths = [ORDINARY / 'results_sanma_ancient']
+        raise ValueError('Pass one completed ancient-yaku result directory as an argument; generated run data is not bundled.')
     if len(ancient_paths) != 1:
         raise ValueError('Publish only one complete full-model run; earlier partial searches are seeds, not a proof')
     full_summary = json.loads((ancient_paths[0] / 'summary.json').read_text())

@@ -137,7 +137,7 @@ def enumerate_sets(output, resume=False, limit=0, extra_seeds=()):
         try:
             # Re-evaluate every ranked witness AND rejected candidate, including
             # alternative event paths. Old rejected decompositions may win now.
-            sources = [(ROOT / 'baseline', filename) for filename in ('combinations.jsonl', 'rejections.jsonl')]
+            sources = [(ROOT.parents[1] / 'results' / 'full', filename) for filename in ('combinations.jsonl', 'rejections.jsonl')]
             sources += [(Path(directory), 'combinations.jsonl') for directory in extra_seeds]
             for directory, filename in sources:
                 for number, line in enumerate(iter_record_lines(directory, filename), 1):
